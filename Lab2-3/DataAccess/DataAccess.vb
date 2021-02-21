@@ -71,12 +71,6 @@ Public Class DataAccess
 
 
 
-    Public Function cambiarPassword(ByVal pNuevaPassword As String, pCodigoRecuperacion As String, pEmail As String) As Boolean
-        Return True
-    End Function
-
-
-
     Public Function login(ByVal pUser As String, ByVal pPass As String) As Integer
 
         If openConnection() Then
@@ -85,20 +79,22 @@ Public Class DataAccess
                 HashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(pPass)))
             End Using
 
+            '0 - Error de conexión a la base de datos'
+            '1 - Usuario registrado y verificado'
+            '2 - Usuario registrado sin verificar'
+            '3 - Usuario no existe'
+
             'Definir y ejecutar la consulta'
-            Dim st As String = "select count() from Usuarios where email='" & pUser & "' and pass='" & HashedPass & "' and confirmado='True';"
+            Dim st As String = "select count(*) from Usuarios where email='" & pUser & "' and pass='" & HashedPass & "' and confirmado='True';"
             comando = New SqlCommand(st, conexion)
             Dim count As Integer = comando.ExecuteScalar()
 
-            'imprimo la consulta en onsola para verificar que es correcta'
-            Console.WriteLine(st)
-
             If count = 1 Then
                 closeConnection()
-                Return 0
+                Return 1
             Else
                 'Verificar que el usuario existe pero no está confirmado'
-                st = "select count() from Usuarios where email='" & pUser & "' and pass='" & HashedPass & "' and confirmado='False';"
+                st = "select count(*) from Usuarios where email='" & pUser & "' and pass='" & HashedPass & "' and confirmado='False';"
                 comando = New SqlCommand(st, conexion)
                 count = comando.ExecuteScalar()
 
@@ -113,9 +109,130 @@ Public Class DataAccess
             'BD no conectada'
             MsgBox(" Error de conexión al servidor de BD: " + excepcion + "")
             closeConnection()
-            Return 1
+            Return 0
         End If
     End Function
+
+
+
+    Public Function verificarCuenta(pUser As String, pCodigo As String) As Integer
+
+        If openConnection() Then
+
+            '0 - Error de conexión a la base de datos'
+            '1 - Usuario ya confirmado'
+            '2 - Usuario no existe en db'
+            '3 - Usuario confirmado correctamente'
+            '4 - Error de actualización de db'
+            '5 - Código incorrecto'
+
+            'Confirmo que el usuario existe'
+            Dim st As String = "select count(*) from Usuarios where email='" & pUser & "' and confirmado='True';"
+            comando = New SqlCommand(st, conexion)
+            Dim count As Integer = comando.ExecuteScalar()
+
+            If count = 1 Then
+                closeConnection()
+                Return 1
+            Else
+                'Verificar que el usuario existe pero no está confirmado'
+                st = "select count(*) from Usuarios where email='" & pUser & "' and confirmado='False';"
+                comando = New SqlCommand(st, conexion)
+                count = comando.ExecuteScalar()
+
+                closeConnection()
+                If count = 1 Then
+
+                    'Verificar que el usuario existe pero no está confirmado'
+                    st = "select numconfir from Usuarios where email='" & pUser & "';"
+                    comando = New SqlCommand(st, conexion)
+                    count = comando.ExecuteScalar()
+
+                    'Verificar el código de confirmación'
+                    If count = pCodigo Then
+                        Try
+                            st = "UPDATE Usuarios SET confirmado='True' WHERE email='" & pUser & "';"
+                            comando = New SqlCommand(st, conexion)
+                            comando.ExecuteNonQuery()
+                            Return 3
+                        Catch ex As Exception
+                            Return 4
+                        End Try
+                    Else
+                        Return 5
+                    End If
+                Else
+                    'Usuario no existe'
+                    Return 2
+                End If
+
+            End If
+
+        Else
+            'BD no conectada'
+            MsgBox(" Error de conexión al servidor de BD: " + excepcion + "")
+            closeConnection()
+            Return 0
+        End If
+
+
+    End Function
+
+
+
+    Public Function cambiarPassword(pUser As String, pOldPassword As String, pNewPassword As String) As Integer
+
+        If openConnection() Then
+
+            '0 - Error de conexión a la base de datos'
+            '1 - Usuario ya confirmado'
+            '2 - Usuario no existe en db'
+            '3 - Usuario confirmado correctamente'
+            '4 - Error de actualización de db'
+
+            'Confirmo que el usuario existe'
+            Dim st As String = "select count(*) from Usuarios where email='" & pUser & "';"
+            comando = New SqlCommand(st, conexion)
+            Dim count As Integer = comando.ExecuteScalar()
+
+            If count = 1 Then
+                closeConnection()
+                Return 1
+            Else
+                'Verificar que el usuario existe pero no está confirmado'
+                st = "select count(*) from Usuarios where email='" & pUser & "' and confirmado='False';"
+                comando = New SqlCommand(st, conexion)
+                count = comando.ExecuteScalar()
+
+                closeConnection()
+                If count = 1 Then
+
+                    Try
+                        st = "UPDATE Usuarios SET confirmado='True' WHERE email='" & pUser & "';"
+                        comando = New SqlCommand(st, conexion)
+                        comando.ExecuteNonQuery()
+                        Return 3
+                    Catch ex As Exception
+                        Return 4
+                    End Try
+
+                    Return 3
+                Else
+                    'Usuario no existe'
+                    Return 2
+                End If
+            End If
+
+        Else
+            'BD no conectada'
+            MsgBox(" Error de conexión al servidor de BD: " + excepcion + "")
+            closeConnection()
+            Return 0
+        End If
+
+
+    End Function
+
 
 
     Public Function enviarEmail(pReceiver As String, pNombre As String, pCodigo As String) As Boolean

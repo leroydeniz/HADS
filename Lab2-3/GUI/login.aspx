@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="login.aspx.vb" Inherits="GUI.login"  Debug="true" %>
 <%@ Import Namespace="System.Data" %>
-<%@ Import Namespace="System.Data.OleDb"%>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,7 +15,7 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="login" runat="server">
         <div>
             <div>
                 <asp:Table runat="server" BorderWidth="1"  HorizontalAlign="Center">
@@ -59,7 +58,7 @@
                     <asp:TableRow>
                         <asp:TableCell>
                             <br />
-                            <asp:RegularExpressionValidator ID="PasswordRegularExpressionValidator" runat="server" ErrorMessage="Contraseña incorrecta." ControlToValidate="password" ValidationExpression="[0-9a-zA-Z]{6,}"></asp:RegularExpressionValidator>
+                            <asp:RegularExpressionValidator ID="PasswordRegularExpressionValidator" runat="server" ErrorMessage="Contraseña incorrecta." ControlToValidate="Password" ValidationExpression="[0-9a-zA-Z]{6,}"></asp:RegularExpressionValidator>
                             <br />
                         </asp:TableCell>
                     </asp:TableRow>
@@ -74,7 +73,6 @@
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
-                
             </div>      
         </div>
     </form>

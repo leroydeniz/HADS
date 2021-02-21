@@ -17,7 +17,7 @@
 
     <form id="form1" runat="server">
         <div>
-            <div class="auto-style1">
+                        <div class="auto-style1">
                 <asp:Table ID="Table1" runat="server" CellPadding="5" CellSpacing="2" HorizontalAlign="Center" BorderColor="#0F423F" BorderWidth="1px">
                     
                     <asp:TableRow BorderWidth="1">
@@ -90,7 +90,7 @@
                     <asp:TableRow>
                         <asp:TableCell>
                             <br />
-                            <asp:RequiredFieldValidator ID="NombreVacioValidacion" runat="server" ErrorMessage="Nombre requerido." ControlToValidate="nombre"></asp:RequiredFieldValidator><br />
+                            <asp:RequiredFieldValidator ID="NombreValidacion" runat="server" ErrorMessage="Nombre requerido." ControlToValidate="nombre"></asp:RequiredFieldValidator><br />
                             <asp:RequiredFieldValidator ID="ApellidosValidacion" runat="server" ErrorMessage="Apellidos requerido." ControlToValidate="apellidos"></asp:RequiredFieldValidator><br />
                             <asp:RegularExpressionValidator ID="PasswordFormatoValidacion" runat="server" ErrorMessage="Password no válido." ControlToValidate="password" ValidationExpression="[0-9a-zA-Z]{6,}"></asp:RegularExpressionValidator><br />
                             <asp:CompareValidator ID="PasswordEqualsValidacion" runat="server" ErrorMessage="Contraseñas no coinciden." ControlToValidate="repassword" ControlToCompare="password"></asp:CompareValidator><br />

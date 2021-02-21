@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cambiarPassword.aspx" />
+    <Content Include="index.aspx" />
     <Content Include="login.aspx" />
     <Content Include="registro.aspx" />
     <Content Include="verificarCuenta.aspx" />
@@ -104,6 +105,13 @@
     </Compile>
     <Compile Include="cambiarPassword.aspx.vb">
       <DependentUpon>cambiarPassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.vb">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.vb">
+      <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="login.aspx.designer.vb">

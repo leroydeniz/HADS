@@ -95,13 +95,13 @@ Partial Public Class registro
     Protected WithEvents BtnLogin As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control NombreVacioValidacion.
+    '''Control NombreValidacion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents NombreVacioValidacion As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents NombreValidacion As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control ApellidosValidacion.
