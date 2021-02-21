@@ -16,7 +16,7 @@ Public Class DataAccess
 
     '*************' FUNCIONES DE ACCESO *************'
 
-    Public Function registro(ByVal pUser As String, ByVal pPass As String, ByVal pNombre As String, ByVal pApellidos As String, ByVal pTipo As String) As Boolean
+    Public Function registro(ByVal pUser As String, ByVal pPass As String, ByVal pNombre As String, ByVal pApellidos As String, ByVal pTipo As String) As Integer
         If openConnection() Then
 
             'Verifico que el usuario no existe previamente en la bd'
@@ -26,40 +26,50 @@ Public Class DataAccess
 
             Console.WriteLine(st)
 
+            '0 - Usuario ya existe'
+            '1 - Error de conexión a la base de datos
+            '2 - Error de inserción en la base de datos'
+            '3 - Registro correcto'
+
             If count = 1 Then
-                MsgBox("DEBUG: DataAccess >> usuario ya existe (primer if).")
+                'MsgBox("DEBUG: DataAccess >> usuario ya existe (primer if).")'
                 closeConnection()
-                Return False
+                Return 0
             Else
                 'Encripto la contraseña'
                 Using SHA1hash As SHA1 = SHA1.Create()
                     HashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(pPass)))
                 End Using
 
+                Randomize()
+                Dim randomNumber As Integer = CInt(Int((3000 * Rnd()) + 1))
+
                 'Definir y ejecutar la consulta'
-                st = "insert into Usuarios(email, nombre, apellidos, numconfir, confirmado, tipo, pass) values('" & pUser & "', '" & pNombre & "', '" & pApellidos & "', 0, 0, '" & pTipo & "', '" & HashedPass & "');"
+                st = "insert into Usuarios(email, nombre, apellidos, numconfir, confirmado, tipo, pass) values('" & pUser & "', '" & pNombre & "', '" & pApellidos & "', '" & randomNumber & "', 0, '" & pTipo & "', '" & HashedPass & "');"
                 comando = New SqlCommand(st, conexion)
                 Try
                     count = comando.ExecuteNonQuery()
                     closeConnection()
                 Catch ex As Exception
-                    MsgBox("DEBUG: DataAccess >> error de inserción (segundo if). " + ex.Message)
+                    'MsgBox("DEBUG: DataAccess >> error de inserción (segundo if). " + ex.Message)'
                     closeConnection()
-                    Return False
+                    Return 2
                 End Try
                 closeConnection()
-                'Si no ha fallado, devuelve true'
-                Return True
-
+                'Si no ha fallado, devuelve 3'
+                Return 3
             End If
 
         Else
             'BD no conectada'
-            MsgBox("*** Error de conexión al servidor de BD: " + excepcion + "***")
+            'MsgBox("*** Error de conexión al servidor de BD: " + excepcion + "***")'
             closeConnection()
-            Return False
+            Return 1
         End If
     End Function
+
+
+
 
     Public Function cambiarPassword(ByVal pNuevaPassword As String, pCodigoRecuperacion As String, pEmail As String) As Boolean
         Return True
