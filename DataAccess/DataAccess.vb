@@ -56,9 +56,11 @@ Public Class DataAccess
 
                     If mailEnviado Then
                         'Todo correcto'
+                        closeConnection()
                         Return 3
                     Else
                         'Email no enviado'
+                        closeConnection()
                         Return 4
                     End If
 
@@ -109,8 +111,10 @@ Public Class DataAccess
 
                 closeConnection()
                 If count = 1 Then
+                    closeConnection()
                     Return 2
                 Else
+                    closeConnection()
                     Return 3
                 End If
             End If
@@ -162,15 +166,19 @@ Public Class DataAccess
                             st = "UPDATE Usuarios SET confirmado='True' WHERE email='" & pUser & "';"
                             comando = New SqlCommand(st, conexion)
                             comando.ExecuteNonQuery()
+                            closeConnection()
                             Return 3
                         Catch ex As Exception
+                            closeConnection()
                             Return 4
                         End Try
                     Else
+                        closeConnection()
                         Return 5
                     End If
                 Else
                     'Usuario no existe'
+                    closeConnection()
                     Return 2
                 End If
 
@@ -224,8 +232,10 @@ Public Class DataAccess
                     st = "UPDATE Usuarios SET pass='" & HashedPass & "' WHERE email='" & pUser & "';"
                     comando = New SqlCommand(st, conexion)
                     comando.ExecuteNonQuery()
+                    closeConnection()
                     Return 3
                 Catch ex As Exception
+                    closeConnection()
                     Return 2
                 End Try
             End If
