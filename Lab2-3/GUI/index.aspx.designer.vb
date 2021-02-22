@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class login
+Partial Public Class index
 
     '''<summary>
     '''Control login.

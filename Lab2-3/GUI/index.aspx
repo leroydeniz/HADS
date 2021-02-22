@@ -1,22 +1,21 @@
-﻿ <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="index.aspx.vb" Inherits="GUI.login"  Debug="true" %>
-<%@ Import Namespace="System.Data" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="index.aspx.vb" Inherits="GUI.index"  Debug="true" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-        }
-        .auto-style2 {
-            font-size: x-large;
-        }
-    </style>
-</head>
-<body>
-    <form id="login" runat="server">
-        <div>
+    <head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title></title>
+        <style type="text/css">
+            .auto-style1 {
+            }
+            .auto-style2 {
+                font-size: x-large;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="login" runat="server">
             <div>
                 <asp:Table runat="server" BorderWidth="1"  HorizontalAlign="Center">
                     <asp:TableRow>
@@ -41,8 +40,7 @@
                     </asp:TableRow>
                 </asp:Table>
                 
-            </div>      
-        </div>
-    </form>
-</body>
+            </div>
+        </form>
+    </body>
 </html>

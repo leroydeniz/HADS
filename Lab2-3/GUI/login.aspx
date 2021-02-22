@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="login.aspx.vb" Inherits="GUI.login"  Debug="true" %>
-<%@ Import Namespace="System.Data" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <form id="login" runat="server">
+    <form id="loginForm" runat="server">
         <div>
             <div>
                 <asp:Table runat="server" BorderWidth="1"  HorizontalAlign="Center">

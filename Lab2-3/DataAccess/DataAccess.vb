@@ -184,18 +184,26 @@ Public Class DataAccess
 
         If openConnection() Then
 
+
+            Using SHA1hash As SHA1 = SHA1.Create()
+                HashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(pNewPassword)))
+            End Using
+
+            Using SHA1hash As SHA1 = SHA1.Create()
+                OldHashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(pOldPassword)))
+            End Using
+
             '0 - Error de conexión a la base de datos'
-            '1 - Usuario ya confirmado'
-            '2 - Usuario no existe en db'
-            '3 - Usuario confirmado correctamente'
-            '4 - Error de actualización de db'
+            '1 - Usuario o contraseña incorrectos'
+            '2 - Error de actualización de contraseña'
+            '3 - Contraseña cambiada exitosamente'
 
             'Confirmo que el usuario existe'
-            Dim st As String = "select count(*) from Usuarios where email='" & pUser & "';"
+            Dim st As String = "select count(*) from Usuarios where email='" & pUser & "' and pass='" & OldHashedPass & "';"
             comando = New SqlCommand(st, conexion)
             Dim count As Integer = comando.ExecuteScalar()
 
-            If count = 1 Then
+            If count = 0 Then
                 closeConnection()
                 Return 1
             Else
@@ -204,23 +212,14 @@ Public Class DataAccess
                 comando = New SqlCommand(st, conexion)
                 count = comando.ExecuteScalar()
 
-                closeConnection()
-                If count = 1 Then
-
-                    Try
-                        st = "UPDATE Usuarios SET confirmado='True' WHERE email='" & pUser & "';"
-                        comando = New SqlCommand(st, conexion)
-                        comando.ExecuteNonQuery()
-                        Return 3
-                    Catch ex As Exception
-                        Return 4
-                    End Try
-
+                Try
+                    st = "UPDATE Usuarios SET pass='" & HashedPass & "' WHERE email='" & pUser & "';"
+                    comando = New SqlCommand(st, conexion)
+                    comando.ExecuteNonQuery()
                     Return 3
-                Else
-                    'Usuario no existe'
+                Catch ex As Exception
                     Return 2
-                End If
+                End Try
             End If
 
         Else
