@@ -1,0 +1,14 @@
+C:\Users\Leroy\source\repos\LAB\LAB\bin\Debug\LAB.dll
+C:\Users\Leroy\source\repos\LAB\LAB\bin\Debug\LAB.pdb
+C:\Users\Leroy\source\repos\LAB\LAB\bin\Debug\LAB.xml
+C:\Users\Leroy\source\repos\LAB\LAB\bin\Debug\DataAccess.dll
+C:\Users\Leroy\source\repos\LAB\LAB\bin\Debug\DataAccess.pdb
+C:\Users\Leroy\source\repos\LAB\LAB\bin\Debug\DataAccess.xml
+C:\Users\Leroy\source\repos\LAB\LAB\obj\Debug\LAB.vbprojAssemblyReference.cache
+C:\Users\Leroy\source\repos\LAB\LAB\obj\Debug\LAB.Resources.resources
+C:\Users\Leroy\source\repos\LAB\LAB\obj\Debug\LAB.vbproj.GenerateResource.cache
+C:\Users\Leroy\source\repos\LAB\LAB\obj\Debug\LAB.vbproj.CoreCompileInputs.cache
+C:\Users\Leroy\source\repos\LAB\LAB\obj\Debug\LAB.vbproj.CopyComplete
+C:\Users\Leroy\source\repos\LAB\LAB\obj\Debug\LAB.dll
+C:\Users\Leroy\source\repos\LAB\LAB\obj\Debug\LAB.xml
+C:\Users\Leroy\source\repos\LAB\LAB\obj\Debug\LAB.pdb
