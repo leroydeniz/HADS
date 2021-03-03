@@ -24,7 +24,8 @@
                         <asp:TableCell>
                             <br />
                             <br />
-                            <span class="auto-style2"><strong>Dashboard usuario</strong></span><br />
+                            <span class="auto-style2"><strong>Dashboard </strong></span><asp:Label ID="usuarioText" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="nombreusuario" runat="server"></asp:Label><br />
                             <br />
                             <br />
                         </asp:TableCell>
@@ -37,7 +38,7 @@
 
                     <asp:TableRow>
                         <asp:TableCell>
-                            2. <asp:LinkButton ID="LinkLogout" runat="server" PostBackUrl="login.aspx">Logout</asp:LinkButton>
+                            2. <asp:LinkButton ID="LinkLogout" runat="server">Logout</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>

@@ -2,17 +2,16 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        If IsNothing(Session.Contents("usuario")) Then
+            MsgBox("Usuario ya verificado.")
+            Response.Redirect("login.aspx")
+        End If
     End Sub
 
     Protected Sub BtnVerificarCuenta_Click(sender As Object, e As EventArgs) Handles BtnVerificarCuenta.Click
         Dim objController = New LAB.Controller
 
-        Dim pUser = email.Text
-        Dim pCodigo = codigo.Text
-
-        Dim resultadoTmp = objController.verificarCuenta(pUser, pCodigo)
-
+        Dim resultadoTmp = objController.verificarCuenta(Session.Contents("usuario"), codigo.Text)
 
         '0 - Error de conexión a la base de datos'
         '1 - Usuario ya confirmado'

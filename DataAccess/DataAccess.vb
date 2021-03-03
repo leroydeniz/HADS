@@ -251,6 +251,71 @@ Public Class DataAccess
     End Function
 
 
+    Public Function recuperarPassword(pUser As String) As Integer
+
+        If openConnection() Then
+
+            Randomize()
+            Dim randomNumber As Integer = CInt(Int((3000 * Rnd()) + 100000))
+
+            Using SHA1hash As SHA1 = SHA1.Create()
+                HashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(randomNumber)))
+            End Using
+
+            '0 - Error de conexión a la base de datos'
+            '1 - Usuario no existe en la base de datos'
+            '2 - Error de actualización de contraseña'
+            '3 - Contraseña cambiada y mail enviado'
+            '4 - Contraseña cambiada pero mail no enviado'
+
+            'Confirmo que el usuario existe'
+            Dim st As String = "select count(*) from Usuarios where email='" & pUser & "';"
+            comando = New SqlCommand(st, conexion)
+            Dim count As Integer = comando.ExecuteScalar()
+
+            If count = 0 Then
+                closeConnection()
+                Return 1
+            Else
+                st = "select nombre from Usuarios where email='" & pUser & "';"
+                comando = New SqlCommand(st, conexion)
+                Dim nombreDB = comando.ExecuteNonQuery()
+
+                Try
+                    st = "UPDATE Usuarios SET pass='" & HashedPass & "' WHERE email='" & pUser & "';"
+                    comando = New SqlCommand(st, conexion)
+                    comando.ExecuteNonQuery()
+                    closeConnection()
+
+                    Dim mailEnviado As Boolean = enviarEmail(pUser, nombreDB, randomNumber)
+
+                    If mailEnviado Then
+                        'Todo correcto'
+                        closeConnection()
+                        Return 3
+                    Else
+                        'Email no enviado'
+                        closeConnection()
+                        Return 4
+                    End If
+
+                Catch ex As Exception
+                    closeConnection()
+                    Return 2
+                End Try
+            End If
+
+        Else
+            'BD no conectada'
+            MsgBox(" Error de conexión al servidor de BD: " + excepcion + "")
+            closeConnection()
+            Return 0
+        End If
+
+    End Function
+
+
+
 
     Public Function enviarEmail(pReceiver As String, pNombre As String, pCodigo As String) As Boolean
         Try
@@ -295,7 +360,7 @@ Public Class DataAccess
 
     Public Shared Function openConnection() As Boolean
         Try
-            conexion.ConnectionString = "Server=tcp:has21-13.database.windows.net,1433;Initial Catalog=has21-13;Persist Security Info=False;User ID=has21-13;Password=fiss21&&;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+            conexion.ConnectionString = "Server=tcp:has-server.database.windows.net,1433;Initial Catalog=has21-13;Persist Security Info=False;User ID=leroydeniz@icloud.com@has-server;Password=Depresion12/;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
             conexion.Open()
         Catch ex As Exception
             excepcion = ex.Message

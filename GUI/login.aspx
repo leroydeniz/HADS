@@ -68,7 +68,7 @@
                             <br />
                             <asp:LinkButton ID="LinkRegistro" runat="server" PostBackUrl="registro.aspx">Quiero registrarme</asp:LinkButton>
                             <br />
-                            <asp:LinkButton ID="LinkRecuperarContrasena" runat="server" PostBackUrl="cambiarPassword.aspx">Recuperar contraseña</asp:LinkButton>
+                            <asp:LinkButton ID="LinkRecuperarContrasena" runat="server" PostBackUrl="./recuperarPassword.aspx">Recuperar contraseña</asp:LinkButton>
                             <br />
                             <br />
                         </asp:TableCell>

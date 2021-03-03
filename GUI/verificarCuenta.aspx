@@ -51,7 +51,7 @@
                         <asp:TableCell>
                             <br />
                             <br /> 
-                            <asp:Button ID="BtnVerificarCuenta" runat="server" Height="44px" Text="Login" Width="221px" />
+                            <asp:Button ID="BtnVerificarCuenta" runat="server" Height="44px" Text="Verificar" Width="221px" />
                             <br />
                             <br />
                         </asp:TableCell>

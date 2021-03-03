@@ -2,7 +2,10 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        If Not (IsNothing(Session.Contents("usuario"))) Then
+            MsgBox("Usuario ya logueado.")
+            Response.Redirect("index.aspx")
+        End If
     End Sub
 
     Protected Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
@@ -24,6 +27,7 @@
 
         If resultadoTmp = 1 Then
             MsgBox("Bienvenido!")
+            Session.Contents("usuario") = pEmail
             Response.Redirect("index.aspx")
         ElseIf resultadoTmp = 0 Then
             MsgBox("Error de conexión a la base de datos.")

@@ -17,7 +17,7 @@
                         <asp:TableCell>
                             <br />
                             <br />
-                            <span class="auto-style2"><strong>Cambiar contraseña</strong></span><br />
+                            <span class="auto-style2"><strong>Cambiar password</strong></span><br />
                             <br />
                             <br />
                         </asp:TableCell>

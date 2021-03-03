@@ -2,7 +2,10 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        If IsNothing(Session.Contents("usuario")) Then
+            MsgBox("Usuario no logueado.")
+            Response.Redirect("login.aspx")
+        End If
     End Sub
 
     Protected Sub BtnCambiarPassword_Click(sender As Object, e As EventArgs) Handles BtnCambiarPassword.Click
@@ -23,7 +26,7 @@
 
         If resultadoTmp = 0 Then
             MsgBox("Error de conexión a la base de datos.")
-        ElseIf resultadoTmp = 0 Then
+        ElseIf resultadoTmp = 1 Then
             MsgBox("Usuario/contraseña incorrectos.")
         ElseIf resultadoTmp = 2 Then
             MsgBox("Error de actualización en la BD.")

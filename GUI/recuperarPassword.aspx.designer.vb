@@ -11,50 +11,41 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class index
+Partial Public Class recuperarPassword
 
     '''<summary>
-    '''Control form1.
+    '''Control formCambiarPassword.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents formCambiarPassword As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''Control usuarioText.
+    '''Control Table1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents usuarioText As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Table1 As Global.System.Web.UI.WebControls.Table
 
     '''<summary>
-    '''Control nombreusuario.
+    '''Control email.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents nombreusuario As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents email As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control LinkCambioPassword.
+    '''Control BtnCambiarPassword.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents LinkCambioPassword As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Control LinkLogout.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents LinkLogout As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents BtnCambiarPassword As Global.System.Web.UI.WebControls.Button
 End Class
