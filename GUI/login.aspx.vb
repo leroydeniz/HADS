@@ -33,6 +33,7 @@
             MsgBox("Error de conexión a la base de datos.")
         ElseIf resultadoTmp = 2 Then
             MsgBox("Debe verificar el usuario antes de continuar.")
+            Session.Contents("usuario") = pEmail
             Response.Redirect("verificarCuenta.aspx")
         ElseIf resultadoTmp = 3 Then
             MsgBox("Usuario o contraseña incorrectos.")

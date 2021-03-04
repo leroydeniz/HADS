@@ -317,6 +317,32 @@ Public Class DataAccess
 
 
 
+    Public Function cuentaVerificada(pUser As String) As Integer
+
+        If openConnection() Then
+
+            'Confirmo que el usuario existe'
+            Dim st As String = "select count(*) from Usuarios where email='" & pUser & "' and confirmado='True';"
+            comando = New SqlCommand(st, conexion)
+            Dim count As Integer = comando.ExecuteScalar()
+
+            closeConnection()
+
+            Return count
+
+        Else
+            'BD no conectada'
+            MsgBox(" Error de conexión al servidor de BD: " + excepcion + "")
+            closeConnection()
+            Return 2
+        End If
+
+
+    End Function
+
+
+
+
     Public Function enviarEmail(pReceiver As String, pNombre As String, pCodigo As String) As Boolean
         Try
             'Direccion de origen

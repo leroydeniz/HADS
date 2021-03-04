@@ -25,4 +25,9 @@
         recuperarPassword = objDataAccess.recuperarPassword(pEmail)
     End Function
 
+    Public Function cuentaVerificada(pEmail As String) As Integer
+        Dim objDataAccess = New DataAccess.DataAccess
+        cuentaVerificada = objDataAccess.cuentaVerificada(pEmail)
+    End Function
+
 End Class
