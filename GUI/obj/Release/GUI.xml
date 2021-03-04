@@ -217,6 +217,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:GUI.login._RespuestaDelServidor">
+<summary>
+Control RespuestaDelServidor.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:GUI.recuperarPassword._formCambiarPassword">
 <summary>
 Control formCambiarPassword.
@@ -247,6 +256,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:GUI.recuperarPassword._BtnCambiarPassword">
 <summary>
 Control BtnCambiarPassword.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.recuperarPassword._RespuestaDelServidor">
+<summary>
+Control RespuestaDelServidor.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -370,6 +388,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:GUI.registro._RespuestaDelServidor">
+<summary>
+Control RespuestaDelServidor.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:GUI.verificarPassword._formVerificarCuenta">
 <summary>
 Control formVerificarCuenta.
@@ -400,6 +427,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:GUI.verificarPassword._BtnVerificarCuenta">
 <summary>
 Control BtnVerificarCuenta.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.verificarPassword._RespuestaDelServidor">
+<summary>
+Control RespuestaDelServidor.
 </summary>
 <remarks>
 Campo generado automáticamente.

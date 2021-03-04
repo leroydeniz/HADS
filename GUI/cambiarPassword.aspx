@@ -67,6 +67,14 @@
                             <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Contraseñas no coinciden" controltovalidate="newPassword" controltocompare="NewRePassword"></asp:CompareValidator><br />
                         </asp:TableCell>
                     </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <br />
+                            <asp:Label ID="RespuestaDelServidor" runat="server" Text=""></asp:Label>
+                            <br />
+                            <br />
+                        </asp:TableCell>
+                    </asp:TableRow>
                 </asp:Table>
                 <br />
             </div>

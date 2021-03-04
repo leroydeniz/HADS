@@ -23,20 +23,20 @@
         '3 - Registro correcto'
 
         If resultadoTmp = 0 Then
-            MsgBox("Usuario ya existe!")
-            Response.Redirect("login.aspx")
+            RespuestaDelServidor.Text = "Usuario ya existe! Será redirigido en 3 segundos..."
+            Response.AddHeader("REFRESH", "3;URL=login.aspx")
         ElseIf resultadoTmp = 1 Then
-            MsgBox("Error de conexión a la base de datos.")
+            RespuestaDelServidor.Text = "Error de conexión a la base de datos."
         ElseIf resultadoTmp = 2 Then
-            MsgBox("Error de inserción en al BD.")
+            RespuestaDelServidor.Text = "Error de inserción en al BD."
             Response.Redirect("verificar.aspx")
         ElseIf resultadoTmp = 3 Then
-            MsgBox("Usuario registrado correctamente.")
-            Response.Redirect("login.aspx")
+            RespuestaDelServidor.Text = "Usuario registrado correctamente. Será redirigido en 3 segundos..."
+            Response.AddHeader("REFRESH", "3;URL=login.aspx")
         ElseIf resultadoTmp = 4 Then
-            MsgBox("Error en envío de email.")
+            RespuestaDelServidor.Text = "Error en envío de email."
         Else
-            MsgBox("Error desconocido.")
+            RespuestaDelServidor.Text = "Error desconocido."
         End If
 
     End Sub

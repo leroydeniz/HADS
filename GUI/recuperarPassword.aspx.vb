@@ -18,18 +18,18 @@
         '4 - Contraseña cambiada pero mail no enviado'
 
         If resultadoTmp = 0 Then
-            MsgBox("Error de conexión a la base de datos.")
+            RespuestaDelServidor.Text = "Error de conexión a la base de datos."
         ElseIf resultadoTmp = 1 Then
-            MsgBox("Usuario no existe en la base de datos.")
+            RespuestaDelServidor.Text = "Usuario no existe en la base de datos."
         ElseIf resultadoTmp = 2 Then
-            MsgBox("Error de actualización de contraseña.")
+            RespuestaDelServidor.Text = "Error de actualización de contraseña."
         ElseIf resultadoTmp = 3 Then
-            MsgBox("Contraseña cambiada y mail enviado.")
-            Response.Redirect("login.aspx")
+            RespuestaDelServidor.Text = "Contraseña cambiada y mail enviado. Será redirigido en 3 segundos..."
+            Response.AddHeader("REFRESH", "3;URL=login.aspx")
         ElseIf resultadoTmp = 4 Then
-            MsgBox("Contraseña cambiada pero mail no enviado.")
+            RespuestaDelServidor.Text = "Contraseña cambiada pero mail no enviado."
         Else
-            MsgBox("Error desconocido.")
+            RespuestaDelServidor.Text = "Error desconocido."
         End If
 
     End Sub

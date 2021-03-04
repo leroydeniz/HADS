@@ -3,14 +3,14 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If IsNothing(Session.Contents("usuario")) Then
-            MsgBox("Usuario no logueado.")
+            Response.Write("<script>alert('Usuario no logueado.')</script>")
             Response.Redirect("login.aspx")
         End If
 
         Dim objController = New LAB.Controller
 
         If objController.cuentaVerificada(Session.Contents("usuario")) = 1 Then
-            MsgBox("Cuenta ya verificada.")
+            Response.Write("<script>alert('Cuenta ya verificada.')</script>")
             Response.Redirect("index.aspx")
         End If
     End Sub
@@ -28,21 +28,21 @@
         '5 - Código incorrecto'
 
         If resultadoTmp = 1 Then
-            MsgBox("Usuario ya confirmado!")
+            RespuestaDelServidor.Text = "Usuario ya confirmado!"
             Response.Redirect("index.aspx")
         ElseIf resultadoTmp = 0 Then
-            MsgBox("Error de conexión a la base de datos.")
+            RespuestaDelServidor.Text = "Error de conexión a la base de datos."
         ElseIf resultadoTmp = 2 Then
-            MsgBox("Usuario no existe en la BD.")
+            RespuestaDelServidor.Text = "Usuario no existe en la BD."
         ElseIf resultadoTmp = 3 Then
-            MsgBox("Cuenta verificada correctamente.")
+            RespuestaDelServidor.Text = "Cuenta verificada correctamente."
             Response.Redirect("index.aspx")
         ElseIf resultadoTmp = 4 Then
-            MsgBox("Error de actualización en la base de datos.")
+            RespuestaDelServidor.Text = "Error de actualización en la base de datos."
         ElseIf resultadoTmp = 5 Then
-            MsgBox("Código de verificación incorrecto.")
+            RespuestaDelServidor.Text = "Código de verificación incorrecto."
         Else
-            MsgBox("Error desconocido.")
+            RespuestaDelServidor.Text = "Error desconocido."
         End If
 
     End Sub

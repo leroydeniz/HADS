@@ -95,6 +95,14 @@
                             <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Apellido es obligatorio."  ControlToValidate="apellidos" ></asp:RequiredFieldValidator>
                         </asp:TableCell>
                     </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <br />
+                            <asp:Label ID="RespuestaDelServidor" runat="server" Text=""></asp:Label>
+                            <br />
+                            <br />
+                        </asp:TableCell>
+                    </asp:TableRow>
                 </asp:Table>
                 <br />
             </div>

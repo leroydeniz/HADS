@@ -27,21 +27,20 @@
         '3 - Usuario no existe'
 
         If resultadoTmp = 1 Then
-            'MsgBox("Bienvenido!")'
             Session.Contents("usuario") = pEmail
-            Response.Redirect("index.aspx")
+            RespuestaDelServidor.Text = "Bienvenido!. Será redirigido en 3 segundos..."
+            Response.AddHeader("REFRESH", "3;URL=index.aspx")
         ElseIf resultadoTmp = 0 Then
-            'MsgBox("Error de conexión a la base de datos.")'
+            RespuestaDelServidor.Text = "Error de conexión a la base de datos."
         ElseIf resultadoTmp = 2 Then
-            'MsgBox("Debe verificar el usuario antes de continuar.")'
             Session.Contents("usuario") = pEmail
-            Response.Redirect("verificarCuenta.aspx")
+            RespuestaDelServidor.Text = "Debe verificar el usuario antes de continuar. Será redirigido en 3 segundos..."
+            Response.AddHeader("REFRESH", "3;URL=verificarCuenta.aspx")
         ElseIf resultadoTmp = 3 Then
-            'MsgBox("Usuario o contraseña incorrectos.")'
+            RespuestaDelServidor.Text = "Usuario o contraseña incorrectos."
         Else
-            'MsgBox("Error desconocido.")'
+            RespuestaDelServidor.Text = "Error desconocido."
         End If
-
 
     End Sub
 
