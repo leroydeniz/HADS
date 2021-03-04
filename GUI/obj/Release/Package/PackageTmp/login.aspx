@@ -22,7 +22,7 @@
             <div>
                 <asp:Table runat="server" BorderWidth="1"  HorizontalAlign="Center">
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell ColumnSpan="2">
                             <br />
                             <br />
                             <span class="auto-style2"><strong>Login</strong></span><br />
@@ -49,7 +49,7 @@
                     </asp:TableRow>
                     
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell ColumnSpan="2">
                             <br />
                             <br /> 
                             <asp:Button ID="BtnLogin" runat="server" Height="44px" Text="Login" Width="221px" />
@@ -58,7 +58,7 @@
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell ColumnSpan="2">
                             <br />
                             <asp:LinkButton ID="LinkRegistro" runat="server" PostBackUrl="registro.aspx">Quiero registrarme</asp:LinkButton>
                             <br />
@@ -68,7 +68,7 @@
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell ColumnSpan="2">
                             <br />
                             <asp:Label ID="RespuestaDelServidor" runat="server" Text=""></asp:Label>
                             <br />

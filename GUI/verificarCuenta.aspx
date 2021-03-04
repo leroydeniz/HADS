@@ -21,7 +21,7 @@
 
                 <asp:Table runat="server" BorderWidth="1"  HorizontalAlign="Center">
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell ColumnSpan="2">
                             <br />
                             <br />
                             <span class="auto-style2"><strong>Verificar Cuenta</strong></span><br />
@@ -48,7 +48,7 @@
                     </asp:TableRow>
                     
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell ColumnSpan="2">
                             <br />
                             <br /> 
                             <asp:Button ID="BtnVerificarCuenta" runat="server" Height="44px" Text="Verificar" Width="221px" />
@@ -57,7 +57,7 @@
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell ColumnSpan="2">
                             <br />
                             <asp:Label ID="RespuestaDelServidor" runat="server" Text=""></asp:Label>
                             <br />

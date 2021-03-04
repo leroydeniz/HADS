@@ -81,14 +81,14 @@
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell ColumnSpan="2">
                             <br />
                             <asp:Button ID="BtnRegister" runat="server" Height="44px" style="text-align: center" Text="Registrarse" Width="221px" />
                             <br />
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell ColumnSpan="2">
                             <br /><asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Contraseña inválida." ControlToValidate="password" ValidationExpression="[a-zA-Z0-9]{6,}"></asp:RegularExpressionValidator>
                             <br /><asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Las contraseñas no coinciden." ControlToValidate="password" ControlToCompare="repassword"></asp:CompareValidator>
                             <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Nombre es obligatorio." ControlToValidate="nombre"></asp:RequiredFieldValidator>
@@ -96,7 +96,7 @@
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell ColumnSpan="2">
                             <br />
                             <asp:Label ID="RespuestaDelServidor" runat="server" Text=""></asp:Label>
                             <br />

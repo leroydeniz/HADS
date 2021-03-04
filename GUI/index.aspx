@@ -25,7 +25,7 @@
                             <br />
                             <br />
                             <span class="auto-style2"><strong>Dashboard </strong></span><br />
-                            <asp:Label ID="usuarioText" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="usuarioText" runat="server" Text=""></asp:Label>
                             <asp:Label ID="nombreusuario" runat="server"></asp:Label><br />
                             <br />
                             <br />

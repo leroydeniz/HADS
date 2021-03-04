@@ -14,7 +14,7 @@
                 <asp:Table ID="Table1" runat="server" CellPadding="5" CellSpacing="2" HorizontalAlign="Center" BorderColor="#0F423F" BorderWidth="1px">
                     
                     <asp:TableRow BorderWidth="1">
-                        <asp:TableCell>
+                        <asp:TableCell ColumnSpan="2">
                             <br />
                             <br />
                             <span class="auto-style2"><strong>Recuperar password</strong></span><br />
@@ -31,14 +31,14 @@
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell ColumnSpan="2">
                             <br />
                             <asp:Button ID="BtnCambiarPassword" runat="server" Height="44px" style="text-align: center" Text="Enviar" Width="221px" />
                             <br />
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell ColumnSpan="2">
                             <br />
                             <asp:Label ID="RespuestaDelServidor" runat="server" Text=""></asp:Label>
                             <br />
