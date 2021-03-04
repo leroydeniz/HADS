@@ -1,0 +1,14 @@
+C:\Users\Leroy\source\repos\HADS21-13\LAB\bin\Release\LAB.dll
+C:\Users\Leroy\source\repos\HADS21-13\LAB\bin\Release\LAB.pdb
+C:\Users\Leroy\source\repos\HADS21-13\LAB\bin\Release\LAB.xml
+C:\Users\Leroy\source\repos\HADS21-13\LAB\bin\Release\DataAccess.dll
+C:\Users\Leroy\source\repos\HADS21-13\LAB\bin\Release\DataAccess.pdb
+C:\Users\Leroy\source\repos\HADS21-13\LAB\bin\Release\DataAccess.xml
+C:\Users\Leroy\source\repos\HADS21-13\LAB\obj\Release\LAB.vbprojAssemblyReference.cache
+C:\Users\Leroy\source\repos\HADS21-13\LAB\obj\Release\LAB.Resources.resources
+C:\Users\Leroy\source\repos\HADS21-13\LAB\obj\Release\LAB.vbproj.GenerateResource.cache
+C:\Users\Leroy\source\repos\HADS21-13\LAB\obj\Release\LAB.vbproj.CoreCompileInputs.cache
+C:\Users\Leroy\source\repos\HADS21-13\LAB\obj\Release\LAB.vbproj.CopyComplete
+C:\Users\Leroy\source\repos\HADS21-13\LAB\obj\Release\LAB.dll
+C:\Users\Leroy\source\repos\HADS21-13\LAB\obj\Release\LAB.xml
+C:\Users\Leroy\source\repos\HADS21-13\LAB\obj\Release\LAB.pdb
