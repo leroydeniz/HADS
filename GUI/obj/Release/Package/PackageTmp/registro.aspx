@@ -89,7 +89,10 @@
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
-                            <br /> <br />
+                            <br /><asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Contraseña inválida." ControlToValidate="password" ValidationExpression="[a-zA-Z0-9]{6,}"></asp:RegularExpressionValidator>
+                            <br /><asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Las contraseñas no coinciden." ControlToValidate="password" ControlToCompare="repassword"></asp:CompareValidator>
+                            <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Nombre es obligatorio." ControlToValidate="nombre"></asp:RequiredFieldValidator>
+                            <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Apellido es obligatorio."  ControlToValidate="apellidos" ></asp:RequiredFieldValidator>
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>

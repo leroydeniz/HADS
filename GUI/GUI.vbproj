@@ -191,6 +191,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.vbproj">
+      <Project>{d020a0b8-134f-4c2f-8299-f5bab31b2cb1}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LAB\LAB.vbproj">
       <Project>{252a6133-60c8-4c05-b844-f9b259890a3d}</Project>
       <Name>LAB</Name>

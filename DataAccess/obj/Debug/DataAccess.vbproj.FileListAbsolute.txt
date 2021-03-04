@@ -17,3 +17,4 @@ C:\Users\Leroy\Source\Repos\HADS21-13\DataAccess\obj\Debug\DataAccess.vbproj.Cor
 C:\Users\Leroy\Source\Repos\HADS21-13\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\Leroy\Source\Repos\HADS21-13\DataAccess\obj\Debug\DataAccess.xml
 C:\Users\Leroy\Source\Repos\HADS21-13\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\Leroy\source\repos\HADS21-13\DataAccess\obj\Debug\DataAccess.vbprojAssemblyReference.cache

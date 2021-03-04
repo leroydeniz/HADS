@@ -3,9 +3,10 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not (IsNothing(Session.Contents("usuario"))) Then
-            MsgBox("Usuario ya logueado.")
+            'MsgBox("Usuario ya logueado.")'
             Response.Redirect("index.aspx")
         End If
+
     End Sub
 
     Protected Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
@@ -26,19 +27,19 @@
         '3 - Usuario no existe'
 
         If resultadoTmp = 1 Then
-            MsgBox("Bienvenido!")
+            'MsgBox("Bienvenido!")'
             Session.Contents("usuario") = pEmail
             Response.Redirect("index.aspx")
         ElseIf resultadoTmp = 0 Then
-            MsgBox("Error de conexión a la base de datos.")
+            'MsgBox("Error de conexión a la base de datos.")'
         ElseIf resultadoTmp = 2 Then
-            MsgBox("Debe verificar el usuario antes de continuar.")
+            'MsgBox("Debe verificar el usuario antes de continuar.")'
             Session.Contents("usuario") = pEmail
             Response.Redirect("verificarCuenta.aspx")
         ElseIf resultadoTmp = 3 Then
-            MsgBox("Usuario o contraseña incorrectos.")
+            'MsgBox("Usuario o contraseña incorrectos.")'
         Else
-            MsgBox("Error desconocido.")
+            'MsgBox("Error desconocido.")'
         End If
 
 
