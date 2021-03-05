@@ -20,6 +20,11 @@
         cambiarPassword = objDataAccess.cambiarPassword(pUser, pOldPassword, pNewPassword)
     End Function
 
+    Public Function getUserData(pEmail As String) As String()
+        Dim objDataAccess = New DataAccess.DataAccess
+        getUserData = objDataAccess.getUserData(pEmail)
+    End Function
+
     Public Function recuperarPassword(pEmail As String) As Integer
         Dim objDataAccess = New DataAccess.DataAccess
         recuperarPassword = objDataAccess.recuperarPassword(pEmail)

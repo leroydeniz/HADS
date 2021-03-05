@@ -343,6 +343,36 @@ Public Class DataAccess
 
 
 
+    Public Function getUserData(pEmail As String) As String()
+        Dim datos As String() = Nothing
+        openConnection()
+        Dim tablaUsuarios As DataTable = GetTable()
+        closeConnection()
+        datos(0) = tablaUsuarios.Rows(pEmail).Item("email")
+        datos(1) = tablaUsuarios.Rows(pEmail).Item("nombre")
+        datos(2) = tablaUsuarios.Rows(pEmail).Item("apellidos")
+        datos(3) = tablaUsuarios.Rows(pEmail).Item("confirmado")
+        datos(4) = tablaUsuarios.Rows(pEmail).Item("tipo")
+        Return datos
+    End Function
+
+
+    Function GetTable() As DataTable
+
+        ' Create new DataTable instance.
+        Dim tablaUsuarios As New DataTable
+
+        ' Create four typed columns in the DataTable.
+        tablaUsuarios.Columns.Add("email", GetType(String))
+        tablaUsuarios.Columns.Add("nombre", GetType(String))
+        tablaUsuarios.Columns.Add("apellidos", GetType(String))
+        tablaUsuarios.Columns.Add("confiramdo", GetType(String))
+        tablaUsuarios.Columns.Add("tipo", GetType(String))
+
+        Return tablaUsuarios
+
+    End Function
+
     Public Function enviarEmail(pReceiver As String, pNombre As String, pCodigo As String) As Boolean
         Try
             'Direccion de origen

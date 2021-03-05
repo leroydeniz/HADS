@@ -93,7 +93,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cambiarPassword.aspx" />
-    <Content Include="index.aspx" />
+    <Content Include="Alumno\index.aspx" />
+    <Content Include="Profesor\index.aspx" />
     <Content Include="login.aspx" />
     <Content Include="recuperarPassword.aspx" />
     <Content Include="registro.aspx" />
@@ -108,10 +109,17 @@
       <DependentUpon>cambiarPassword.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="index.aspx.designer.vb">
+    <Compile Include="Alumno\index.aspx.designer.vb">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="index.aspx.vb">
+    <Compile Include="Alumno\index.aspx.vb">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Profesor\index.aspx.designer.vb">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor\index.aspx.vb">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>

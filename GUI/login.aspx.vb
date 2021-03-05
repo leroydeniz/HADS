@@ -2,8 +2,7 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If Not (IsNothing(Session.Contents("usuario"))) Then
-            'MsgBox("Usuario ya logueado.")'
+        If Not IsNothing(Session.Contents("usuario")) Then
             Response.Redirect("index.aspx")
         End If
 
@@ -27,9 +26,25 @@
         '3 - Usuario no existe'
 
         If resultadoTmp = 1 Then
+
+            'Se trae la información del usuario de la base de datos para cargar en la sesión'
+            Dim userData = objController.getUserData(pEmail)
             Session.Contents("usuario") = pEmail
+            Session.Contents("tipo") = userData(4)
+            Session.Contents("verificado") = userData(3)
+            Session.Contents("nombre") = userData(1)
+            Session.Contents("apellidos") = userData(2)
+
             RespuestaDelServidor.Text = "Bienvenido!. Será redirigido en 3 segundos..."
-            Response.AddHeader("REFRESH", "3;URL=index.aspx")
+
+            'Elige a qué perfil enviarlo'
+            If Session.Contents("tipo") = "Profesor" Then
+                Response.AddHeader("REFRESH", "3;URL=Profesor/index.aspx")
+            Else
+                Response.AddHeader("REFRESH", "3;URL=Alumno/index.aspx")
+            End If
+
+
         ElseIf resultadoTmp = 0 Then
             RespuestaDelServidor.Text = "Error de conexión a la base de datos."
         ElseIf resultadoTmp = 2 Then
