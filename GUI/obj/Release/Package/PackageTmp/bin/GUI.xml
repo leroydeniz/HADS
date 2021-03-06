@@ -37,6 +37,15 @@ GUI
  Devuelve el objeto de registro Asp.
  </summary>
 </member>
+<member name="F:GUI.inicioAlumno._form1">
+<summary>
+control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:GUI.cambiarPassword._formCambiarPassword">
 <summary>
 Control formCambiarPassword.
@@ -229,6 +238,24 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:GUI.login._RespuestaDelServidor">
 <summary>
 Control RespuestaDelServidor.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.login._Label1">
+<summary>
+Control Label1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.inicioProfesor._form1">
+<summary>
+Control form1.
 </summary>
 <remarks>
 Campo generado automáticamente.
