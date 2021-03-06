@@ -28,3 +28,13 @@ C:\Users\jorge\source\repos\HADS21-13\DataAccess\obj\Debug\DataAccess.vbproj.Cor
 C:\Users\jorge\source\repos\HADS21-13\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\jorge\source\repos\HADS21-13\DataAccess\obj\Debug\DataAccess.xml
 C:\Users\jorge\source\repos\HADS21-13\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\Leroy\source\repos\HADS21-13-Nueva\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\Leroy\source\repos\HADS21-13-Nueva\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\Leroy\source\repos\HADS21-13-Nueva\DataAccess\bin\Debug\DataAccess.xml
+C:\Users\Leroy\source\repos\HADS21-13-Nueva\DataAccess\obj\Debug\DataAccess.vbprojAssemblyReference.cache
+C:\Users\Leroy\source\repos\HADS21-13-Nueva\DataAccess\obj\Debug\DataAccess.Resources.resources
+C:\Users\Leroy\source\repos\HADS21-13-Nueva\DataAccess\obj\Debug\DataAccess.vbproj.GenerateResource.cache
+C:\Users\Leroy\source\repos\HADS21-13-Nueva\DataAccess\obj\Debug\DataAccess.vbproj.CoreCompileInputs.cache
+C:\Users\Leroy\source\repos\HADS21-13-Nueva\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\Leroy\source\repos\HADS21-13-Nueva\DataAccess\obj\Debug\DataAccess.xml
+C:\Users\Leroy\source\repos\HADS21-13-Nueva\DataAccess\obj\Debug\DataAccess.pdb
