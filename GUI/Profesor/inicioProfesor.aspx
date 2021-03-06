@@ -24,7 +24,7 @@
                         <asp:TableCell>
                             <br />
                             <br />
-                            <span class="auto-style2"><strong>Dashboard Profesor </strong></span><br />
+                            <span class="auto-style2"><strong>Dashboard Profesor</strong></span><br />
                             <asp:Label ID="usuarioText" runat="server" Text=""></asp:Label>
                             <asp:Label ID="nombreusuario" runat="server"></asp:Label><br />
                             <br />
