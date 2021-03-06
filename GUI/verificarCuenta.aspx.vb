@@ -25,7 +25,7 @@
         '2 - Usuario no existe en db'
         '3 - Usuario confirmado correctamente'
         '4 - Error de actualización de db'
-        '5 - Código incorrecto'
+        '5 - Código incorrecto OK'
 
         If resultadoTmp = 1 Then
             RespuestaDelServidor.Text = "Usuario ya confirmado!"

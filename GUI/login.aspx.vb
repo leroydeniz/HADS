@@ -28,7 +28,7 @@
 
         If resultadoTmp = 1 Then
 
-            'Se trae la información del usuario de la base de datos para cargar en la sesión'
+            'Se trae la información del usuario de la base de datos para cargar en la sesión' 
             If (guardarDatos(objController, pEmail)) Then
                 'Elige a qué perfil enviarlo'
                 If Session.Contents("tipo") = "Profesor" Then
