@@ -24,7 +24,6 @@
         '1 - Usuario registrado y verificado'
         '2 - Usuario registrado sin verificar'
         '3 - Usuario no existe'
-        '3 - Usuario no existe'
 
 
         If resultadoTmp = 1 Then
