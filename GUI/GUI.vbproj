@@ -92,16 +92,26 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Alumno\inicioAlumno.aspx" />
     <Content Include="cambiarPassword.aspx" />
-    <Content Include="Alumno\index.aspx" />
-    <Content Include="Profesor\index.aspx" />
+    <Content Include="index.aspx">
+      <BrowseToURL>~/Alumno/index.aspx</BrowseToURL>
+    </Content>
     <Content Include="login.aspx" />
+    <Content Include="Profesor\inicioProfesor.aspx" />
     <Content Include="recuperarPassword.aspx" />
     <Content Include="registro.aspx" />
     <Content Include="verificarCuenta.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alumno\inicioAlumno.aspx.designer.vb">
+      <DependentUpon>inicioAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumno\inicioAlumno.aspx.vb">
+      <DependentUpon>inicioAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="cambiarPassword.aspx.designer.vb">
       <DependentUpon>cambiarPassword.aspx</DependentUpon>
     </Compile>
@@ -109,17 +119,10 @@
       <DependentUpon>cambiarPassword.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Alumno\index.aspx.designer.vb">
+    <Compile Include="index.aspx.designer.vb">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Alumno\index.aspx.vb">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Profesor\index.aspx.designer.vb">
-      <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Profesor\index.aspx.vb">
+    <Compile Include="index.aspx.vb">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
@@ -148,6 +151,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Profesor\inicioProfesor.aspx.designer.vb">
+      <DependentUpon>inicioProfesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor\inicioProfesor.aspx.vb">
+      <DependentUpon>inicioProfesor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="recuperarPassword.aspx.designer.vb">
       <DependentUpon>recuperarPassword.aspx</DependentUpon>

@@ -85,10 +85,10 @@ Public Class DataAccess
     Public Function login(ByVal pUser As String, ByVal pPass As String) As Integer
 
         If openConnection() Then
-
-            Using SHA1hash As SHA1 = SHA1.Create()
-                HashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(pPass)))
-            End Using
+            HashedPass = pPass
+            ' Using SHA1hash As SHA1 = SHA1.Create()
+            ' HashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(pPass)))
+            'End Using 
 
             '0 - Error de conexión a la base de datos'
             '1 - Usuario registrado y verificado'
@@ -344,34 +344,49 @@ Public Class DataAccess
 
 
     Public Function getUserData(pEmail As String) As String()
-        Dim datos As String() = Nothing
+        Dim datos(7) As String
         openConnection()
         Dim tablaUsuarios As DataTable = GetTable()
         closeConnection()
-        datos(0) = tablaUsuarios.Rows(pEmail).Item("email")
-        datos(1) = tablaUsuarios.Rows(pEmail).Item("nombre")
-        datos(2) = tablaUsuarios.Rows(pEmail).Item("apellidos")
-        datos(3) = tablaUsuarios.Rows(pEmail).Item("confirmado")
-        datos(4) = tablaUsuarios.Rows(pEmail).Item("tipo")
+        Dim dv As New DataView(tablaUsuarios)
+
+        Dim filter As String = "email = '" & pEmail & "'"
+
+        Dim FilteredRows As DataRow() = tablaUsuarios.Select(filter)
+
+        Dim email = FilteredRows(0).Item("email")
+        Dim nombre = FilteredRows(0).Item("nombre")
+        Dim apellidos = FilteredRows(0).Item("apellidos")
+        Dim numconfir = FilteredRows(0).Item("numconfir")
+        Dim confirmado = FilteredRows(0).Item("confirmado")
+        Dim tipo = FilteredRows(0).Item("tipo")
+        Dim pass = FilteredRows(0).Item("pass")
+        Dim codpass = FilteredRows(0).Item("codpass")
+
+        datos(0) = email
+        datos(1) = nombre
+        datos(2) = apellidos
+        datos(3) = numconfir
+        datos(4) = confirmado
+        datos(5) = tipo
+        datos(6) = pass
+        datos(7) = codpass
+
         Return datos
     End Function
 
 
     Function GetTable() As DataTable
-
-        ' Create new DataTable instance.
-        Dim tablaUsuarios As New DataTable
-
-        ' Create four typed columns in the DataTable.
-        tablaUsuarios.Columns.Add("email", GetType(String))
-        tablaUsuarios.Columns.Add("nombre", GetType(String))
-        tablaUsuarios.Columns.Add("apellidos", GetType(String))
-        tablaUsuarios.Columns.Add("confiramdo", GetType(String))
-        tablaUsuarios.Columns.Add("tipo", GetType(String))
-
-        Return tablaUsuarios
-
+        Dim strSql As String = "SELECT * FROM dbo.Usuarios"
+        Dim dtb As New DataTable
+        openConnection()
+        Using dad As New SqlDataAdapter(strSql, conexion)
+            dad.Fill(dtb)
+        End Using
+        closeConnection()
+        Return dtb
     End Function
+
 
     Public Function enviarEmail(pReceiver As String, pNombre As String, pCodigo As String) As Boolean
         Try
@@ -416,7 +431,7 @@ Public Class DataAccess
 
     Public Shared Function openConnection() As Boolean
         Try
-            conexion.ConnectionString = "Server=tcp:has-server.database.windows.net,1433;Initial Catalog=has21-13;Persist Security Info=False;User ID=leroydeniz@icloud.com@has-server;Password=Depresion12/;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+            conexion.ConnectionString = "Server=tcp:jorgehads.database.windows.net,1433;Initial Catalog=HADS-Jorge;Persist Security Info=False;User ID=trabajo.jorge2000@gmail.com@jorgehads;Password=Marmota69;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
             conexion.Open()
         Catch ex As Exception
             excepcion = ex.Message

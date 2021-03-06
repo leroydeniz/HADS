@@ -28,23 +28,16 @@
         If resultadoTmp = 1 Then
 
             'Se trae la información del usuario de la base de datos para cargar en la sesión'
-            Dim userData = objController.getUserData(pEmail)
-            Session.Contents("usuario") = pEmail
-            Session.Contents("tipo") = userData(4)
-            Session.Contents("verificado") = userData(3)
-            Session.Contents("nombre") = userData(1)
-            Session.Contents("apellidos") = userData(2)
-
-            RespuestaDelServidor.Text = "Bienvenido!. Será redirigido en 3 segundos..."
-
-            'Elige a qué perfil enviarlo'
-            If Session.Contents("tipo") = "Profesor" Then
-                Response.AddHeader("REFRESH", "3;URL=Profesor/index.aspx")
-            Else
-                Response.AddHeader("REFRESH", "3;URL=Alumno/index.aspx")
+            If (guardarDatos(objController, pEmail)) Then
+                'Elige a qué perfil enviarlo'
+                If Session.Contents("tipo") = "Profesor" Then
+                    Response.AddHeader("REFRESH", "3;URL=Profesor/inicioProfesor.aspx")
+                Else
+                    Response.AddHeader("REFRESH", "3;URL=Alumno/inicioAlumno.aspx")
+                    RespuestaDelServidor.Text = "Bienvenido!. Será redirigido en 3 segundos..."
+                End If
+            Else RespuestaDelServidor.Text = "Error al crear el perfil de sesion."
             End If
-
-
         ElseIf resultadoTmp = 0 Then
             RespuestaDelServidor.Text = "Error de conexión a la base de datos."
         ElseIf resultadoTmp = 2 Then
@@ -56,7 +49,22 @@
         Else
             RespuestaDelServidor.Text = "Error desconocido."
         End If
-
     End Sub
 
+    Private Function guardarDatos(objCotnroler As LAB.Controller, pEmail As String) As Boolean
+        Try
+            Dim userData = objCotnroler.getUserData(pEmail)
+            Session.Contents("usuario") = userData(0)
+            Session.Contents("nombre") = userData(1)
+            Session.Contents("apellidos") = userData(2)
+            Session.Contents("numconfir") = userData(3)
+            Session.Contents("confirmado") = userData(4)
+            Session.Contents("tipo") = userData(5)
+            Session.Contents("pass") = userData(6)
+            Session.Contents("codpass") = userData(7)
+            Return True
+        Catch e As Exception
+            Return False
+        End Try
+    End Function
 End Class
