@@ -39,7 +39,43 @@ GUI
 </member>
 <member name="F:GUI.inicioAlumno._form1">
 <summary>
-control form1.
+Control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.inicioAlumno._usuarioText">
+<summary>
+Control usuarioText.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.inicioAlumno._nombreusuario">
+<summary>
+Control nombreusuario.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.inicioAlumno._LinkCambioPassword">
+<summary>
+Control LinkCambioPassword.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.inicioAlumno._LinkLogout">
+<summary>
+Control LinkLogout.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -256,6 +292,42 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:GUI.inicioProfesor._form1">
 <summary>
 Control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.inicioProfesor._usuarioText">
+<summary>
+Control usuarioText.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.inicioProfesor._nombreusuario">
+<summary>
+Control nombreusuario.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.inicioProfesor._LinkCambioPassword">
+<summary>
+Control LinkCambioPassword.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.inicioProfesor._LinkLogout">
+<summary>
+Control LinkLogout.
 </summary>
 <remarks>
 Campo generado automáticamente.
