@@ -13,7 +13,7 @@
         'Definir la instancia del controlador'
         Dim objController = New LAB.Controller
 
-        'Traer variables del formulario'
+        'Traer variables del formulario '
         Dim pEmail = email.Text
         Dim pPass = password.Text
 
