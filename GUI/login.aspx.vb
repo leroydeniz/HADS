@@ -30,21 +30,24 @@
 
             'Se trae la información del usuario de la base de datos para cargar en la sesión' 
             If (guardarDatos(objController, pEmail)) Then
+                RespuestaDelServidor.Text = "Bienvenido!. Será redirigido en 3 segundos..."
                 'Elige a qué perfil enviarlo'
                 If Session.Contents("tipo") = "Profesor" Then
-                    Response.AddHeader("REFRESH", "3;URL=Profesor/inicioProfesor.aspx")
+                    Response.AddHeader("REFRESH", "3;URL=inicioProfesor.aspx")
                 Else
-                    Response.AddHeader("REFRESH", "3;URL=Alumno/inicioAlumno.aspx")
-                    RespuestaDelServidor.Text = "Bienvenido!. Será redirigido en 3 segundos..."
+                    Response.AddHeader("REFRESH", "3;URL=inicioAlumno.aspx")
                 End If
             Else RespuestaDelServidor.Text = "Error al crear el perfil de sesion."
             End If
         ElseIf resultadoTmp = 0 Then
             RespuestaDelServidor.Text = "Error de conexión a la base de datos."
         ElseIf resultadoTmp = 2 Then
-            Session.Contents("usuario") = pEmail
-            RespuestaDelServidor.Text = "Debe verificar el usuario antes de continuar. Será redirigido en 3 segundos..."
-            Response.AddHeader("REFRESH", "3;URL=verificarCuenta.aspx")
+            If (guardarDatos(objController, pEmail)) Then
+                RespuestaDelServidor.Text = "Debe verificar el usuario antes de continuar. Será redirigido en 3 segundos..."
+                Response.AddHeader("REFRESH", "3;URL=verificarCuenta.aspx")
+            Else
+                RespuestaDelServidor.Text = "Error al crear el perfil de sesion."
+            End If
         ElseIf resultadoTmp = 3 Then
             RespuestaDelServidor.Text = "Usuario o contraseña incorrectos."
         Else
