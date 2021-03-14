@@ -35,5 +35,18 @@
         cuentaVerificada = objDataAccess.cuentaVerificada(pEmail)
     End Function
 
+    Public Function insertarTarea(codigo As String, descripcion As String, asignatura As String, horasEstimadas As String, tipoTarea As String) As Boolean
+        Dim objDataAccess = New DataAccess.DataAccess
+        insertarTarea = objDataAccess.insertarTarea(codigo, descripcion, asignatura, horasEstimadas, tipoTarea)
+    End Function
 
+    Public Function instanciarTarea(email As String, codTarea As String, horasReales As String) As Boolean
+        Dim objDataAccess = New DataAccess.DataAccess
+        instanciarTarea = objDataAccess.instanciarTarea(email, codTarea, horasReales)
+    End Function
+
+    Public Function getTablaTareas(codigo As String) As DataTable
+        Dim objDataAccess = New DataAccess.DataAccess
+        getTablaTareas = getTablaTareas(codigo)
+    End Function
 End Class

@@ -11,7 +11,7 @@
     Protected Sub BtnCambiarPassword_Click(sender As Object, e As EventArgs) Handles BtnCambiarPassword.Click
         Dim objController = New LAB.Controller
 
-        Dim pUser = email.Text
+        Dim pUser = Session.Contents("usuario")
         Dim pOldPassword = oldPassword.Text
         Dim pNewPassword = newPassword.Text
 
@@ -32,7 +32,12 @@
             RespuestaDelServidor.Text = "Error de actualización en la BD."
         ElseIf resultadoTmp = 3 Then
             RespuestaDelServidor.Text = "Contraseña cambiada correctamente. Será redirigido en 3 segundos..."
-            Response.AddHeader("REFRESH", "3;URL=index.aspx")
+            If Session.Contents("tipo") = "Profesor" Then
+                Response.AddHeader("REFRESH", "3;URL=Profesor/inicioProfesor.aspx")
+            Else
+                Response.AddHeader("REFRESH", "3;URL=Alumno/inicioAlumno.aspx")
+            End If
+
         Else
             RespuestaDelServidor.Text = "Error desconocido."
         End If

@@ -86,9 +86,9 @@ Public Class DataAccess
 
         If openConnection() Then
             HashedPass = pPass
-            ' Using SHA1hash As SHA1 = SHA1.Create()
-            ' HashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(pPass)))
-            'End Using 
+            Using SHA1hash As SHA1 = SHA1.Create()
+                HashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(pPass)))
+            End Using
 
             '0 - Error de conexión a la base de datos'
             '1 - Usuario registrado y verificado'
@@ -208,6 +208,7 @@ Public Class DataAccess
             Using SHA1hash As SHA1 = SHA1.Create()
                 OldHashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(pOldPassword)))
             End Using
+
 
             '0 - Error de conexión a la base de datos'
             '1 - Usuario o contraseña incorrectos'
@@ -361,7 +362,6 @@ Public Class DataAccess
         Dim confirmado = FilteredRows(0).Item("confirmado")
         Dim tipo = FilteredRows(0).Item("tipo")
         Dim pass = FilteredRows(0).Item("pass")
-        Dim codpass = FilteredRows(0).Item("codpass")
 
         datos(0) = email
         datos(1) = nombre
@@ -370,7 +370,7 @@ Public Class DataAccess
         datos(4) = confirmado
         datos(5) = tipo
         datos(6) = pass
-        datos(7) = codpass
+
 
         Return datos
     End Function
@@ -424,7 +424,65 @@ Public Class DataAccess
         Return True
     End Function
 
+    Public Function insertarTarea(codigo As String, descripcion As String, asignatura As String, horasEstimadas As String, tipoTarea As String) As Boolean
+        Try
+            If openConnection() Then
+                Dim st As String = "INSERT INTO TareasGenericas(Codigo, Descripcion, CodAsig, HEstimadas, Explotacion, TipoTarea) VALUES ('" & codigo & "', '" & descripcion & "', '" & asignatura & "', '" & horasEstimadas & "', 'false', '" & tipoTarea & "');"
+                comando = New SqlCommand(st, conexion)
+                comando.ExecuteNonQuery()
+                closeConnection()
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 
+    Public Function instanciarTarea(email As String, codTarea As String, horasReales As String) As Boolean
+        Try
+            If openConnection() Then
+                Dim st As String = "UPDATE EstudiantesTareas SET HReales='" & horasReales & "'WHERE Email= '" & email & "' AND CodTarea='" & codTarea & "';"
+                MsgBox(st)
+                comando = New SqlCommand(st, conexion)
+                comando.ExecuteNonQuery()
+                closeConnection()
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function getTablaTareas(codigo As String) As DataTable
+        Try
+            If openConnection() Then
+                Dim stConexion As String = "Server=tcp:jorgehads.database.windows.net,1433;Initial Catalog=HADS-Jorge;Persist Security Info=False;User ID=trabajo.jorge2000@gmail.com@jorgehads;Password=Marmota69;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+                Dim stQuery As String = "SELECT * FROM TareasGenericas tg WHERE tg.CodAsig" & codigo & "';"
+                Return GetDataTable(stConexion, stQuery)
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    Private Function GetDataTable(ConnectionString As String, Sql As String) As DataTable
+        Dim MyDataTable As New DataTable
+        Dim MySqlConnection As New SqlConnection(ConnectionString)
+        Using MySqlConnection
+            Dim MySqlCommand As SqlCommand = New SqlCommand(Sql, MySqlConnection)
+            MySqlConnection.Open()
+            Dim MyDataReader As SqlDataReader = MySqlCommand.ExecuteReader()
+            MyDataTable.Load(MyDataReader)
+            MyDataReader.Close()
+        End Using
+        Return MyDataTable
+    End Function
 
 
     '*************' FUNCIONES DE CONEXIÓN *************'

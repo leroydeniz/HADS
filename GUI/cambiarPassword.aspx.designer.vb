@@ -32,15 +32,6 @@ Partial Public Class cambiarPassword
     Protected WithEvents Table1 As Global.System.Web.UI.WebControls.Table
 
     '''<summary>
-    '''Control email.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents email As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''Control oldPassword.
     '''</summary>
     '''<remarks>

@@ -25,26 +25,18 @@
         '2 - Usuario no existe en db'
         '3 - Usuario confirmado correctamente'
         '4 - Error de actualización de db'
-        '5 - Código incorrecto OK'
+        '5 - Código incorrecto'
 
         If resultadoTmp = 1 Then
             RespuestaDelServidor.Text = "Usuario ya confirmado!"
-            If Session.Contents("tipo") = "Profesor" Then
-                Response.Redirect("inicioProfesor.aspx")
-            Else
-                Response.Redirect("inicioAlumno.aspx")
-            End If
+            Response.Redirect("index.aspx")
         ElseIf resultadoTmp = 0 Then
             RespuestaDelServidor.Text = "Error de conexión a la base de datos."
         ElseIf resultadoTmp = 2 Then
             RespuestaDelServidor.Text = "Usuario no existe en la BD."
         ElseIf resultadoTmp = 3 Then
             RespuestaDelServidor.Text = "Cuenta verificada correctamente."
-            If Session.Contents("tipo") = "Profesor" Then
-                Response.Redirect("inicioProfesor.aspx")
-            Else
-                Response.Redirect("inicioAlumno.aspx")
-            End If
+            Response.Redirect("index.aspx")
         ElseIf resultadoTmp = 4 Then
             RespuestaDelServidor.Text = "Error de actualización en la base de datos."
         ElseIf resultadoTmp = 5 Then

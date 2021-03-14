@@ -24,7 +24,7 @@
                         <asp:TableCell ColumnSpan="2">
                             <br />
                             <br />
-                            <span class="auto-style2"><strong>Verificar Cuenta </strong></span><br />
+                            <span class="auto-style2"><strong>Verificar Cuenta</strong></span><br />
                             <br />
                             <br />
                         </asp:TableCell>

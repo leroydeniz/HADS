@@ -14,13 +14,13 @@ Option Explicit On
 Partial Public Class inicioAlumno
 
     '''<summary>
-    '''Control form1.
+    '''Control form2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents form2 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
     '''Control usuarioText.
@@ -32,22 +32,22 @@ Partial Public Class inicioAlumno
     Protected WithEvents usuarioText As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control nombreusuario.
+    '''Control LinkTareasGenericas.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents nombreusuario As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LinkTareasGenericas As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control LinkCambioPassword.
+    '''Control LinkButton3.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents LinkCambioPassword As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents LinkButton3 As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''Control LinkLogout.

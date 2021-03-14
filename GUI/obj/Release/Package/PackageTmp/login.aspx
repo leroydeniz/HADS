@@ -75,13 +75,6 @@
                             <br />
                         </asp:TableCell>
                     </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell ColumnSpan="2">
-                            <br />
-                            <br /><asp:Label ID="Label1" runat="server" style="text-align: center" Text="Label"> v1.4</asp:Label>
-                            <br />
-                        </asp:TableCell>
-                    </asp:TableRow>
                 </asp:Table>
             </div>      
         </div>

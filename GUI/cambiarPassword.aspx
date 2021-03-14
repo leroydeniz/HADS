@@ -24,18 +24,10 @@
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
-                            Email:
-                        </asp:TableCell>
-                        <asp:TableCell>
-                            <asp:TextBox ID="email" runat="server" textMode="Email"></asp:TextBox> 
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
                             Antigua password:
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="oldPassword" runat="server" textMode="Password"></asp:TextBox> 
+                            <asp:TextBox ID="oldPassword" runat="server" textMode="Password"></asp:TextBox>
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>

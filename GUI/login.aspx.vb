@@ -13,7 +13,7 @@
         'Definir la instancia del controlador'
         Dim objController = New LAB.Controller
 
-        'Traer variables del formulario '
+        'Traer variables del formulario'
         Dim pEmail = email.Text
         Dim pPass = password.Text
 
@@ -28,26 +28,24 @@
 
         If resultadoTmp = 1 Then
 
-            'Se trae la información del usuario de la base de datos para cargar en la sesión' 
-            If (guardarDatos(objController, pEmail)) Then
-                RespuestaDelServidor.Text = "Bienvenido!. Será redirigido en 3 segundos..."
+            'Se trae la información del usuario de la base de datos para cargar en la sesión'
+            If guardarDatos(objController, pEmail) Then
                 'Elige a qué perfil enviarlo'
+                RespuestaDelServidor.Text = "Bienvenido! Será redirigido en 3 segundos..."
                 If Session.Contents("tipo") = "Profesor" Then
-                    Response.AddHeader("REFRESH", "3;URL=inicioProfesor.aspx")
+                    Response.AddHeader("REFRESH", "3;URL=Profesor/inicioProfesor.aspx")
                 Else
-                    Response.AddHeader("REFRESH", "3;URL=inicioAlumno.aspx")
+                    Response.AddHeader("REFRESH", "3;URL=Alumno/inicioAlumno.aspx")
                 End If
-            Else RespuestaDelServidor.Text = "Error al crear el perfil de sesion."
+            Else
+                RespuestaDelServidor.Text = "Error al crear el perfil de sesion."
             End If
         ElseIf resultadoTmp = 0 Then
             RespuestaDelServidor.Text = "Error de conexión a la base de datos."
         ElseIf resultadoTmp = 2 Then
-            If (guardarDatos(objController, pEmail)) Then
-                RespuestaDelServidor.Text = "Debe verificar el usuario antes de continuar. Será redirigido en 3 segundos..."
-                Response.AddHeader("REFRESH", "3;URL=verificarCuenta.aspx")
-            Else
-                RespuestaDelServidor.Text = "Error al crear el perfil de sesion."
-            End If
+            Session.Contents("usuario") = pEmail
+            RespuestaDelServidor.Text = "Debe verificar el usuario antes de continuar. Será redirigido en 3 segundos..."
+            Response.AddHeader("REFRESH", "3;URL=verificarCuenta.aspx")
         ElseIf resultadoTmp = 3 Then
             RespuestaDelServidor.Text = "Usuario o contraseña incorrectos."
         Else
@@ -65,7 +63,6 @@
             Session.Contents("confirmado") = userData(4)
             Session.Contents("tipo") = userData(5)
             Session.Contents("pass") = userData(6)
-            Session.Contents("codpass") = userData(7)
             Return True
         Catch e As Exception
             Return False
