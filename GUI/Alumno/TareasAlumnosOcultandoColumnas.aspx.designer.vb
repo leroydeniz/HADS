@@ -23,6 +23,15 @@ Partial Public Class TareasAlumnosOcultandoColumnas
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
+    '''Control usuarioText.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents usuarioText As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control DropDownList1.
     '''</summary>
     '''<remarks>
@@ -48,4 +57,22 @@ Partial Public Class TareasAlumnosOcultandoColumnas
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control VolverAlMenu.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents VolverAlMenu As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''Control LinkLogout.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents LinkLogout As Global.System.Web.UI.WebControls.LinkButton
 End Class

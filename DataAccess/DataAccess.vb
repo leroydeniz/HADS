@@ -33,7 +33,6 @@ Public Class DataAccess
             '3 - Fallo en envío de mail'
 
             If count = 1 Then
-                'MsgBox("DEBUG: DataAccess >> usuario ya existe (primer if).")'
                 closeConnection()
                 Return 0
             Else
@@ -65,7 +64,6 @@ Public Class DataAccess
                     End If
 
                 Catch ex As Exception
-                    'MsgBox("DEBUG: DataAccess >> error de inserción (segundo if). " + ex.Message)'
                     closeConnection()
                     Return 2
                 End Try
@@ -73,7 +71,6 @@ Public Class DataAccess
 
         Else
             'BD no conectada'
-            'MsgBox("*** Error de conexión al servidor de BD: " + excepcion + "***")'
             closeConnection()
             Return 1
         End If
@@ -120,7 +117,6 @@ Public Class DataAccess
             End If
         Else
             'BD no conectada'
-            MsgBox(" Error de conexión al servidor de BD: " + excepcion + "")
             closeConnection()
             Return 0
         End If
@@ -186,7 +182,6 @@ Public Class DataAccess
 
         Else
             'BD no conectada'
-            'MsgBox(" Error de conexión al servidor de BD: " + excepcion + "")'
             closeConnection()
             Return 0
         End If
@@ -243,7 +238,6 @@ Public Class DataAccess
 
         Else
             'BD no conectada'
-            MsgBox(" Error de conexión al servidor de BD: " + excepcion + "")
             closeConnection()
             Return 0
         End If
@@ -308,7 +302,6 @@ Public Class DataAccess
 
         Else
             'BD no conectada'
-            MsgBox(" Error de conexión al servidor de BD: " + excepcion + "")
             closeConnection()
             Return 0
         End If
@@ -333,7 +326,6 @@ Public Class DataAccess
 
         Else
             'BD no conectada'
-            MsgBox(" Error de conexión al servidor de BD: " + excepcion + "")
             closeConnection()
             Return 2
         End If
@@ -440,20 +432,18 @@ Public Class DataAccess
         End Try
     End Function
 
-    Public Function instanciarTarea(email As String, codTarea As String, horasReales As String) As Boolean
+    Public Function instanciarTarea(email As String, codTarea As String, horasEstimadas As String, horasReales As String) As Boolean
         Try
-            If openConnection() Then
-                Dim st As String = "UPDATE EstudiantesTareas SET HReales='" & horasReales & "'WHERE Email= '" & email & "' AND CodTarea='" & codTarea & "';"
-                MsgBox(st)
+            If openConnection() Then 'Estudiantes tareas 
+                Dim st As String = "INSERT INTO EstudiantesTareas(email, codTarea, HEstimadas, HReales) Values('" & email & "', '" & codTarea & "', '" & horasEstimadas & "', '" & horasReales & "');"
                 comando = New SqlCommand(st, conexion)
                 comando.ExecuteNonQuery()
                 closeConnection()
                 Return True
-            Else
-                Return False
             End If
         Catch ex As Exception
             Return False
+
         End Try
     End Function
 

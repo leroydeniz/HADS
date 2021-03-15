@@ -25,6 +25,12 @@ Public Class TareasAlumnosOcultandoColumnas
             Session("adaptador") = dapMbrs
             Session("tabla") = tblMbrs
         End If
+
+        If IsNothing(Session.Contents("usuario")) Then
+            Response.Redirect("../login.aspx")
+        Else
+            usuarioText.Text = Session.Contents("usuario")
+        End If
     End Sub
 
     Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView1.SelectedIndexChanged
@@ -42,5 +48,11 @@ Public Class TareasAlumnosOcultandoColumnas
         GridView1.DataSource = dv
         GridView1.DataBind()
     End Sub
-
+    Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
+        Response.AddHeader("REFRESH", "1;URL=inicioAlumno.aspx")
+    End Sub
+    Protected Sub LinkLogout_Click(sender As Object, e As EventArgs) Handles LinkLogout.Click
+        Session.Abandon()
+        Response.AddHeader("REFRESH", "1;URL=../login.aspx")
+    End Sub
 End Class

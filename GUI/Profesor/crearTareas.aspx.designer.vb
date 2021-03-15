@@ -14,22 +14,22 @@ Option Explicit On
 Partial Public Class crearTareas
 
     '''<summary>
-    '''Control form1.
+    '''Control form2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents form2 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''Control LinkLogout.
+    '''Control usuarioText.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents LinkLogout As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents usuarioText As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control DropDownList1.
@@ -75,4 +75,22 @@ Partial Public Class crearTareas
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents BtnInsertarTarea As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control VolverAlMenu.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents VolverAlMenu As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''Control LinkLogout.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents LinkLogout As Global.System.Web.UI.WebControls.LinkButton
 End Class

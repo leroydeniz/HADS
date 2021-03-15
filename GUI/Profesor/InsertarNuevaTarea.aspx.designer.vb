@@ -14,13 +14,22 @@ Option Explicit On
 Partial Public Class InsertarNuevaTarea
 
     '''<summary>
-    '''Control form1.
+    '''Control form2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents form2 As Global.System.Web.UI.HtmlControls.HtmlForm
+
+    '''<summary>
+    '''Control usuarioText.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents usuarioText As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control codigo.
@@ -77,15 +86,6 @@ Partial Public Class InsertarNuevaTarea
     Protected WithEvents DropDownList2 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control Label0.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Label0 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''Control BtnAñadirTarea.
     '''</summary>
     '''<remarks>
@@ -95,6 +95,15 @@ Partial Public Class InsertarNuevaTarea
     Protected WithEvents BtnAñadirTarea As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''Control Label0.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label0 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control LinkVerTareas.
     '''</summary>
     '''<remarks>
@@ -102,4 +111,22 @@ Partial Public Class InsertarNuevaTarea
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents LinkVerTareas As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''Control VolverAlMenu.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents VolverAlMenu As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''Control LinkLogout.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents LinkLogout As Global.System.Web.UI.WebControls.LinkButton
 End Class

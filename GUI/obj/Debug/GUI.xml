@@ -91,6 +91,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:GUI.InstanciarTarea._usuarioText">
+<summary>
+Control usuarioText.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:GUI.InstanciarTarea._TBusuario">
 <summary>
 Control TBusuario.
@@ -163,9 +172,45 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:GUI.InstanciarTarea._VerTareas">
+<summary>
+Control VerTareas.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.InstanciarTarea._VolverAlMenu">
+<summary>
+Control VolverAlMenu.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.InstanciarTarea._LinkLogout">
+<summary>
+Control LinkLogout.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:GUI.TareasAlumnosOcultandoColumnas._form1">
 <summary>
 Control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.TareasAlumnosOcultandoColumnas._usuarioText">
+<summary>
+Control usuarioText.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -193,6 +238,24 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:GUI.TareasAlumnosOcultandoColumnas._GridView1">
 <summary>
 Control GridView1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.TareasAlumnosOcultandoColumnas._VolverAlMenu">
+<summary>
+Control VolverAlMenu.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.TareasAlumnosOcultandoColumnas._LinkLogout">
+<summary>
+Control LinkLogout.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -388,18 +451,27 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.crearTareas._form1">
+<member name="F:GUI.login._Label1">
 <summary>
-Control form1.
+Control Label1.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.crearTareas._LinkLogout">
+<member name="F:GUI.crearTareas._form2">
 <summary>
-Control LinkLogout.
+Control form2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.crearTareas._usuarioText">
+<summary>
+Control usuarioText.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -451,6 +523,24 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:GUI.crearTareas._VolverAlMenu">
+<summary>
+Control VolverAlMenu.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.crearTareas._LinkLogout">
+<summary>
+Control LinkLogout.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:GUI.inicioProfesor._form1">
 <summary>
 Control form1.
@@ -496,9 +586,18 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.InsertarNuevaTarea._form1">
+<member name="F:GUI.InsertarNuevaTarea._form2">
 <summary>
-Control form1.
+Control form2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.InsertarNuevaTarea._usuarioText">
+<summary>
+Control usuarioText.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -559,15 +658,6 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.InsertarNuevaTarea._Label0">
-<summary>
-Control Label0.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
 <member name="F:GUI.InsertarNuevaTarea._BtnAñadirTarea">
 <summary>
 Control BtnAñadirTarea.
@@ -577,9 +667,36 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:GUI.InsertarNuevaTarea._Label0">
+<summary>
+Control Label0.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:GUI.InsertarNuevaTarea._LinkVerTareas">
 <summary>
 Control LinkVerTareas.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.InsertarNuevaTarea._VolverAlMenu">
+<summary>
+Control VolverAlMenu.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.InsertarNuevaTarea._LinkLogout">
+<summary>
+Control LinkLogout.
 </summary>
 <remarks>
 Campo generado automáticamente.
