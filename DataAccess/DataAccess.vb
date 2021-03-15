@@ -416,7 +416,7 @@ Public Class DataAccess
         Return True
     End Function
 
-    Public Function insertarTarea(codigo As String, descripcion As String, asignatura As String, horasEstimadas As String, tipoTarea As String) As Boolean
+    Public Function insertarTareaXXXXX(codigo As String, descripcion As String, asignatura As String, horasEstimadas As String, tipoTarea As String) As Boolean
         Try
             If openConnection() Then
                 Dim st As String = "INSERT INTO TareasGenericas(Codigo, Descripcion, CodAsig, HEstimadas, Explotacion, TipoTarea) VALUES ('" & codigo & "', '" & descripcion & "', '" & asignatura & "', '" & horasEstimadas & "', 'false', '" & tipoTarea & "');"

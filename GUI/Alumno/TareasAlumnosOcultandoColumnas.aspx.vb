@@ -14,13 +14,11 @@ Public Class TareasAlumnosOcultandoColumnas
             dstMbrs = Session("datos")
         Else
             Session("asignaturaElegida") = DropDownList1.Text
-            Dim st As String = "SELECT * FROM TareasGenericas;"
+            Dim st As String = "SELECT Codigo,Descripcion,CodAsig, HEstimadas,TipoTarea FROM TareasGenericas WHERE Explotacion='True' AND Codigo NOT IN (SELECT CodTarea FROM EstudiantesTareas WHERE email='" & Session("usuario") & "');"
             dapMbrs = New SqlDataAdapter(st, conClsf)
             Dim bldMbrs As New SqlCommandBuilder(dapMbrs)
             dapMbrs.Fill(dstMbrs, "Miembros")
             tblMbrs = dstMbrs.Tables("Miembros")
-            GridView1.DataSource = tblMbrs
-            GridView1.DataBind()
             Session("datos") = dstMbrs
             Session("adaptador") = dapMbrs
             Session("tabla") = tblMbrs
@@ -49,10 +47,10 @@ Public Class TareasAlumnosOcultandoColumnas
         GridView1.DataBind()
     End Sub
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
-        Response.AddHeader("REFRESH", "1;URL=inicioAlumno.aspx")
+        Response.AddHeader("REFRESH", "0;URL=inicioAlumno.aspx")
     End Sub
     Protected Sub LinkLogout_Click(sender As Object, e As EventArgs) Handles LinkLogout.Click
         Session.Abandon()
-        Response.AddHeader("REFRESH", "1;URL=../login.aspx")
+        Response.AddHeader("REFRESH", "0;URL=../login.aspx")
     End Sub
 End Class
