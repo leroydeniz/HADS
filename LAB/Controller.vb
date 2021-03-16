@@ -37,7 +37,7 @@
 
     Public Function insertarTarea(codigo As String, descripcion As String, asignatura As String, horasEstimadas As String, tipoTarea As String) As Boolean
         Dim objDataAccess = New DataAccess.DataAccess
-        insertarTarea = objDataAccess.insertarTarea(codigo, descripcion, asignatura, horasEstimadas, tipoTarea)
+        insertarTarea = Nothing 'objDataAccess.insertarTarea(codigo, descripcion, asignatura, horasEstimadas, tipoTarea)
     End Function
 
     Public Function instanciarTarea(email As String, codTarea As String, horasEstimadas As String, horasReales As String) As Boolean

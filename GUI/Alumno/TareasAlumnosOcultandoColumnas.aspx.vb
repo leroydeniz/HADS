@@ -14,11 +14,23 @@ Public Class TareasAlumnosOcultandoColumnas
             dstMbrs = Session("datos")
         Else
             Session("asignaturaElegida") = DropDownList1.Text
+
+            ' 1 - SQL - Consulta de la tabla que trae
             Dim st As String = "SELECT Codigo,Descripcion,CodAsig, HEstimadas,TipoTarea FROM TareasGenericas WHERE Explotacion='True' AND Codigo NOT IN (SELECT CodTarea FROM EstudiantesTareas WHERE email='" & Session("usuario") & "');"
+
+            ' 2 - Adapter - Ejecuta la consutla y establece la conexión
             dapMbrs = New SqlDataAdapter(st, conClsf)
+
+            ' 3 - SQLCommandBuilder - Establece automáticamente las consultas de INSERT, SELECT, UPDATE y DELETE
             Dim bldMbrs As New SqlCommandBuilder(dapMbrs)
+
+            ' 5 - Fill - Trae los datos al dataset en memoria
             dapMbrs.Fill(dstMbrs, "Miembros")
+
+            ' 6 - Tables - para elegir la tabla dentro del DataSet
             tblMbrs = dstMbrs.Tables("Miembros")
+
+            ' 7 - Se guardan en sesión los datos que se reutilizarán
             Session("datos") = dstMbrs
             Session("adaptador") = dapMbrs
             Session("tabla") = tblMbrs
