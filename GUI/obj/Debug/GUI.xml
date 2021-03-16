@@ -154,18 +154,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.InstanciarTarea._GridView1">
+<member name="F:GUI.InstanciarTarea._GridView2">
 <summary>
-Control GridView1.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:GUI.InstanciarTarea._SqlDataSource1">
-<summary>
-Control SqlDataSource1.
+Control GridView2.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -670,6 +661,33 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:GUI.InsertarNuevaTarea._Label0">
 <summary>
 Control Label0.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.InsertarNuevaTarea._RequiredFieldValidator1">
+<summary>
+Control RequiredFieldValidator1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.InsertarNuevaTarea._RequiredFieldValidator2">
+<summary>
+Control RequiredFieldValidator2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.InsertarNuevaTarea._RequiredFieldValidator3">
+<summary>
+Control RequiredFieldValidator3.
 </summary>
 <remarks>
 Campo generado automáticamente.

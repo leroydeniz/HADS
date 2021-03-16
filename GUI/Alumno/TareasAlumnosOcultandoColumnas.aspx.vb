@@ -16,7 +16,7 @@ Public Class TareasAlumnosOcultandoColumnas
             Session("asignaturaElegida") = DropDownList1.Text
 
             ' 1 - SQL - Consulta de la tabla que trae
-            Dim st As String = "SELECT Codigo,Descripcion,CodAsig, HEstimadas,TipoTarea FROM TareasGenericas WHERE Explotacion='True' AND Codigo NOT IN (SELECT CodTarea FROM EstudiantesTareas WHERE email='" & Session("usuario") & "');"
+            Dim st As String = "SELECT Codigo,Descripcion,CodAsig, HEstimadas,TipoTarea FROM TareasGenericas WHERE Explotacion='True' AND Codigo NOt in (SELECT CodTarea FROM EstudiantesTareas WHERE email='" & Session("usuario") & "');"
 
             ' 2 - Adapter - Ejecuta la consutla y establece la conexión
             dapMbrs = New SqlDataAdapter(st, conClsf)

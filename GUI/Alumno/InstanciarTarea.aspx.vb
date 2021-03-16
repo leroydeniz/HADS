@@ -11,10 +11,11 @@ Public Class InstanciarTarea
     Dim tipoTarea As String
     Dim HReales As String
 
-    Dim conexionT As SqlConnection = New SqlConnection("Server=tcp:jorgehads.database.windows.net,1433;Initial Catalog=HADS-Jorge;Persist Security Info=False;User ID=trabajo.jorge2000@gmail.com@jorgehads;Password=Marmota69;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
+    Dim conexion As SqlConnection = New SqlConnection("Server=tcp:jorgehads.database.windows.net,1433;Initial Catalog=HADS-Jorge;Persist Security Info=False;User ID=trabajo.jorge2000@gmail.com@jorgehads;Password=Marmota69;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
     Dim tareasAdapter As New SqlDataAdapter()
-    Dim tareasDataSet As New DataSet
+    Dim tareas As New DataSet
     Dim tareasTabla As New DataTable
+    Dim tareasDataView As DataView
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
@@ -28,35 +29,35 @@ Public Class InstanciarTarea
             Codigo = datos.Cells(1).Text
             Descripcion = datos.Cells(2).Text
             CodAsig = datos.Cells(3).Text
-            HEstimadas = datos.Cells(4).Text
-            tipoTarea = datos.Cells(5).Text
+            HEstimadas = datos.Cells(5).Text
+            tipoTarea = datos.Cells(4).Text
 
             TBusuario.Text = usuario
             TBtarea.Text = Codigo
             TBhorasEstimadas.Text = HEstimadas
 
-            If Page.IsPostBack Then
-            Else
-                ' 1 - SQL - Consulta de la tabla que trae
-                Dim consulta As String = "SELECT * from TareasGenericas where email = '" & usuario & "');"
+            ' 1 - SQL - Consulta de la tabla que trae
+            Dim consulta As String = "SELECT * from EstudiantesTareas where Email = '" & usuario & "';"
 
-                ' 2 - Adapter - Ejecuta la consulta y establece la conexión
-                tareasAdapter = New SqlDataAdapter(consulta, conexionT)
+            ' 2 - Adapter - Establece la conexión y ejecuta el select
+            tareasAdapter = New SqlDataAdapter(consulta, conexion)
 
-                ' 3 - SQLCommandBuilder - Establece automáticamente las consultas de INSERT, SELECT, UPDATE y DELETE
-                Dim tareasBuilder As New SqlCommandBuilder(tareasAdapter)
+            ' 3 - Fill - Trae los datos al dataset en memoria
+            tareasAdapter.Fill(tareas)
 
-                ' 5 - Fill - Trae los datos al dataset en memoria
-                tareasAdapter.Fill(tareasDataSet, "tareasDataSet")
+            ' 4 - Tables - para elegir la tabla dentro del DataSet
+            tareasTabla = tareas.Tables(0)
 
-                ' 6 - Tables - para elegir la tabla dentro del DataSet
-                tareasTabla = tareasDataSet.Tables("tareasDataSet")
+            ' 5 - SQLCommandBuilder - Establece automáticamente las consultas de INSERT, UPDATE y DELETE
+            Dim tareasBuilder As New SqlCommandBuilder(tareasAdapter)
 
-                ' 7 - Se guardan en sesión los datos que se reutilizarán
-                Session("tareasTabla") = tareasTabla
-                Session("tareasAdapter") = tareasAdapter
-                Session("tareasDataSet") = tareasDataSet
-            End If
+            GridView2.DataSource = tareasTabla
+            GridView2.DataBind()
+
+            ' 7 - Se guardan en sesión los datos que se reutilizarán
+            Session("tareasTabla") = tareasTabla
+            Session("tareasAdapter") = tareasAdapter
+            Session("tareasDataSet") = tareas
         End If
 
     End Sub
@@ -65,15 +66,26 @@ Public Class InstanciarTarea
         Codigo = TBtarea.Text
         HEstimadas = TBhorasEstimadas.Text
         HReales = TBHorasReales.Text
+        Try
+            Dim ds As New DataSet
+            ds = Session("tareasDataSet")
+            Dim dr As DataRow
+            dr = ds.Tables(0).NewRow()
+            dr.Item(0) = Session("usuario")
+            dr.Item(1) = Codigo
+            dr.Item(2) = HEstimadas
+            dr.Item(3) = HReales
 
-        Dim consulta As String = "INSERT INTO TareasGenericas(Codigo, Descripcion, CodAsig, HEstimadas, Explotacion, TipoTarea) VALUES ('" & Codigo & "', '" & Descripcion & "', '" & CodAsig & "', '" & HEstimadas & "', 'false', '" & tipoTarea & "');"
+            ds.Tables(0).Rows.Add(dr)
 
-        Session("tareasAdapter").Update(Session("tareasDataSet"), "tareasDataSet")
-        Session("tareasDataSet").AcceptChanges()
+            Session("tareasAdapter").Update(tareas)
+            tareas.AcceptChanges()
 
-        RespuestaDelServidor.Text = "Tarea Instanciada correctamente."
-        Response.AddHeader("REFRESH", "0;URL=InstanciarTarea.aspx")
-
+            RespuestaDelServidor.Text = "Tarea instanciada correctamente."
+            Response.AddHeader("REFRESH", "0;URL=InstanciarTarea.aspx")
+        Catch ex As Exception
+            RespuestaDelServidor.Text = "La tarea ya ha sido instanciada."
+        End Try
     End Sub
 
     Protected Sub TBHorasReales_TextChanged(sender As Object, e As EventArgs) Handles TBHorasReales.TextChanged
