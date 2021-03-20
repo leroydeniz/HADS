@@ -88,13 +88,16 @@
 
                     <asp:TableRow>
                         <asp:TableCell>
-                            <br /><br /><br /><asp:LinkButton ID="LinkVerTareas" runat="server" PostBackUrl="crearTareas.aspx">Ver Tareas</asp:LinkButton>
+                            <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Código de tarea no puede estar vacío." ControlToValidate="codigo"></asp:RequiredFieldValidator>
+                            <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Descripción de tarea no puede estar vacío." ControlToValidate="descripcion"></asp:RequiredFieldValidator>
+                            <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Horas estimadas de tarea no puede estar vacío." ControlToValidate="horasEstimadas"></asp:RequiredFieldValidator>
+                            <br />
                         </asp:TableCell>
                     </asp:TableRow>
 
                     <asp:TableRow>
                         <asp:TableCell>
-                            <br /><br /><br /><asp:LinkButton ID="VolverAlMenu" runat="server">Volver al menú</asp:LinkButton> &nbsp;&nbsp;| &nbsp;&nbsp;<asp:LinkButton ID="LinkLogout" runat="server">Logout</asp:LinkButton>
+                            <br /><br /><br /><asp:LinkButton ID="LinkVerTareas" runat="server" PostBackUrl="crearTareas.aspx">Volver a Tareas</asp:LinkButton> &nbsp;&nbsp;| &nbsp;&nbsp; <asp:LinkButton ID="VolverAlMenu" runat="server">Volver al menú</asp:LinkButton> &nbsp;&nbsp;| &nbsp;&nbsp; <asp:LinkButton ID="LinkLogout" runat="server">Logout</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>

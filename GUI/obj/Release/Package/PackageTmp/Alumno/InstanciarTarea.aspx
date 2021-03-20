@@ -49,13 +49,13 @@
 				            <asp:Label ID="RespuestaDelServidor" runat="server" Text=""/>
                         </asp:TableCell></asp:TableRow><asp:TableRow>
                         <asp:TableCell ColumnSpan="2">
-				            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Email,CodTarea" DataSourceID="SqlDataSource1"><Columns>
-                                        <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" ReadOnly="True" /><asp:BoundField DataField="CodTarea" HeaderText="CodTarea" SortExpression="CodTarea" ReadOnly="True" /><asp:BoundField DataField="HEstimadas" HeaderText="HEstimadas" SortExpression="HEstimadas" /><asp:BoundField DataField="HReales" HeaderText="HReales" SortExpression="HReales" /></Columns>
-                                </asp:GridView>
-                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HADS-JorgeConnectionString %>" SelectCommand="SELECT * FROM [EstudiantesTareas] WHERE ([Email] = @Email)"><SelectParameters>
-                                        <asp:SessionParameter Name="Email" SessionField="usuario" Type="String" /></SelectParameters>
-                                </asp:SqlDataSource>
+                            <asp:GridView ID="GridView2" runat="server"> </asp:GridView>
                         </asp:TableCell></asp:TableRow><asp:TableRow>
                         <asp:TableCell>
                             <br/><br/><br/><asp:LinkButton ID="VerTareas" runat="server">Ver tareas</asp:LinkButton> &nbsp;&nbsp;| &nbsp;&nbsp;<asp:LinkButton ID="VolverAlMenu" runat="server">Volver al menú</asp:LinkButton> &nbsp;&nbsp;| &nbsp;&nbsp;<asp:LinkButton ID="LinkLogout" runat="server">Logout</asp:LinkButton>
                         </asp:TableCell></asp:TableRow></asp:Table></div></form></body></html>
+
+
+
+
+

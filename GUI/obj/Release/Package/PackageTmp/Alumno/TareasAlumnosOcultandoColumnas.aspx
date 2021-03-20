@@ -37,14 +37,22 @@
                     
                     <asp:TableRow>
                         <asp:TableCell ColumnSpan="2">
-                            	<asp:GridView ID="GridView1" runat="server">
+                            	 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
                 			<Columns>
                 		   		<asp:ButtonField ButtonType="Button" CommandName="Select" Text="Instanciar" />
+             		   		    <asp:BoundField DataField="Codigo" HeaderText="Codigo" />
+                                <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
+                                <asp:BoundField DataField="CodAsig" HeaderText="CodAsig" />
+                                <asp:BoundField DataField="TipoTarea" HeaderText="Tipo Tarea" />
+                                <asp:BoundField DataField="HEstimadas" HeaderText="Horas Estimadas" />
+             		   		</Columns>
+                			<Columns>
+                		   		
              		   		</Columns>
             			</asp:GridView>
                         </asp:TableCell>
                     </asp:TableRow>
-
+                                
                     <asp:TableRow>
                         <asp:TableCell>
                             <br /><br /><br /><asp:LinkButton ID="VolverAlMenu" runat="server">Volver al menú</asp:LinkButton> &nbsp;&nbsp;| &nbsp;&nbsp;<asp:LinkButton ID="LinkLogout" runat="server">Logout</asp:LinkButton>
@@ -52,7 +60,6 @@
                     </asp:TableRow>
                 </asp:Table>
             </div>     
-
     </form>
 </body>
 </html>
