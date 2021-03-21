@@ -46,7 +46,7 @@ Public Class importarTareas
             dataAdapter.Fill(tareasDataSet)
 
 
-            ' Creo un DataTable y defino su estructura de columnas
+            ' 6 - Creo un DataTable y defino su estructura de columnas
             Dim tareasDataTable As New DataTable
             tareasDataTable.Columns.Add("Codigo", GetType(String))
             tareasDataTable.Columns.Add("Descripcion", GetType(String))
@@ -55,29 +55,29 @@ Public Class importarTareas
             tareasDataTable.Columns.Add("Explotacion", GetType(Integer))
             tareasDataTable.Columns.Add("TipoTarea", GetType(String))
 
-            ' 6 - Tables - para elegir la tabla dentro del DataSet
+            ' 7 - Tables - para elegir la tabla dentro del DataSet
             tareasDataTable = tareasDataSet.Tables(0)
 
-            ' Creo e inicializo a vacío un nuevo objeto de tipo XMLDocument para asignarle el contenido del Archivo XML
+            ' 8 - Creo e inicializo a vacío un nuevo objeto de tipo XMLDocument para asignarle el contenido del Archivo XML
             Dim xmldoc As New XmlDocument()
             xmldoc = New XmlDocument()
 
-            ' Cargo el contenido del archivo XML en una variable de tipo XmlDocument
+            ' 9 - Cargo el contenido del archivo XML en una variable de tipo XmlDocument
             xmldoc.Load(Server.MapPath("xml/" & DropDownList11.Text & ".xml"))
 
-            ' Creo un nuevo XmlNodeList que tendrá la lista de todos los nodos del DOM tareas -> tarea *
+            ' 10 - Creo un nuevo XmlNodeList que tendrá la lista de todos los nodos del DOM tareas -> tarea *
             Dim tareasList As XmlNodeList
 
-            ' Creo una XmlNode que cargará cada dato de la lista
+            ' 11 - Creo una XmlNode que cargará cada dato de la lista
             Dim tarea As XmlNode
 
-            ' Creo un DataRow que me permita ir llenando fila a fila al DataTable con los datos de cada nodo 'tarea' del XML
+            ' 12 - Creo un DataRow que me permita ir llenando fila a fila al DataTable con los datos de cada nodo 'tarea' del XML
             Dim Fila As DataRow = tareasDataTable.NewRow
 
-            'Cargo el DOM con todos los primeros nodos de tipo 'tarea'
+            ' 13 - Cargo el DOM con todos los primeros nodos de tipo 'tarea'
             tareasList = xmldoc.GetElementsByTagName("tarea")
 
-            ' Para cada nodo tarea del XML, voy cargando cada columna de la Row
+            ' 14 - Para cada nodo tarea del XML, voy cargando cada columna de la Row
             For Each tarea In tareasList
                 Fila("Codigo") = tarea.Attributes.GetNamedItem("codigo").Value
                 Fila("Descripcion") = tarea.ChildNodes(0).InnerText
@@ -92,16 +92,17 @@ Public Class importarTareas
 
                 Fila("TipoTarea") = tarea.ChildNodes(3).InnerText
 
-                ' Agrego la fila al DataTable
+                ' 15 - Agrego la fila al DataTable
                 tareasDataTable.ImportRow(Fila)
 
             Next
 
-            Dim actualizadas = dataAdapter.Update(tareasDataSet)
-            If actualizadas = 0 Then
-                result.Text = "No se actualizaron"
+            ' 16 - Actualizo el dataset y verifico si hubieron cambios en la actualización
+            Dim cantidadActualizadas = dataAdapter.Update(tareasDataSet)
+            If cantidadActualizadas = 0 Then
+                result.Text = "ERROR. TAREAS YA IMPORTADAS"
             Else
-                result.Text = "OK"
+                result.Text = "TAREAS IMPORTADAS CORRECTAMENTE"
             End If
         Catch ex As Exception
             MsgBox(ex.ToString())
