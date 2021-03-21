@@ -22,10 +22,10 @@ Public Class crearTareas
         Response.Redirect("InsertarNuevaTarea.aspx")
     End Sub
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
-        Response.AddHeader("REFRESH", "1;URL=inicioProfesor.aspx")
+        Response.AddHeader("REFRESH", "0;URL=inicioProfesor.aspx")
     End Sub
     Protected Sub LinkLogout_Click(sender As Object, e As EventArgs) Handles LinkLogout.Click
         Session.Abandon()
-        Response.AddHeader("REFRESH", "1;URL=../login.aspx")
+        Response.AddHeader("REFRESH", "0;URL=../login.aspx")
     End Sub
 End Class

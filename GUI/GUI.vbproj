@@ -101,8 +101,13 @@
     </Content>
     <Content Include="login.aspx" />
     <Content Include="Profesor\crearTareas.aspx" />
+    <Content Include="Profesor\exportarTareas.aspx" />
+    <Content Include="Profesor\importarTareas.aspx" />
     <Content Include="Profesor\inicioProfesor.aspx" />
     <Content Include="Profesor\InsertarNuevaTarea.aspx" />
+    <Content Include="Profesor\xml\HAS.xml" />
+    <Content Include="Profesor\xml\SEG.xml" />
+    <Content Include="Profesor\xml\VerTablaTareas.xsl" />
     <Content Include="recuperarPassword.aspx" />
     <Content Include="registro.aspx" />
     <Content Include="verificarCuenta.aspx" />
@@ -177,6 +182,20 @@
       <DependentUpon>crearTareas.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Profesor\exportarTareas.aspx.designer.vb">
+      <DependentUpon>exportarTareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor\exportarTareas.aspx.vb">
+      <DependentUpon>exportarTareas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Profesor\importarTareas.aspx.designer.vb">
+      <DependentUpon>importarTareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor\importarTareas.aspx.vb">
+      <DependentUpon>importarTareas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Profesor\inicioProfesor.aspx.designer.vb">
       <DependentUpon>inicioProfesor.aspx</DependentUpon>
     </Compile>
@@ -233,6 +252,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="Profesor\xml\tareas.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

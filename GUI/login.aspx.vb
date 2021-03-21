@@ -3,7 +3,11 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsNothing(Session.Contents("usuario")) Then
-            Response.Redirect("index.aspx")
+            If Session.Contents("tipo") = "Profesor" Then
+                Response.AddHeader("REFRESH", "0;URL=Profesor/inicioProfesor.aspx")
+            Else
+                Response.AddHeader("REFRESH", "0;URL=Alumno/inicioAlumno.aspx")
+            End If
         End If
 
     End Sub

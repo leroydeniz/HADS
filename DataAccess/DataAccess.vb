@@ -441,6 +441,7 @@ Public Class DataAccess
                 closeConnection()
                 Return True
             End If
+            Return False
         Catch ex As Exception
             Return False
 

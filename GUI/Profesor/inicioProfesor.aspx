@@ -30,13 +30,13 @@
                     
                     <asp:TableRow>
                         <asp:TableCell>
-                            2. Importar v. XMLDocument
+                            2. <asp:LinkButton ID="LinkImportar" runat="server" PostBackUrl="importarTareas.aspx">Importar tareas</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
                     
                     <asp:TableRow>
                         <asp:TableCell>
-                            3. Exportar
+                            3. <asp:LinkButton ID="LinkExportar" runat="server" PostBackUrl="exportarTareas.aspx">Exportar tareas</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
                     
