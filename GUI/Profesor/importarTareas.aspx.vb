@@ -48,12 +48,6 @@ Public Class importarTareas
 
             ' 6 - Creo un DataTable y defino su estructura de columnas
             Dim tareasDataTable As New DataTable
-            tareasDataTable.Columns.Add("Codigo", GetType(String))
-            tareasDataTable.Columns.Add("Descripcion", GetType(String))
-            tareasDataTable.Columns.Add("CodAsig", GetType(String))
-            tareasDataTable.Columns.Add("HEstimadas", GetType(Integer))
-            tareasDataTable.Columns.Add("Explotacion", GetType(Integer))
-            tareasDataTable.Columns.Add("TipoTarea", GetType(String))
 
             ' 7 - Tables - para elegir la tabla dentro del DataSet
             tareasDataTable = tareasDataSet.Tables(0)
@@ -71,14 +65,15 @@ Public Class importarTareas
             ' 11 - Creo una XmlNode que cargará cada dato de la lista
             Dim tarea As XmlNode
 
-            ' 12 - Creo un DataRow que me permita ir llenando fila a fila al DataTable con los datos de cada nodo 'tarea' del XML
-            Dim Fila As DataRow = tareasDataTable.NewRow
-
             ' 13 - Cargo el DOM con todos los primeros nodos de tipo 'tarea'
             tareasList = xmldoc.GetElementsByTagName("tarea")
 
             ' 14 - Para cada nodo tarea del XML, voy cargando cada columna de la Row
             For Each tarea In tareasList
+
+                ' 12 - Creo un DataRow que me permita ir llenando fila a fila al DataTable con los datos de cada nodo 'tarea' del XML
+                Dim Fila As DataRow = tareasDataTable.NewRow
+
                 Fila("Codigo") = tarea.Attributes.GetNamedItem("codigo").Value
                 Fila("Descripcion") = tarea.ChildNodes(0).InnerText
                 Fila("CodAsig") = DropDownList11.Text
@@ -93,7 +88,7 @@ Public Class importarTareas
                 Fila("TipoTarea") = tarea.ChildNodes(3).InnerText
 
                 ' 15 - Agrego la fila al DataTable
-                tareasDataTable.ImportRow(Fila)
+                tareasDataTable.Rows.Add(Fila)
 
             Next
 
