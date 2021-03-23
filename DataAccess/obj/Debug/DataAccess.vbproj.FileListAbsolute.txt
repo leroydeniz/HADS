@@ -58,3 +58,6 @@ C:\Users\jorge\Desktop\HADS21-13\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\jorge\Desktop\HADS21-13\DataAccess\obj\Debug\DataAccess.xml
 C:\Users\jorge\Desktop\HADS21-13\DataAccess\obj\Debug\DataAccess.pdb
 C:\Users\Leroy\source\repos\HADS21-13\DataAccess\obj\Debug\DataAccess.vbprojAssemblyReference.cache
+C:\Users\Leroy\source\repos\HADS21-13\DataAccess\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Leroy\source\repos\HADS21-13\DataAccess\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Leroy\source\repos\HADS21-13\DataAccess\obj\Debug\DataAccess.vbproj.CopyComplete

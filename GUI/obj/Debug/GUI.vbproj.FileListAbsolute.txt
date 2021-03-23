@@ -412,3 +412,5 @@ C:\Users\jorge\Desktop\HADS21-13\GUI\obj\Debug\GUI.vbproj.CopyComplete
 C:\Users\jorge\Desktop\HADS21-13\GUI\obj\Debug\GUI.dll
 C:\Users\jorge\Desktop\HADS21-13\GUI\obj\Debug\GUI.xml
 C:\Users\jorge\Desktop\HADS21-13\GUI\obj\Debug\GUI.pdb
+C:\Users\Leroy\source\repos\HADS21-13\GUI\bin\Newtonsoft.Json.dll
+C:\Users\Leroy\source\repos\HADS21-13\GUI\bin\Newtonsoft.Json.xml

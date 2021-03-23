@@ -44,7 +44,7 @@
                     <asp:TableRow>
                         <asp:TableCell>
                             <br /><br />
-                            <asp:Button ID="Button1" runat="server" Text="Importar tareas" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="result" runat="server" Text="X"></asp:Label>
+                            <asp:Button ID="Button1" runat="server" Text="Importar tareas" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="result" runat="server" Text=""></asp:Label>
                         </asp:TableCell>
                     </asp:TableRow>
 

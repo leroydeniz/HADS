@@ -568,9 +568,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.exportarTareas._Xml1">
+<member name="F:GUI.exportarTareas._GridView1">
 <summary>
-Control Xml1.
+Control GridView1.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -589,6 +589,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:GUI.exportarTareas._ExportarJSON">
 <summary>
 Control ExportarJSON.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.exportarTareas._Mensaje">
+<summary>
+Control Mensaje.
 </summary>
 <remarks>
 Campo generado automáticamente.

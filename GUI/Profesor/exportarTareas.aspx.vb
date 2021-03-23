@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Net
 Imports System.Xml
+Imports Newtonsoft.Json
 
 Public Class exportarTareas
     Inherits System.Web.UI.Page
@@ -108,6 +109,29 @@ Public Class exportarTareas
     End Sub
 
     Protected Sub ExportarJSON_Click(sender As Object, e As EventArgs) Handles ExportarJSON.Click
+        Dim tareasFiltradas As DataTable
+
+        ' Se filtra la tabla original a las tareas propias de la asignatura elegida
+        Dim filtro As String = "CodAsig = '" & Session("asignaturaElegida") & "'"
+
+        Dim dv As New DataView(Session("tareasTabla"))
+        dv.RowFilter = filtro
+        tareasFiltradas = dv.Table
+        Dim JSONString = String.Empty
+        JSONString = JsonConvert.SerializeObject(Session("tareasTabla"))
+
+        Dim objWriter As New System.IO.StreamWriter(Server.MapPath("export/" + Session("asignaturaElegida") + ".json"))
+        objWriter.Write(JSONString)
+        objWriter.Close()
+
+
+
+        ' descargo el archivo creado
+        Response.ContentType = "application/octet-stream"
+        Response.AppendHeader("content-disposition", "attachment; filename=" + Session("asignaturaelegida") + ".json")
+        Response.TransmitFile(Server.MapPath("export/" + Session("asignaturaelegida") + ".json"))
+        Response.End()
+
 
     End Sub
 End Class
