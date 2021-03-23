@@ -9,44 +9,6 @@ Public Class exportarTareas
     Dim dataAdapter As New SqlDataAdapter()
     Dim tareasTabla = New DataTable
 
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If IsNothing(Session.Contents("usuario")) Then
-            Response.Redirect("../login.aspx")
-        Else
-            usuarioText.Text = Session.Contents("usuario")
-
-            If Not Page.IsPostBack Then
-                Try
-                    ' Traigo la nueva asignatura elegida del DropDownList
-                    Session.Contents("asignaturaElegida") = DropDownList11.Text
-
-                    ' 1 - SQL - Consulta de la tabla que trae
-                    Dim consulta As String = "SELECT Codigo, CodAsig, Descripcion, HEstimadas, Explotacion, TipoTarea FROM TareasGenericas WHERE CodAsig IN (SELECT DISTINCT CodAsig FROM crearTareasProfesor WHERE email = '" & Session("usuario") & "');"
-
-                    ' 2 - Adapter - Ejecuta la consutla y establece la conexión
-                    dataAdapter = New SqlDataAdapter(consulta, conexion)
-
-                    ' 3 - SQLCommandBuilder - Establece automáticamente las consultas de AMB
-                    Dim tareasBuilder As New SqlCommandBuilder(dataAdapter)
-
-                    Dim tareasDataSet As New DataSet
-
-                    dataAdapter.Fill(tareasDataSet)
-
-                    tareasTabla = tareasDataSet.Tables(0)
-
-                    Session("dataAdapter") = dataAdapter
-                    Session("tareasDataSet") = tareasDataSet
-                    Session("tareasTabla") = tareasTabla
-
-                Catch ex As Exception
-                    Mensaje.Text = ex.Message
-                End Try
-            End If
-
-        End If
-    End Sub
-
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
         Response.AddHeader("REFRESH", "0;URL=inicioProfesor.aspx")
     End Sub
@@ -87,7 +49,7 @@ Public Class exportarTareas
             Dim tareasFiltradas As DataTable
 
             ' Se filtra la tabla original a las tareas propias de la asignatura elegida
-            Dim filtro As String = "CodAsig = '" & Session("asignaturaElegida") & "'"
+            Dim filtro As String = "CodAsig = '" & DropDownList11.Text & "'"
 
             Dim dv As New DataView(Session("tareasTabla"))
             dv.RowFilter = filtro
@@ -99,11 +61,11 @@ Public Class exportarTareas
             ' Descargo el archivo creado
             Response.ContentType = "application/octet-stream"
             Response.AppendHeader("Content-Disposition", "attachment; filename=" + Session("asignaturaElegida") + ".xml")
-            Response.TransmitFile(Server.MapPath("export/" + Session("asignaturaElegida") + ".xml"))
+            Response.TransmitFile(Server.MapPath("export/" + DropDownList11.Text + ".xml"))
             Response.End()
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            Mensaje.Text = ex.Message
         End Try
 
     End Sub
@@ -134,4 +96,49 @@ Public Class exportarTareas
 
 
     End Sub
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        If IsNothing(Session.Contents("usuario")) Then
+            Response.Redirect("../login.aspx")
+        Else
+            usuarioText.Text = Session.Contents("usuario")
+            Session.Contents("asignaturaElegida") = DropDownList11.Text
+
+            If Not Page.IsPostBack Then
+                Try
+
+                    ' 1 - SQL - Consulta de la tabla que trae
+                    Dim consulta As String = "SELECT Codigo, CodAsig, Descripcion, HEstimadas, Explotacion, TipoTarea FROM TareasGenericas WHERE CodAsig IN (SELECT DISTINCT CodAsig FROM crearTareasProfesor WHERE email = '" & Session("usuario") & "');"
+
+                    ' 2 - Adapter - Ejecuta la consutla y establece la conexión
+                    dataAdapter = New SqlDataAdapter(consulta, conexion)
+
+                    ' 3 - SQLCommandBuilder - Establece automáticamente las consultas de AMB
+                    Dim tareasBuilder As New SqlCommandBuilder(dataAdapter)
+
+                    Dim tareasDataSet As New DataSet
+
+                    dataAdapter.Fill(tareasDataSet)
+
+                    tareasTabla = tareasDataSet.Tables(0)
+
+                    GridView1.DataSource = tareasTabla
+                    GridView1.DataBind()
+
+                    Session("dataAdapter") = dataAdapter
+                    Session("tareasDataSet") = tareasDataSet
+                    Session("tareasTabla") = tareasTabla
+
+                    Session.Contents("asignaturaElegida") = DropDownList11.Text
+                    MsgBox(Session.Contents("asignaturaElegida"))
+
+                Catch ex As Exception
+                    Mensaje.Text = ex.Message
+                End Try
+            End If
+
+        End If
+    End Sub
+
 End Class

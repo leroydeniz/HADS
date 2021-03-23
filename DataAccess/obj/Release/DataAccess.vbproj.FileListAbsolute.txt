@@ -8,3 +8,6 @@ C:\Users\Leroy\source\repos\HADS21-13\DataAccess\obj\Release\DataAccess.vbproj.C
 C:\Users\Leroy\source\repos\HADS21-13\DataAccess\obj\Release\DataAccess.dll
 C:\Users\Leroy\source\repos\HADS21-13\DataAccess\obj\Release\DataAccess.xml
 C:\Users\Leroy\source\repos\HADS21-13\DataAccess\obj\Release\DataAccess.pdb
+C:\Users\Leroy\source\repos\HADS21-13\DataAccess\bin\Release\Newtonsoft.Json.dll
+C:\Users\Leroy\source\repos\HADS21-13\DataAccess\bin\Release\Newtonsoft.Json.xml
+C:\Users\Leroy\source\repos\HADS21-13\DataAccess\obj\Release\DataAccess.vbproj.CopyComplete

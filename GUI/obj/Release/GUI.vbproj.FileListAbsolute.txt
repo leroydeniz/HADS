@@ -67,3 +67,5 @@ C:\Users\Leroy\source\repos\HADS21-13\GUI\obj\Release\GUI.vbproj.CopyComplete
 C:\Users\Leroy\source\repos\HADS21-13\GUI\obj\Release\GUI.dll
 C:\Users\Leroy\source\repos\HADS21-13\GUI\obj\Release\GUI.xml
 C:\Users\Leroy\source\repos\HADS21-13\GUI\obj\Release\GUI.pdb
+C:\Users\Leroy\source\repos\HADS21-13\GUI\bin\Newtonsoft.Json.dll
+C:\Users\Leroy\source\repos\HADS21-13\GUI\bin\Newtonsoft.Json.xml
