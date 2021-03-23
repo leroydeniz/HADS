@@ -81,7 +81,7 @@
                             <br />
                             <br />
                             <br />
-                            <br /><asp:Label ID="Label1" runat="server" style="text-align: center" Text="Label"> v5.3</asp:Label>
+                            <br /><asp:Label ID="Label1" runat="server" style="text-align: center" Text="Label"> v5.3.1</asp:Label>
                             <br />
                         </asp:TableCell>
                     </asp:TableRow>

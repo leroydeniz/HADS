@@ -12,4 +12,10 @@
     <explotacion>false</explotacion>
     <tipotarea>Trabajo</tipotarea>
   </tarea>
+	<tarea codigo="SEG20-Test2">
+		<descripcion>Test 2</descripcion>
+		<hestimadas>1</hestimadas>
+		<explotacion>false</explotacion>
+		<tipotarea>Examen</tipotarea>
+	</tarea>
 </tareas>

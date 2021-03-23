@@ -24,8 +24,8 @@ Public Class importarTareas
     End Sub
 
     Protected Sub DropDownList11_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList11.SelectedIndexChanged
-        Xml1.DocumentSource = Server.MapPath("xml/" & DropDownList11.Text & ".xml")
-        Xml1.TransformSource = Server.MapPath("xml/VerTablaTareas.xsl")
+        Xml1.DocumentSource = Server.MapPath("import/" & DropDownList11.Text & ".xml")
+        Xml1.TransformSource = Server.MapPath("import/VerTablaTareas.xsl")
         result.Text = ""
     End Sub
 
@@ -67,13 +67,13 @@ Public Class importarTareas
             ' 11 - Creo una XmlNode que cargará cada dato de la lista
             Dim tarea As XmlNode
 
-            ' 13 - Cargo el DOM con todos los primeros nodos de tipo 'tarea'
+            ' 12 - Cargo el DOM con todos los primeros nodos de tipo 'tarea'
             tareasList = xmldoc.GetElementsByTagName("tarea")
 
-            ' 14 - Para cada nodo tarea del XML, voy cargando cada columna de la Row
+            ' 13 - Para cada nodo tarea del XML, voy cargando cada columna de la Row
             For Each tarea In tareasList
 
-                ' 12 - Creo un DataRow que me permita ir llenando fila a fila al DataTable con los datos de cada nodo 'tarea' del XML
+                ' 14 - Creo un DataRow que me permita ir llenando fila a fila al DataTable con los datos de cada nodo 'tarea' del XML
                 Dim Fila As DataRow = tareasDataTable.NewRow
 
                 Fila("Codigo") = tarea.Attributes.GetNamedItem("codigo").Value
@@ -101,7 +101,7 @@ Public Class importarTareas
             End If
         Catch ex As Exception
             'result.Text = ex.Message
-            result.Text = "ERROR. TAREAS YA IMPORTADAS"
+            result.Text = "ERROR. ALGUNA DE LAS TAREAS YA HA SIDO IMPORTADAS"
         End Try
 
     End Sub
