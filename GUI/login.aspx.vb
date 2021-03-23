@@ -37,9 +37,9 @@
                 'Elige a qué perfil enviarlo'
                 RespuestaDelServidor.Text = "Bienvenido! Será redirigido en 3 segundos..."
                 If Session.Contents("tipo") = "Profesor" Then
-                    Response.AddHeader("REFRESH", "3;URL=Profesor/inicioProfesor.aspx")
+                    Response.AddHeader("REFRESH", "0;URL=Profesor/inicioProfesor.aspx")
                 Else
-                    Response.AddHeader("REFRESH", "3;URL=Alumno/inicioAlumno.aspx")
+                    Response.AddHeader("REFRESH", "0;URL=Alumno/inicioAlumno.aspx")
                 End If
             Else
                 RespuestaDelServidor.Text = "Error al crear el perfil de sesion."

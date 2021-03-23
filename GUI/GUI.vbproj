@@ -105,9 +105,9 @@
     <Content Include="Profesor\importarTareas.aspx" />
     <Content Include="Profesor\inicioProfesor.aspx" />
     <Content Include="Profesor\InsertarNuevaTarea.aspx" />
-    <Content Include="Profesor\xml\HAS.xml" />
-    <Content Include="Profesor\xml\SEG.xml" />
-    <Content Include="Profesor\xml\VerTablaTareas.xsl" />
+    <Content Include="Profesor\import\HAS.xml" />
+    <Content Include="Profesor\import\SEG.xml" />
+    <Content Include="Profesor\import\VerTablaTareas.xsl" />
     <Content Include="recuperarPassword.aspx" />
     <Content Include="registro.aspx" />
     <Content Include="verificarCuenta.aspx" />
@@ -252,7 +252,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="packages.config" />
-    <None Include="Profesor\xml\tareas.xsd">
+    <None Include="Profesor\import\tareas.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">
@@ -267,6 +267,9 @@
       <Project>{252a6133-60c8-4c05-b844-f9b259890a3d}</Project>
       <Name>LAB</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Profesor\export\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -11,6 +11,7 @@ Public Class importarTareas
             Response.Redirect("../login.aspx")
         Else
             usuarioText.Text = Session.Contents("usuario")
+
         End If
     End Sub
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
@@ -25,13 +26,14 @@ Public Class importarTareas
     Protected Sub DropDownList11_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList11.SelectedIndexChanged
         Xml1.DocumentSource = Server.MapPath("xml/" & DropDownList11.Text & ".xml")
         Xml1.TransformSource = Server.MapPath("xml/VerTablaTareas.xsl")
+        result.Text = ""
     End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         Try
             ' 1 - SQL - Consulta de la tabla que trae
-            Dim consulta As String = "SELECT Codigo,Descripcion,CodAsig, HEstimadas,Explotacion,TipoTarea FROM TareasGenericas WHERE Explotacion='True' AND Codigo NOt in (SELECT CodTarea FROM EstudiantesTareas WHERE email='" & Session("usuario") & "');"
+            Dim consulta As String = "SELECT Codigo, CodAsig, Descripcion, HEstimadas, Explotacion, TipoTarea FROM TareasGenericas WHERE CodAsig IN (SELECT DISTINCT CodAsig FROM crearTareasProfesor WHERE email = '" & Session("usuario") & "');"
 
             ' 2 - Adapter - Ejecuta la consutla y establece la conexión
             dataAdapter = New SqlDataAdapter(consulta, conexion)
@@ -57,7 +59,7 @@ Public Class importarTareas
             xmldoc = New XmlDocument()
 
             ' 9 - Cargo el contenido del archivo XML en una variable de tipo XmlDocument
-            xmldoc.Load(Server.MapPath("xml/" & DropDownList11.Text & ".xml"))
+            xmldoc.Load(Server.MapPath("import/" & DropDownList11.Text & ".xml"))
 
             ' 10 - Creo un nuevo XmlNodeList que tendrá la lista de todos los nodos del DOM tareas -> tarea *
             Dim tareasList As XmlNodeList
@@ -94,13 +96,12 @@ Public Class importarTareas
 
             ' 16 - Actualizo el dataset y verifico si hubieron cambios en la actualización
             Dim cantidadActualizadas = dataAdapter.Update(tareasDataSet)
-            If cantidadActualizadas = 0 Then
-                result.Text = "ERROR. TAREAS YA IMPORTADAS"
-            Else
+            If cantidadActualizadas <> 0 Then
                 result.Text = "TAREAS IMPORTADAS CORRECTAMENTE"
             End If
         Catch ex As Exception
-            MsgBox(ex.ToString())
+            'result.Text = ex.Message
+            result.Text = "ERROR. TAREAS YA IMPORTADAS"
         End Try
 
     End Sub
