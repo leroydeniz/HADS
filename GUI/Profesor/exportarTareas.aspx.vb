@@ -55,6 +55,8 @@ Public Class exportarTareas
             dv.RowFilter = filtro
             tareasFiltradas = dv.Table
 
+            tareasFiltradas.Columns.Item(0).ColumnMapping = MappingType.Attribute
+
             ' Guardo el archivo
             tareasFiltradas.WriteXml(Server.MapPath("export/" & Session("asignaturaElegida") & ".xml"))
 
@@ -107,6 +109,7 @@ Public Class exportarTareas
 
             If Not Page.IsPostBack Then
                 Try
+                    Session.Contents("asignaturaElegida") = DropDownList11.Text
 
                     ' 1 - SQL - Consulta de la tabla que trae
                     Dim consulta As String = "SELECT Codigo, CodAsig, Descripcion, HEstimadas, Explotacion, TipoTarea FROM TareasGenericas WHERE CodAsig IN (SELECT DISTINCT CodAsig FROM crearTareasProfesor WHERE email = '" & Session("usuario") & "');"
@@ -129,9 +132,6 @@ Public Class exportarTareas
                     Session("dataAdapter") = dataAdapter
                     Session("tareasDataSet") = tareasDataSet
                     Session("tareasTabla") = tareasTabla
-
-                    Session.Contents("asignaturaElegida") = DropDownList11.Text
-                    MsgBox(Session.Contents("asignaturaElegida"))
 
                 Catch ex As Exception
                     Mensaje.Text = ex.Message

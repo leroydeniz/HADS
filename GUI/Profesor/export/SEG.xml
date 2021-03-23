@@ -1,135 +1,118 @@
 <?xml version="1.0" standalone="yes"?>
 <NewDataSet>
-  <Table>
-    <Codigo>HAS20-Lab1</Codigo>
+  <Table Codigo="HAS20-Lab1">
     <CodAsig>HAS</CodAsig>
     <Descripcion>Lab componentes</Descripcion>
     <HEstimadas>6</HEstimadas>
     <Explotacion>true</Explotacion>
     <TipoTarea>Laboratorio</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>HAS20-Lab10</Codigo>
+  <Table Codigo="HAS20-Lab10">
     <CodAsig>HAS</CodAsig>
     <Descripcion>Sobre django</Descripcion>
     <HEstimadas>10</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>Laboratorio</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>HAS20-Lab2</Codigo>
+  <Table Codigo="HAS20-Lab2">
     <CodAsig>HAS</CodAsig>
     <Descripcion>Web Forms</Descripcion>
     <HEstimadas>12</HEstimadas>
     <Explotacion>true</Explotacion>
     <TipoTarea>Laboratorio</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>HAS20-Lab4</Codigo>
+  <Table Codigo="HAS20-Lab4">
     <CodAsig>HAS</CodAsig>
     <Descripcion>Laboratorio sobre XML</Descripcion>
     <HEstimadas>12</HEstimadas>
     <Explotacion>true</Explotacion>
     <TipoTarea>Laboratorio</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>HAS20-Test1</Codigo>
+  <Table Codigo="HAS20-Test1">
     <CodAsig>HAS</CodAsig>
     <Descripcion>Test 1 de la asignatura</Descripcion>
     <HEstimadas>1</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>Examen</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>HAS20-Test12</Codigo>
+  <Table Codigo="HAS20-Test12">
     <CodAsig>HAS</CodAsig>
     <Descripcion>Test 1 de la asignatura</Descripcion>
     <HEstimadas>3</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>examen</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>HAS21-L5</Codigo>
+  <Table Codigo="HAS21-L5">
     <CodAsig>HAS</CodAsig>
     <Descripcion>Lab5</Descripcion>
     <HEstimadas>8</HEstimadas>
     <Explotacion>true</Explotacion>
     <TipoTarea>laboratorio</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>HAS21-LAB5</Codigo>
+  <Table Codigo="HAS21-LAB5">
     <CodAsig>HAS</CodAsig>
     <Descripcion>Lab sobre ADO.NET</Descripcion>
     <HEstimadas>20</HEstimadas>
     <Explotacion>true</Explotacion>
     <TipoTarea>Laboratorio</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>SEG20-Lab1</Codigo>
+  <Table Codigo="SEG20-Lab1">
     <CodAsig>SEG</CodAsig>
     <Descripcion>Tareas del trabajo 1 de la asignatura</Descripcion>
     <HEstimadas>10</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>Trabajo</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>SEG20-Lab16</Codigo>
+  <Table Codigo="SEG20-Lab16">
     <CodAsig>SEG</CodAsig>
     <Descripcion>Tareas del trabajo 1 de la asignatura</Descripcion>
     <HEstimadas>10</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>Trabajo</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>SEG20-Lab17</Codigo>
+  <Table Codigo="SEG20-Lab17">
     <CodAsig>SEG</CodAsig>
     <Descripcion>Tareas del trabajo 1 de la asignatura</Descripcion>
     <HEstimadas>10</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>Trabajo</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>SEG20-Lab199</Codigo>
+  <Table Codigo="SEG20-Lab199">
     <CodAsig>SEG</CodAsig>
     <Descripcion>Tareas del trabajo 1 de la asignatura</Descripcion>
     <HEstimadas>10</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>Trabajo</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>SEG20-Test1</Codigo>
+  <Table Codigo="SEG20-Test1">
     <CodAsig>SEG</CodAsig>
     <Descripcion>Test 1 de la asignatura</Descripcion>
     <HEstimadas>3</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>Examen</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>SEG20-Test116</Codigo>
+  <Table Codigo="SEG20-Test116">
     <CodAsig>SEG</CodAsig>
     <Descripcion>Test 1 de la asignatura</Descripcion>
     <HEstimadas>3</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>Examen</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>SEG20-Test12</Codigo>
+  <Table Codigo="SEG20-Test12">
     <CodAsig>SEG</CodAsig>
     <Descripcion>Test 12 de la asignatura</Descripcion>
     <HEstimadas>3</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>Examen</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>SEG20-Test17</Codigo>
+  <Table Codigo="SEG20-Test17">
     <CodAsig>SEG</CodAsig>
     <Descripcion>Test 1 de la asignatura</Descripcion>
     <HEstimadas>3</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>Examen</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>SEG20-Test199</Codigo>
+  <Table Codigo="SEG20-Test199">
     <CodAsig>SEG</CodAsig>
     <Descripcion>Test 1 de la asignatura</Descripcion>
     <HEstimadas>3</HEstimadas>
