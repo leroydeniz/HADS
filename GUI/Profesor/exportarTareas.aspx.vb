@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Net
 Imports System.Xml
 
 Public Class exportarTareas
@@ -82,21 +83,23 @@ Public Class exportarTareas
     Protected Sub ExportarXML_Click(sender As Object, e As EventArgs) Handles ExportarXML.Click
 
         Try
-            ' Creo una instancia de un nuevo objeto XML
-            Dim xmldoc As New XmlDocument
+            Dim tareasFiltradas As DataTable
 
-            ' Defino su declaración
-            Dim declaracion As XmlDeclaration = xmldoc.CreateXmlDeclaration("1.0", Nothing, Nothing)
-            xmldoc.AppendChild(declaracion)
+            ' Se filtra la tabla original a las tareas propias de la asignatura elegida
+            Dim filtro As String = "CodAsig = '" & Session("asignaturaElegida") & "'"
 
-            ' Defino el nodo DOM y lo agrego al archivo
-            Dim xmlroot As XmlElement = xmldoc.CreateElement("tareas")
-            xmldoc.AppendChild(xmlroot)
-
-
+            Dim dv As New DataView(Session("tareasTabla"))
+            dv.RowFilter = filtro
+            tareasFiltradas = dv.Table
 
             ' Guardo el archivo
-            xmldoc.Save(Server.MapPath("export/" & Session("asignaturaElegida") & ".xml"))
+            tareasFiltradas.WriteXml(Server.MapPath("export/" & Session("asignaturaElegida") & ".xml"))
+
+            ' Descargo el archivo creado
+            Response.ContentType = "application/octet-stream"
+            Response.AppendHeader("Content-Disposition", "attachment; filename=" + Session("asignaturaElegida") + ".xml")
+            Response.TransmitFile(Server.MapPath("export/" + Session("asignaturaElegida") + ".xml"))
+            Response.End()
 
         Catch ex As Exception
             MsgBox(ex.Message)

@@ -1,4 +1,4 @@
-﻿    <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="exportarTareas.aspx.vb" Inherits="GUI.exportarTareas" %>
+﻿    <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="exportarTareas.aspx.vb" Inherits="GUI.exportarTareas" Async="true"%>
 
     <!DOCTYPE html>
 
