@@ -52,11 +52,12 @@ Public Class exportarTareas
             Dim filtro As String = "CodAsig = '" & DropDownList11.Text & "'"
 
             Dim dv As New DataView(Session("tareasTabla"))
+            'OPCIONAL 2 -Añadir NameSpace
+            tareasFiltradas.Namespace = "http://ji.ehu.es/has"
             dv.RowFilter = filtro
             tareasFiltradas = dv.Table
 
             tareasFiltradas.Columns.Item(0).ColumnMapping = MappingType.Attribute
-
             ' Guardo el archivo
             tareasFiltradas.WriteXml(Server.MapPath("export/" & Session("asignaturaElegida") & ".xml"))
 

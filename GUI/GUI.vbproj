@@ -105,6 +105,7 @@
     <Content Include="login.aspx" />
     <Content Include="Profesor\crearTareas.aspx" />
     <Content Include="Profesor\exportarTareas.aspx" />
+    <Content Include="Profesor\importarTareasDS.aspx" />
     <Content Include="Profesor\importarTareas.aspx" />
     <Content Include="Profesor\inicioProfesor.aspx" />
     <Content Include="Profesor\InsertarNuevaTarea.aspx" />
@@ -191,6 +192,13 @@
     <Compile Include="Profesor\exportarTareas.aspx.vb">
       <DependentUpon>exportarTareas.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Profesor\importarTareasDS.aspx.designer.vb">
+      <DependentUpon>importarTareasDS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor\importarTareasDS.aspx.vb">
+      <DependentUpon>importarTareasDS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Profesor\importarTareas.aspx.designer.vb">
       <DependentUpon>importarTareas.aspx</DependentUpon>

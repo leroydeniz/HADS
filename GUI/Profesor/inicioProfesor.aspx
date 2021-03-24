@@ -36,25 +36,31 @@
                     
                     <asp:TableRow>
                         <asp:TableCell>
-                            3. <asp:LinkButton ID="LinkExportar" runat="server" PostBackUrl="exportarTareas.aspx">Exportar tareas</asp:LinkButton>
+                            3. <asp:LinkButton ID="LinkImportarDataSet" runat="server" PostBackUrl="importarTareasDS.aspx">Importar tareas con Data Set</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
                     
                     <asp:TableRow>
                         <asp:TableCell>
-                            4. Ver estadísticas
+                            4. <asp:LinkButton ID="LinkExportar" runat="server" PostBackUrl="exportarTareas.aspx">Exportar tareas</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
                     
                     <asp:TableRow>
                         <asp:TableCell>
-                            5. <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="../cambiarPassword.aspx">Cambiar contraseña</asp:LinkButton>
+                            5. Ver estadísticas
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            6. <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="../cambiarPassword.aspx">Cambiar contraseña</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
 
                     <asp:TableRow>
                         <asp:TableCell>
-                            6. <asp:LinkButton ID="LinkLogout" runat="server">Logout</asp:LinkButton>
+                            7. <asp:LinkButton ID="LinkLogout" runat="server">Logout</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
