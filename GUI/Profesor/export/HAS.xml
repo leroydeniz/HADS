@@ -1,139 +1,101 @@
 <?xml version="1.0" standalone="yes"?>
 <NewDataSet>
-  <Table>
-    <Codigo>HAS20-Lab1</Codigo>
-    <CodAsig>HAS</CodAsig>
-    <Descripcion>Lab componentes</Descripcion>
-    <HEstimadas>6</HEstimadas>
-    <Explotacion>true</Explotacion>
-    <TipoTarea>Laboratorio</TipoTarea>
-  </Table>
-  <Table>
-    <Codigo>HAS20-Lab10</Codigo>
-    <CodAsig>HAS</CodAsig>
-    <Descripcion>Sobre django</Descripcion>
-    <HEstimadas>10</HEstimadas>
-    <Explotacion>false</Explotacion>
-    <TipoTarea>Laboratorio</TipoTarea>
-  </Table>
-  <Table>
-    <Codigo>HAS20-Lab2</Codigo>
-    <CodAsig>HAS</CodAsig>
-    <Descripcion>Web Forms</Descripcion>
-    <HEstimadas>12</HEstimadas>
-    <Explotacion>true</Explotacion>
-    <TipoTarea>Laboratorio</TipoTarea>
-  </Table>
-  <Table>
-    <Codigo>HAS20-Lab4</Codigo>
+  <Table Codigo="HAS20-999001" xmlns="http://ji.ehu.es/has">
     <CodAsig>HAS</CodAsig>
     <Descripcion>Laboratorio sobre XML</Descripcion>
     <HEstimadas>12</HEstimadas>
     <Explotacion>true</Explotacion>
     <TipoTarea>Laboratorio</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>HAS20-Test1</Codigo>
+  <Table Codigo="HAS20-Lab1" xmlns="http://ji.ehu.es/has">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Lab componentes</Descripcion>
+    <HEstimadas>6</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </Table>
+  <Table Codigo="HAS20-Lab10" xmlns="http://ji.ehu.es/has">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Sobre django</Descripcion>
+    <HEstimadas>10</HEstimadas>
+    <Explotacion>false</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </Table>
+  <Table Codigo="HAS20-Lab2" xmlns="http://ji.ehu.es/has">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Web Forms</Descripcion>
+    <HEstimadas>12</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </Table>
+  <Table Codigo="HAS20-Lab4" xmlns="http://ji.ehu.es/has">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Laboratorio sobre XML</Descripcion>
+    <HEstimadas>12</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </Table>
+  <Table Codigo="HAS20-Test1" xmlns="http://ji.ehu.es/has">
     <CodAsig>HAS</CodAsig>
     <Descripcion>Test 1 de la asignatura</Descripcion>
     <HEstimadas>1</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>Examen</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>HAS20-Test12</Codigo>
+  <Table Codigo="HAS20-Test12" xmlns="http://ji.ehu.es/has">
     <CodAsig>HAS</CodAsig>
     <Descripcion>Test 1 de la asignatura</Descripcion>
     <HEstimadas>3</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>examen</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>HAS21-L5</Codigo>
+  <Table Codigo="HAS20-Test1211" xmlns="http://ji.ehu.es/has">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Test 1 de la asignatura</Descripcion>
+    <HEstimadas>1</HEstimadas>
+    <Explotacion>false</Explotacion>
+    <TipoTarea>Examen</TipoTarea>
+  </Table>
+  <Table Codigo="HAS21-L5" xmlns="http://ji.ehu.es/has">
     <CodAsig>HAS</CodAsig>
     <Descripcion>Lab5</Descripcion>
     <HEstimadas>8</HEstimadas>
     <Explotacion>true</Explotacion>
     <TipoTarea>laboratorio</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>HAS21-LAB5</Codigo>
+  <Table Codigo="HAS21-LAB4" xmlns="http://ji.ehu.es/has">
     <CodAsig>HAS</CodAsig>
     <Descripcion>Lab sobre ADO.NET</Descripcion>
     <HEstimadas>20</HEstimadas>
     <Explotacion>true</Explotacion>
     <TipoTarea>Laboratorio</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>SEG20-Lab1</Codigo>
-    <CodAsig>SEG</CodAsig>
-    <Descripcion>Tareas del trabajo 1 de la asignatura</Descripcion>
-    <HEstimadas>10</HEstimadas>
-    <Explotacion>false</Explotacion>
-    <TipoTarea>Trabajo</TipoTarea>
+  <Table Codigo="HAS21-LAB5" xmlns="http://ji.ehu.es/has">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Lab sobre ADO.NET</Descripcion>
+    <HEstimadas>20</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>SEG20-Lab16</Codigo>
-    <CodAsig>SEG</CodAsig>
-    <Descripcion>Tareas del trabajo 1 de la asignatura</Descripcion>
-    <HEstimadas>10</HEstimadas>
-    <Explotacion>false</Explotacion>
-    <TipoTarea>Trabajo</TipoTarea>
-  </Table>
-  <Table>
-    <Codigo>SEG20-Lab17</Codigo>
-    <CodAsig>SEG</CodAsig>
-    <Descripcion>Tareas del trabajo 1 de la asignatura</Descripcion>
-    <HEstimadas>10</HEstimadas>
-    <Explotacion>false</Explotacion>
-    <TipoTarea>Trabajo</TipoTarea>
-  </Table>
-  <Table>
-    <Codigo>SEG20-Lab199</Codigo>
-    <CodAsig>SEG</CodAsig>
-    <Descripcion>Tareas del trabajo 1 de la asignatura</Descripcion>
-    <HEstimadas>10</HEstimadas>
-    <Explotacion>false</Explotacion>
-    <TipoTarea>Trabajo</TipoTarea>
-  </Table>
-  <Table>
-    <Codigo>SEG20-Test1</Codigo>
-    <CodAsig>SEG</CodAsig>
-    <Descripcion>Test 1 de la asignatura</Descripcion>
-    <HEstimadas>3</HEstimadas>
+  <Table Codigo="HAS21-Test2001" xmlns="http://ji.ehu.es/has">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Suspenso colectivo</Descripcion>
+    <HEstimadas>1</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>Examen</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>SEG20-Test116</Codigo>
-    <CodAsig>SEG</CodAsig>
-    <Descripcion>Test 1 de la asignatura</Descripcion>
-    <HEstimadas>3</HEstimadas>
-    <Explotacion>false</Explotacion>
-    <TipoTarea>Examen</TipoTarea>
-  </Table>
-  <Table>
-    <Codigo>SEG20-Test12</Codigo>
+  <Table Codigo="SEG20-Test1" xmlns="http://ji.ehu.es/has">
     <CodAsig>SEG</CodAsig>
     <Descripcion>Test 12 de la asignatura</Descripcion>
     <HEstimadas>3</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>Examen</TipoTarea>
   </Table>
-  <Table>
-    <Codigo>SEG20-Test17</Codigo>
+  <Table Codigo="SEG20-Trab1" xmlns="http://ji.ehu.es/has">
     <CodAsig>SEG</CodAsig>
-    <Descripcion>Test 1 de la asignatura</Descripcion>
-    <HEstimadas>3</HEstimadas>
+    <Descripcion>Tareas del trabajo 1 de la asignatura</Descripcion>
+    <HEstimadas>10</HEstimadas>
     <Explotacion>false</Explotacion>
-    <TipoTarea>Examen</TipoTarea>
-  </Table>
-  <Table>
-    <Codigo>SEG20-Test199</Codigo>
-    <CodAsig>SEG</CodAsig>
-    <Descripcion>Test 1 de la asignatura</Descripcion>
-    <HEstimadas>3</HEstimadas>
-    <Explotacion>false</Explotacion>
-    <TipoTarea>Examen</TipoTarea>
+    <TipoTarea>Trabajo</TipoTarea>
   </Table>
 </NewDataSet>
