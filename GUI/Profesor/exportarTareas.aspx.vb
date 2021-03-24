@@ -33,6 +33,7 @@ Public Class exportarTareas
 
             ' Aplico el filtro
             tareasDataView.RowFilter = filtro
+            Session("tareasFiltradas") = tareasDataView.ToTable
 
             ' Pego la tabla filtrada en el DataView y aplico los cambios a tiempo real
             GridView1.DataSource = tareasDataView
@@ -46,20 +47,12 @@ Public Class exportarTareas
     Protected Sub ExportarXML_Click(sender As Object, e As EventArgs) Handles ExportarXML.Click
 
         Try
-            Dim tareasFiltradas As DataTable
-
-            ' Se filtra la tabla original a las tareas propias de la asignatura elegida
-            Dim filtro As String = "CodAsig = '" & DropDownList11.Text & "'"
-
-            Dim dv As New DataView(Session("tareasTabla"))
-
-            dv.RowFilter = filtro
-            tareasFiltradas = dv.Table
-
+            Dim tareasFiltradas As DataTable = Session("tareasFiltradas")
             tareasFiltradas.Columns.Item(0).ColumnMapping = MappingType.Attribute
 
             'OPCIONAL 2 -Añadir NameSpace
             tareasFiltradas.Namespace = "http://ji.ehu.es/has"
+            tareasFiltradas.TableName = "tarea"
 
             ' Guardo el archivo
             tareasFiltradas.WriteXml(Server.MapPath("export/" & Session("asignaturaElegida") & ".xml"))
@@ -77,16 +70,10 @@ Public Class exportarTareas
     End Sub
 
     Protected Sub ExportarJSON_Click(sender As Object, e As EventArgs) Handles ExportarJSON.Click
-        Dim tareasFiltradas As DataTable
+        Dim tareasFiltradas As DataTable = Session("tareasFiltradas")
 
-        ' Se filtra la tabla original a las tareas propias de la asignatura elegida
-        Dim filtro As String = "CodAsig = '" & Session("asignaturaElegida") & "'"
-
-        Dim dv As New DataView(Session("tareasTabla"))
-        dv.RowFilter = filtro
-        tareasFiltradas = dv.Table
         Dim JSONString = String.Empty
-        JSONString = JsonConvert.SerializeObject(Session("tareasTabla"))
+        JSONString = JsonConvert.SerializeObject(tareasFiltradas)
 
         Dim objWriter As New System.IO.StreamWriter(Server.MapPath("export/" + Session("asignaturaElegida") + ".json"))
         objWriter.Write(JSONString)
@@ -125,6 +112,7 @@ Public Class exportarTareas
                     Dim tareasBuilder As New SqlCommandBuilder(dataAdapter)
 
                     Dim tareasDataSet As New DataSet
+                    tareasDataSet.DataSetName = "tareas"
 
                     dataAdapter.Fill(tareasDataSet)
 
