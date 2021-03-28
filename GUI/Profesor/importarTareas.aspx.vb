@@ -6,6 +6,12 @@ Public Class importarTareas
     Dim conexion As SqlConnection = New SqlConnection("Server=tcp:jorgehads.database.windows.net,1433;Initial Catalog=HADS-Jorge;Persist Security Info=False;User ID=trabajo.jorge2000@gmail.com@jorgehads;Password=Marmota69;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
     Dim dataAdapter As New SqlDataAdapter()
 
+
+
+
+
+
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         If Not Page.IsPostBack Then
@@ -21,20 +27,50 @@ Public Class importarTareas
 
         End If
     End Sub
+
+
+
+
+
+
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
         Response.AddHeader("REFRESH", "0;URL=inicioProfesor.aspx")
     End Sub
+
+
+
+
+
+
 
     Protected Sub LinkLogout_Click(sender As Object, e As EventArgs) Handles LinkLogout.Click
         Session.Abandon()
         Response.AddHeader("REFRESH", "0;URL=../login.aspx")
     End Sub
 
+
+
+
+
+
+
     Protected Sub DropDownList11_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList11.SelectedIndexChanged
-        Xml1.DocumentSource = Server.MapPath("../App_Data/" & DropDownList11.Text & ".xml")
-        Xml1.TransformSource = Server.MapPath("../App_Data/VerTablaTareas.xsl")
-        result.Text = ""
+
+        If DropDownList11.Text = " " Then
+            Button1.Enabled = False
+        Else
+            Button1.Enabled = True
+            Xml1.DocumentSource = Server.MapPath("../App_Data/" & DropDownList11.Text & ".xml")
+            Xml1.TransformSource = Server.MapPath("../App_Data/VerTablaTareas.xsl")
+            result.Text = ""
+        End If
+
     End Sub
+
+
+
+
+
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 

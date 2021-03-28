@@ -7,7 +7,21 @@
     <Explotacion>true</Explotacion>
     <TipoTarea>Examen</TipoTarea>
   </tarea>
+  <tarea Codigo="SEG1-T11">
+    <CodAsig>SEG</CodAsig>
+    <Descripcion>Desci segu</Descripcion>
+    <HEstimadas>6</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Examen</TipoTarea>
+  </tarea>
   <tarea Codigo="SEG1-T2">
+    <CodAsig>SEG</CodAsig>
+    <Descripcion>Desci segu</Descripcion>
+    <HEstimadas>6</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Examen</TipoTarea>
+  </tarea>
+  <tarea Codigo="SEG1-T22">
     <CodAsig>SEG</CodAsig>
     <Descripcion>Desci segu</Descripcion>
     <HEstimadas>6</HEstimadas>

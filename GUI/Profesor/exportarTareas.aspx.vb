@@ -39,6 +39,11 @@ Public Class exportarTareas
 
     Protected Sub DropDownList11_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList11.SelectedIndexChanged
 
+        If DropDownList11.Text = " " Then
+            ExportarJSON.Enabled = False
+            ExportarXML.Enabled = False
+        End If
+
         Try
             ' Traigo la nueva asignatura elegida del DropDownList
             Session.Contents("asignaturaElegida") = DropDownList11.Text
@@ -150,6 +155,7 @@ Public Class exportarTareas
 
                     ' 3 - SQLCommandBuilder - Establece automáticamente las consultas de AMB
                     Dim tareasBuilder As New SqlCommandBuilder(dataAdapter)
+
 
                     dataAdapter.Fill(tareasDataSet)
 

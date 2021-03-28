@@ -27,7 +27,7 @@
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:DropDownList ID="DropDownList11" runat="server" DataSourceID="SqlDataSource1" AutoPostBack="true" DataTextField="CodAsig" DataValueField="CodAsig"/>
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HADS-JorgeConnectionString %>" SelectCommand="SELECT DISTINCT [CodAsig] FROM [crearTareasProfesor] WHERE ([email] = @email)">
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HADS-JorgeConnectionString %>" SelectCommand="SELECT ' ' As CodAsig UNION ALL SELECT DISTINCT [CodAsig] FROM [crearTareasProfesor] WHERE ([email] = @email) ">
                                 <SelectParameters>
                                     <asp:SessionParameter Name="email" SessionField="usuario" Type="String" />
                                 </SelectParameters>

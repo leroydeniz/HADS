@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?>
+<tareas>
+  <tarea Codigo="ISO-Lab1">
+    <CodAsig>ISO</CodAsig>
+    <Descripcion>Laboratorio de SWING</Descripcion>
+    <HEstimadas>12</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </tarea>
+</tareas>

@@ -3,7 +3,6 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If IsNothing(Session.Contents("usuario")) Then
-            'MsgBox("Usuario no logueado.")'
             Response.Redirect("login.aspx")
         End If
     End Sub
