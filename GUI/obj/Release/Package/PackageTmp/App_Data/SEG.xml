@@ -1,6 +1,13 @@
 <?xml version="1.0" standalone="yes"?>
 <tareas>
-  <tarea Codigo="SEG1-T4">
+  <tarea Codigo="SEG1-T1">
+    <CodAsig>SEG</CodAsig>
+    <Descripcion>Desci segu</Descripcion>
+    <HEstimadas>6</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Examen</TipoTarea>
+  </tarea>
+  <tarea Codigo="SEG1-T2">
     <CodAsig>SEG</CodAsig>
     <Descripcion>Desci segu</Descripcion>
     <HEstimadas>6</HEstimadas>

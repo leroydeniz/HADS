@@ -16,6 +16,7 @@ Public Class exportarTareas
 
 
 
+
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
         Response.AddHeader("REFRESH", "0;URL=inicioProfesor.aspx")
     End Sub
@@ -126,6 +127,9 @@ Public Class exportarTareas
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        ExportarJSON.Enabled = True
+        ExportarXML.Enabled = True
+
         If IsNothing(Session.Contents("usuario")) Then
             Response.Redirect("../login.aspx")
         Else
@@ -133,6 +137,8 @@ Public Class exportarTareas
             Session.Contents("asignaturaElegida") = DropDownList11.Text
 
             If Not Page.IsPostBack Then
+                ExportarXML.Enabled = False
+                ExportarJSON.Enabled = False
                 Try
                     Session.Contents("asignaturaElegida") = DropDownList11.Text
 
@@ -149,8 +155,8 @@ Public Class exportarTareas
 
                     tareasTabla = tareasDataSet.Tables(0)
 
-                    GridView1.DataSource = tareasTabla
-                    GridView1.DataBind()
+                    'GridView1.DataSource = tareasTabla
+                    'GridView1.DataBind()
 
                     Session("dataAdapter") = dataAdapter
                     Session("tareasDataSet") = tareasDataSet

@@ -7,6 +7,13 @@ Public Class importarTareas
     Dim dataAdapter As New SqlDataAdapter()
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        If Not Page.IsPostBack Then
+            Button1.Enabled = False
+        Else
+            Button1.Enabled = True
+        End If
+
         If IsNothing(Session.Contents("usuario")) Then
             Response.Redirect("../login.aspx")
         Else
