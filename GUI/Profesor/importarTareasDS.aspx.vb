@@ -24,8 +24,8 @@ Public Class importarTareasDS
     End Sub
 
     Protected Sub DropDownList11_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList11.SelectedIndexChanged
-        Xml1.DocumentSource = Server.MapPath("import/" & DropDownList11.Text & ".xml")
-        Xml1.TransformSource = Server.MapPath("import/VerTablaTareas.xsl")
+        Xml1.DocumentSource = Server.MapPath("../App_Data/" & DropDownList11.Text & ".xml")
+        Xml1.TransformSource = Server.MapPath("../App_Data/VerTablaTareas.xsl")
         result.Text = ""
     End Sub
 
@@ -34,7 +34,7 @@ Public Class importarTareasDS
             Dim da As SqlDataAdapter = New SqlDataAdapter("select * from TareasGenericas WHERE 0=1", conexion)
             Dim commandBuilder As New SqlCommandBuilder(da)
             Dim ds As New DataSet()
-            ds.ReadXml(Server.MapPath("import/" & DropDownList11.Text & ".xml"))
+            ds.ReadXml(Server.MapPath("../App_Data/" & DropDownList11.Text & ".xml"))
             Dim dt As New DataTable
             dt = ds.Tables(0)
             dt.Columns.Add("CodAsig")

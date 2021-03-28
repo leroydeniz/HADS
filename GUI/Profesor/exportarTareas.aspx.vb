@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Net
 Imports System.Xml
+Imports System.Xml.Serialization
 Imports Newtonsoft.Json
 
 Public Class exportarTareas
@@ -8,6 +9,7 @@ Public Class exportarTareas
     Dim conexion As SqlConnection = New SqlConnection("Server=tcp:jorgehads.database.windows.net,1433;Initial Catalog=HADS-Jorge;Persist Security Info=False;User ID=trabajo.jorge2000@gmail.com@jorgehads;Password=Marmota69;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
     Dim dataAdapter As New SqlDataAdapter()
     Dim tareasTabla = New DataTable
+    Dim tareasDataSet As New DataSet()
 
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
         Response.AddHeader("REFRESH", "0;URL=inicioProfesor.aspx")
@@ -47,20 +49,25 @@ Public Class exportarTareas
     Protected Sub ExportarXML_Click(sender As Object, e As EventArgs) Handles ExportarXML.Click
 
         Try
+            Dim tareasFiltradasDataSet As New DataSet("tareas")
+            'tareasFiltradasDataSet = New DataSet("tareas")
+            'OPCIONAL 2 -Añadir NameSpace
+            'tareasFiltradasDataSet.Namespace = "http://ji.ehu.es/has"
+
             Dim tareasFiltradas As DataTable = Session("tareasFiltradas")
             tareasFiltradas.Columns.Item(0).ColumnMapping = MappingType.Attribute
 
-            'OPCIONAL 2 -Añadir NameSpace
-            tareasFiltradas.Namespace = "http://ji.ehu.es/has"
+            tareasFiltradasDataSet.Tables.Add(tareasFiltradas)
             tareasFiltradas.TableName = "tarea"
 
+
             ' Guardo el archivo
-            tareasFiltradas.WriteXml(Server.MapPath("export/" & Session("asignaturaElegida") & ".xml"))
+            tareasFiltradasDataSet.WriteXml(Server.MapPath("../App_Data/" & Session("asignaturaElegida") & ".xml"))
 
             ' Descargo el archivo creado
             Response.ContentType = "application/octet-stream"
             Response.AppendHeader("Content-Disposition", "attachment; filename=" + Session("asignaturaElegida") + ".xml")
-            Response.TransmitFile(Server.MapPath("export/" + DropDownList11.Text + ".xml"))
+            Response.TransmitFile(Server.MapPath("../App_Data/" + Session("asignaturaElegida") + ".xml"))
             Response.End()
 
         Catch ex As Exception
@@ -75,16 +82,14 @@ Public Class exportarTareas
         Dim JSONString = String.Empty
         JSONString = JsonConvert.SerializeObject(tareasFiltradas)
 
-        Dim objWriter As New System.IO.StreamWriter(Server.MapPath("export/" + Session("asignaturaElegida") + ".json"))
+        Dim objWriter As New System.IO.StreamWriter(Server.MapPath("../App_Data/" + Session("asignaturaElegida") + ".json"))
         objWriter.Write(JSONString)
         objWriter.Close()
-
-
 
         ' descargo el archivo creado
         Response.ContentType = "application/octet-stream"
         Response.AppendHeader("content-disposition", "attachment; filename=" + Session("asignaturaelegida") + ".json")
-        Response.TransmitFile(Server.MapPath("export/" + Session("asignaturaelegida") + ".json"))
+        Response.TransmitFile(Server.MapPath("../App_Data/" + Session("asignaturaelegida") + ".json"))
         Response.End()
 
 
@@ -110,9 +115,6 @@ Public Class exportarTareas
 
                     ' 3 - SQLCommandBuilder - Establece automáticamente las consultas de AMB
                     Dim tareasBuilder As New SqlCommandBuilder(dataAdapter)
-
-                    Dim tareasDataSet As New DataSet
-                    tareasDataSet.DataSetName = "tareas"
 
                     dataAdapter.Fill(tareasDataSet)
 

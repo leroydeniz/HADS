@@ -1,11 +1,18 @@
 <?xml version="1.0" standalone="yes"?>
-<DocumentElement xmlns="http://ji.ehu.es/has">
+<tareas>
   <tarea Codigo="SEG20-Test1">
     <CodAsig>SEG</CodAsig>
     <Descripcion>Test 12 de la asignatura</Descripcion>
     <HEstimadas>3</HEstimadas>
     <Explotacion>false</Explotacion>
     <TipoTarea>Examen</TipoTarea>
+  </tarea>
+  <tarea Codigo="SEG20-Test1666">
+    <CodAsig>SEG</CodAsig>
+    <Descripcion>SEG</Descripcion>
+    <HEstimadas>3</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>false</TipoTarea>
   </tarea>
   <tarea Codigo="SEG20-Trab1">
     <CodAsig>SEG</CodAsig>
@@ -14,4 +21,11 @@
     <Explotacion>false</Explotacion>
     <TipoTarea>Trabajo</TipoTarea>
   </tarea>
-</DocumentElement>
+  <tarea Codigo="SEG20-Trab1666">
+    <CodAsig>SEG</CodAsig>
+    <Descripcion>SEG</Descripcion>
+    <HEstimadas>10</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>false</TipoTarea>
+  </tarea>
+</tareas>

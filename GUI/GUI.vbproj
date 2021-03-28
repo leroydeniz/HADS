@@ -98,6 +98,7 @@
     <Content Include="Alumno\inicioAlumno.aspx" />
     <Content Include="Alumno\InstanciarTarea.aspx" />
     <Content Include="Alumno\TareasAlumnosOcultandoColumnas.aspx" />
+    <Content Include="App_Data\SEG.xml" />
     <Content Include="cambiarPassword.aspx" />
     <Content Include="index.aspx">
       <BrowseToURL>~/Alumno/index.aspx</BrowseToURL>
@@ -109,9 +110,8 @@
     <Content Include="Profesor\importarTareas.aspx" />
     <Content Include="Profesor\inicioProfesor.aspx" />
     <Content Include="Profesor\InsertarNuevaTarea.aspx" />
-    <Content Include="Profesor\import\HAS.xml" />
-    <Content Include="Profesor\import\SEG.xml" />
-    <Content Include="Profesor\import\VerTablaTareas.xsl" />
+    <Content Include="App_Data\HAS.xml" />
+    <Content Include="App_Data\VerTablaTareas.xsl" />
     <Content Include="recuperarPassword.aspx" />
     <Content Include="registro.aspx" />
     <Content Include="verificarCuenta.aspx" />
@@ -263,7 +263,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="packages.config" />
-    <None Include="Profesor\import\tareas.xsd">
+    <None Include="App_Data\tareas.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">
@@ -279,9 +279,7 @@
       <Name>LAB</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Profesor\export\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

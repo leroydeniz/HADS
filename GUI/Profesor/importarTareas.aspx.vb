@@ -24,8 +24,8 @@ Public Class importarTareas
     End Sub
 
     Protected Sub DropDownList11_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList11.SelectedIndexChanged
-        Xml1.DocumentSource = Server.MapPath("import/" & DropDownList11.Text & ".xml")
-        Xml1.TransformSource = Server.MapPath("import/VerTablaTareas.xsl")
+        Xml1.DocumentSource = Server.MapPath("../App_Data/" & DropDownList11.Text & ".xml")
+        Xml1.TransformSource = Server.MapPath("../App_Data/VerTablaTareas.xsl")
         result.Text = ""
     End Sub
 
@@ -59,7 +59,7 @@ Public Class importarTareas
             xmldoc = New XmlDocument()
 
             ' 9 - Cargo el contenido del archivo XML en una variable de tipo XmlDocument
-            xmldoc.Load(Server.MapPath("import/" & DropDownList11.Text & ".xml"))
+            xmldoc.Load(Server.MapPath("../App_Data/" & DropDownList11.Text & ".xml"))
 
             ' 10 - Creo un nuevo XmlNodeList que tendrá la lista de todos los nodos del DOM tareas -> tarea *
             Dim tareasList As XmlNodeList
@@ -76,10 +76,10 @@ Public Class importarTareas
                 ' 14 - Creo un DataRow que me permita ir llenando fila a fila al DataTable con los datos de cada nodo 'tarea' del XML
                 Dim Fila As DataRow = tareasDataTable.NewRow
 
-                Fila("Codigo") = tarea.Attributes.GetNamedItem("codigo").Value
-                Fila("Descripcion") = tarea.ChildNodes(0).InnerText
+                Fila("Codigo") = tarea.Attributes.GetNamedItem("Codigo").Value
+                Fila("Descripcion") = tarea.ChildNodes(1).InnerText
                 Fila("CodAsig") = DropDownList11.Text
-                Fila("HEstimadas") = tarea.ChildNodes(1).InnerText
+                Fila("HEstimadas") = CInt(tarea.ChildNodes(2).InnerText)
 
                 If (tarea.ChildNodes(2).InnerText = "false") Then
                     Fila("Explotacion") = 0

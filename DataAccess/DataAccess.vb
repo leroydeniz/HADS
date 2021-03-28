@@ -1,6 +1,7 @@
 ﻿Imports System.Net.Mail
 Imports System.Data.SqlClient
 Imports System.Security.Cryptography
+Imports System.Text
 
 Public Class DataAccess
 
@@ -37,9 +38,7 @@ Public Class DataAccess
                 Return 0
             Else
                 'Encripto la contraseña'
-                Using SHA1hash As SHA1 = SHA1.Create()
-                    HashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(pPass)))
-                End Using
+                HashedPass = hashMD5(pPass)
 
                 Randomize()
                 Dim randomNumber As Integer = CInt(Int((3000 * Rnd()) + 1))
@@ -76,16 +75,27 @@ Public Class DataAccess
         End If
     End Function
 
+    Protected Function hashMD5(ByVal password As String) As String
+        Dim md5Obj As New System.Security.Cryptography.MD5CryptoServiceProvider
+        Dim bytesToHash() As Byte = System.Text.Encoding.ASCII.GetBytes(password)
+
+        bytesToHash = md5Obj.ComputeHash(bytesToHash)
+        Dim strResult As New StringBuilder
+
+        For Each b As Byte In bytesToHash
+            strResult.Append(b.ToString("x2"))
+        Next
+
+        Return strResult.ToString
+    End Function
 
 
 
     Public Function login(ByVal pUser As String, ByVal pPass As String) As Integer
-
+        hashMD5("pepe")
         If openConnection() Then
-            HashedPass = pPass
-            Using SHA1hash As SHA1 = SHA1.Create()
-                HashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(pPass)))
-            End Using
+
+            HashedPass = hashMD5(pPass)
 
             '0 - Error de conexión a la base de datos'
             '1 - Usuario registrado y verificado'
@@ -196,13 +206,9 @@ Public Class DataAccess
         If openConnection() Then
 
 
-            Using SHA1hash As SHA1 = SHA1.Create()
-                HashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(pNewPassword)))
-            End Using
+            HashedPass = hashMD5(pNewPassword)
 
-            Using SHA1hash As SHA1 = SHA1.Create()
-                OldHashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(pOldPassword)))
-            End Using
+            OldHashedPass = hashMD5(pOldPassword)
 
 
             '0 - Error de conexión a la base de datos'
@@ -253,9 +259,7 @@ Public Class DataAccess
             Randomize()
             Dim randomNumber As Integer = CInt(Int((3000 * Rnd()) + 100000))
 
-            Using SHA1hash As SHA1 = SHA1.Create()
-                HashedPass = System.Convert.ToBase64String(SHA1hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(randomNumber)))
-            End Using
+            HashedPass = hashMD5(randomNumber)
 
             '0 - Error de conexión a la base de datos'
             '1 - Usuario no existe en la base de datos'
