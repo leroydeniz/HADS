@@ -1,5 +1,12 @@
 <?xml version="1.0" standalone="yes"?>
-<tareas xmlns:has="http://ji.ehu.es/has">
+<tareas>
+  <tarea Codigo="HAD21-Lab12345">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Lab componentes</Descripcion>
+    <HEstimadas>6</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </tarea>
   <tarea Codigo="HAS20-999001">
     <CodAsig>HAS</CodAsig>
     <Descripcion>Laboratorio sobre XML</Descripcion>
@@ -81,7 +88,7 @@
     <CodAsig>HAS</CodAsig>
     <Descripcion>Suspenso colectivo</Descripcion>
     <HEstimadas>1</HEstimadas>
-    <Explotacion>false</Explotacion>
+    <Explotacion>true</Explotacion>
     <TipoTarea>Examen</TipoTarea>
   </tarea>
 </tareas>

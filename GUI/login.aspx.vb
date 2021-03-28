@@ -35,6 +35,7 @@
             'Se trae la información del usuario de la base de datos para cargar en la sesión'
             If guardarDatos(objController, pEmail) Then
                 'Elige a qué perfil enviarlo'
+                BtnLogin.Enabled = False
                 RespuestaDelServidor.Text = "Bienvenido! Será redirigido en 3 segundos..."
                 If Session.Contents("tipo") = "Profesor" Then
                     Response.AddHeader("REFRESH", "0;URL=Profesor/inicioProfesor.aspx")
@@ -47,6 +48,7 @@
         ElseIf resultadoTmp = 0 Then
             RespuestaDelServidor.Text = "Error de conexión a la base de datos."
         ElseIf resultadoTmp = 2 Then
+            BtnLogin.Enabled = False
             Session.Contents("usuario") = pEmail
             RespuestaDelServidor.Text = "Debe verificar el usuario antes de continuar. Será redirigido en 3 segundos..."
             Response.AddHeader("REFRESH", "3;URL=verificarCuenta.aspx")
