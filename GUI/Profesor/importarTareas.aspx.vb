@@ -31,9 +31,9 @@ Public Class importarTareas
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        Try
-            ' 1 - SQL - Consulta de la tabla que trae
-            Dim consulta As String = "SELECT Codigo, CodAsig, Descripcion, HEstimadas, Explotacion, TipoTarea FROM TareasGenericas WHERE CodAsig IN (SELECT DISTINCT CodAsig FROM crearTareasProfesor WHERE email = '" & Session("usuario") & "');"
+        'Try
+        ' 1 - SQL - Consulta de la tabla que trae
+        Dim consulta As String = "SELECT Codigo, CodAsig, Descripcion, HEstimadas, Explotacion, TipoTarea FROM TareasGenericas WHERE CodAsig IN (SELECT DISTINCT CodAsig FROM crearTareasProfesor WHERE email = '" & Session("usuario") & "');"
 
             ' 2 - Adapter - Ejecuta la consutla y establece la conexión
             dataAdapter = New SqlDataAdapter(consulta, conexion)
@@ -77,20 +77,20 @@ Public Class importarTareas
                 Dim Fila As DataRow = tareasDataTable.NewRow
 
                 Fila("Codigo") = tarea.Attributes.GetNamedItem("Codigo").Value
-                Fila("Descripcion") = tarea.ChildNodes(1).InnerText
-                Fila("CodAsig") = DropDownList11.Text
-                Fila("HEstimadas") = CInt(tarea.ChildNodes(2).InnerText)
+            Fila("Descripcion") = tarea.ChildNodes(1).InnerText
+            Fila("CodAsig") = DropDownList11.Text
+            Fila("HEstimadas") = CInt(tarea.ChildNodes(2).InnerText)
 
-                If (tarea.ChildNodes(2).InnerText = "false") Then
-                    Fila("Explotacion") = 0
-                Else
-                    Fila("Explotacion") = 1
+            If (tarea.ChildNodes(3).InnerText = "false") Then
+                Fila("Explotacion") = 0
+            Else
+                Fila("Explotacion") = 1
                 End If
 
-                Fila("TipoTarea") = tarea.ChildNodes(3).InnerText
+            Fila("TipoTarea") = tarea.ChildNodes(4).InnerText
 
-                ' 15 - Agrego la fila al DataTable
-                tareasDataTable.Rows.Add(Fila)
+            ' 15 - Agrego la fila al DataTable
+            tareasDataTable.Rows.Add(Fila)
 
             Next
 
@@ -99,10 +99,10 @@ Public Class importarTareas
             If cantidadActualizadas <> 0 Then
                 result.Text = "TAREAS IMPORTADAS CORRECTAMENTE"
             End If
-        Catch ex As Exception
-            'result.Text = ex.Message
-            result.Text = "ERROR. ALGUNA DE LAS TAREAS YA HA SIDO IMPORTADAS"
-        End Try
+        'Catch ex As Exception
+        'result.Text = ex.Message
+        'result.Text = "ERROR. ALGUNA DE LAS TAREAS YA HA SIDO IMPORTADAS"
+        'End Try
 
     End Sub
 End Class

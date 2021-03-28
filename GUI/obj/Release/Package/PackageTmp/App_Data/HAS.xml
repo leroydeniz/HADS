@@ -1,21 +1,87 @@
-<?xml version="1.0" standalone="yes" ?>
-<tareas  xmlns:has="http://ji.ehu.es/has">
-  <tarea codigo= "HAS20-Test1211">
-    <descripcion>Test 1 de la asignatura</descripcion>
-    <hestimadas>1</hestimadas>
-    <explotacion>false</explotacion>
-    <tipotarea>Examen</tipotarea>
+<?xml version="1.0" standalone="yes"?>
+<tareas xmlns:has="http://ji.ehu.es/has">
+  <tarea Codigo="HAS20-999001">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Laboratorio sobre XML</Descripcion>
+    <HEstimadas>12</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
   </tarea>
-  <tarea codigo="HAS20-999001">
-    <descripcion>Laboratorio sobre XML</descripcion>
-    <hestimadas>12</hestimadas>
-    <explotacion>true</explotacion>
-    <tipotarea>Laboratorio</tipotarea>
+  <tarea Codigo="HAS20-Lab1">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Lab componentes</Descripcion>
+    <HEstimadas>6</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
   </tarea>
-	<tarea codigo= "HAS21-Test2001">
-		<descripcion>Suspenso colectivo</descripcion>
-		<hestimadas>1</hestimadas>
-		<explotacion>false</explotacion>
-		<tipotarea>Examen</tipotarea>
-	</tarea>
+  <tarea Codigo="HAS20-Lab10">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Sobre django</Descripcion>
+    <HEstimadas>10</HEstimadas>
+    <Explotacion>false</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </tarea>
+  <tarea Codigo="HAS20-Lab2">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Web Forms</Descripcion>
+    <HEstimadas>12</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </tarea>
+  <tarea Codigo="HAS20-Lab4">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Laboratorio sobre XML</Descripcion>
+    <HEstimadas>12</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </tarea>
+  <tarea Codigo="HAS20-Test1">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Test 1 de la asignatura</Descripcion>
+    <HEstimadas>1</HEstimadas>
+    <Explotacion>false</Explotacion>
+    <TipoTarea>Examen</TipoTarea>
+  </tarea>
+  <tarea Codigo="HAS20-Test12">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Test 1 de la asignatura</Descripcion>
+    <HEstimadas>3</HEstimadas>
+    <Explotacion>false</Explotacion>
+    <TipoTarea>examen</TipoTarea>
+  </tarea>
+  <tarea Codigo="HAS20-Test1211">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Test 1 de la asignatura</Descripcion>
+    <HEstimadas>1</HEstimadas>
+    <Explotacion>false</Explotacion>
+    <TipoTarea>Examen</TipoTarea>
+  </tarea>
+  <tarea Codigo="HAS21-L5">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Lab5</Descripcion>
+    <HEstimadas>8</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>laboratorio</TipoTarea>
+  </tarea>
+  <tarea Codigo="HAS21-LAB4">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Lab sobre ADO.NET</Descripcion>
+    <HEstimadas>20</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </tarea>
+  <tarea Codigo="HAS21-LAB5">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Lab sobre ADO.NET</Descripcion>
+    <HEstimadas>20</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </tarea>
+  <tarea Codigo="HAS21-Test2001">
+    <CodAsig>HAS</CodAsig>
+    <Descripcion>Suspenso colectivo</Descripcion>
+    <HEstimadas>1</HEstimadas>
+    <Explotacion>false</Explotacion>
+    <TipoTarea>Examen</TipoTarea>
+  </tarea>
 </tareas>

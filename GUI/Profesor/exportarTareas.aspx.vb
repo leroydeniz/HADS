@@ -50,9 +50,7 @@ Public Class exportarTareas
 
         Try
             Dim tareasFiltradasDataSet As New DataSet("tareas")
-            'tareasFiltradasDataSet = New DataSet("tareas")
-            'OPCIONAL 2 -Añadir NameSpace
-            'tareasFiltradasDataSet.Namespace = "http://ji.ehu.es/has"
+
 
             Dim tareasFiltradas As DataTable = Session("tareasFiltradas")
             tareasFiltradas.Columns.Item(0).ColumnMapping = MappingType.Attribute
@@ -63,6 +61,11 @@ Public Class exportarTareas
 
             ' Guardo el archivo
             tareasFiltradasDataSet.WriteXml(Server.MapPath("../App_Data/" & Session("asignaturaElegida") & ".xml"))
+
+
+            'OPCIONAL 2 -Añadir NameSpace
+            'tareasFiltradasDataSet.Namespace = "http://ji.ehu.es/has"
+
 
             ' Descargo el archivo creado
             Response.ContentType = "application/octet-stream"

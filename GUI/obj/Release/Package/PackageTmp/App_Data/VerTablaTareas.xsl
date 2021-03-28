@@ -16,13 +16,13 @@
           <xsl:for-each select="./tarea">
             <tr>
               <td>
-                <xsl:value-of select="./@codigo"/>
+                <xsl:value-of select="./@Codigo"/>
               </td>
               <td>
-                <xsl:value-of select="./descripcion"/>
+                <xsl:value-of select="./Descripcion"/>
               </td>
               <td>
-                <xsl:value-of select="./hestimadas"/>
+                <xsl:value-of select="./HEstimadas"/>
               </td>
             </tr>
           </xsl:for-each>
