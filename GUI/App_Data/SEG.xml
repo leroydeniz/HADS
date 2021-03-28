@@ -1,31 +1,10 @@
 <?xml version="1.0" standalone="yes"?>
 <tareas>
-  <tarea Codigo="SEG20-Test1">
+  <tarea Codigo="SEG1-T4">
     <CodAsig>SEG</CodAsig>
-    <Descripcion>Test 12 de la asignatura</Descripcion>
-    <HEstimadas>3</HEstimadas>
-    <Explotacion>false</Explotacion>
+    <Descripcion>Desci segu</Descripcion>
+    <HEstimadas>6</HEstimadas>
+    <Explotacion>true</Explotacion>
     <TipoTarea>Examen</TipoTarea>
-  </tarea>
-  <tarea Codigo="SEG20-Test1666">
-    <CodAsig>SEG</CodAsig>
-    <Descripcion>SEG</Descripcion>
-    <HEstimadas>3</HEstimadas>
-    <Explotacion>true</Explotacion>
-    <TipoTarea>false</TipoTarea>
-  </tarea>
-  <tarea Codigo="SEG20-Trab1">
-    <CodAsig>SEG</CodAsig>
-    <Descripcion>Tareas del trabajo 1 de la asignatura</Descripcion>
-    <HEstimadas>10</HEstimadas>
-    <Explotacion>false</Explotacion>
-    <TipoTarea>Trabajo</TipoTarea>
-  </tarea>
-  <tarea Codigo="SEG20-Trab1666">
-    <CodAsig>SEG</CodAsig>
-    <Descripcion>SEG</Descripcion>
-    <HEstimadas>10</HEstimadas>
-    <Explotacion>true</Explotacion>
-    <TipoTarea>false</TipoTarea>
   </tarea>
 </tareas>

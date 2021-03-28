@@ -88,7 +88,7 @@
     <CodAsig>HAS</CodAsig>
     <Descripcion>Suspenso colectivo</Descripcion>
     <HEstimadas>1</HEstimadas>
-    <Explotacion>false</Explotacion>
+    <Explotacion>true</Explotacion>
     <TipoTarea>Examen</TipoTarea>
   </tarea>
 </tareas>

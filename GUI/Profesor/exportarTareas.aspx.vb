@@ -5,20 +5,36 @@ Imports System.Xml.Serialization
 Imports Newtonsoft.Json
 
 Public Class exportarTareas
+
     Inherits System.Web.UI.Page
     Dim conexion As SqlConnection = New SqlConnection("Server=tcp:jorgehads.database.windows.net,1433;Initial Catalog=HADS-Jorge;Persist Security Info=False;User ID=trabajo.jorge2000@gmail.com@jorgehads;Password=Marmota69;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
     Dim dataAdapter As New SqlDataAdapter()
     Dim tareasTabla = New DataTable
     Dim tareasDataSet As New DataSet()
+    Dim tareasFiltradasDataSet As New DataSet("tareas")
+    Dim tareasFiltradas As New DataTable("tarea")
+
+
 
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
         Response.AddHeader("REFRESH", "0;URL=inicioProfesor.aspx")
     End Sub
 
+
+
+
+
+
+
     Protected Sub LinkLogout_Click(sender As Object, e As EventArgs) Handles LinkLogout.Click
         Session.Abandon()
         Response.AddHeader("REFRESH", "0;URL=../login.aspx")
     End Sub
+
+
+
+
+
 
     Protected Sub DropDownList11_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList11.SelectedIndexChanged
 
@@ -41,31 +57,31 @@ Public Class exportarTareas
             GridView1.DataSource = tareasDataView
             GridView1.DataBind()
         Catch ex As Exception
-            Mensaje.Text = ex.Message
+            Mensaje.Text = "DEBUG: DropDownList11_SelectedIndexChanged --> " + ex.Message
         End Try
+
     End Sub
+
+
+
+
+
 
 
     Protected Sub ExportarXML_Click(sender As Object, e As EventArgs) Handles ExportarXML.Click
 
         Try
-            Dim tareasFiltradasDataSet As New DataSet("tareas")
 
-
-            Dim tareasFiltradas As DataTable = Session("tareasFiltradas")
+            tareasFiltradas = Session("tareasFiltradas")
             tareasFiltradas.Columns.Item(0).ColumnMapping = MappingType.Attribute
 
-            tareasFiltradasDataSet.Tables.Add(tareasFiltradas)
-            tareasFiltradas.TableName = "tarea"
-
+            Dim tablaCopy As New DataTable("tarea")
+            tablaCopy = tareasFiltradas.Copy()
+            tablaCopy.TableName = "tarea"
+            tareasFiltradasDataSet.Tables.Add(tablaCopy)
 
             ' Guardo el archivo
             tareasFiltradasDataSet.WriteXml(Server.MapPath("../App_Data/" & Session("asignaturaElegida") & ".xml"))
-
-
-            'OPCIONAL 2 -Añadir NameSpace
-            'tareasFiltradasDataSet.Namespace = "http://ji.ehu.es/has"
-
 
             ' Descargo el archivo creado
             Response.ContentType = "application/octet-stream"
@@ -74,12 +90,18 @@ Public Class exportarTareas
             Response.End()
 
         Catch ex As Exception
-            Mensaje.Text = ex.Message
+            Mensaje.Text = "DEBUG: ExportarXML_Click --> " + ex.Message
         End Try
 
     End Sub
 
+
+
+
+
+
     Protected Sub ExportarJSON_Click(sender As Object, e As EventArgs) Handles ExportarJSON.Click
+
         Dim tareasFiltradas As DataTable = Session("tareasFiltradas")
 
         Dim JSONString = String.Empty
@@ -95,8 +117,12 @@ Public Class exportarTareas
         Response.TransmitFile(Server.MapPath("../App_Data/" + Session("asignaturaelegida") + ".json"))
         Response.End()
 
-
     End Sub
+
+
+
+
+
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
@@ -131,11 +157,15 @@ Public Class exportarTareas
                     Session("tareasTabla") = tareasTabla
 
                 Catch ex As Exception
-                    Mensaje.Text = ex.Message
+                    Mensaje.Text = "DEBUG: Page_Load --> " + ex.Message
                 End Try
             End If
-
         End If
     End Sub
+
+
+
+
+
 
 End Class
