@@ -18,7 +18,7 @@ Public Class exportarTareas
 
 
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
-        Response.AddHeader("REFRESH", "0;URL=inicioProfesor.aspx")
+        Response.AddHeader("REFRESH", "0;URL=../inicioProfesor.aspx")
     End Sub
 
 
@@ -29,7 +29,7 @@ Public Class exportarTareas
 
     Protected Sub LinkLogout_Click(sender As Object, e As EventArgs) Handles LinkLogout.Click
         Session.Abandon()
-        Response.AddHeader("REFRESH", "0;URL=../login.aspx")
+        Response.AddHeader("REFRESH", "0;URL=../../login.aspx")
     End Sub
 
 
@@ -87,12 +87,12 @@ Public Class exportarTareas
             tareasFiltradasDataSet.Tables.Add(tablaCopy)
 
             ' Guardo el archivo
-            tareasFiltradasDataSet.WriteXml(Server.MapPath("../App_Data/" & Session("asignaturaElegida") & ".xml"))
+            tareasFiltradasDataSet.WriteXml(Server.MapPath("../../App_Data/" & Session("asignaturaElegida") & ".xml"))
 
             ' Descargo el archivo creado
             Response.ContentType = "application/octet-stream"
             Response.AppendHeader("Content-Disposition", "attachment; filename=" + Session("asignaturaElegida") + ".xml")
-            Response.TransmitFile(Server.MapPath("../App_Data/" + Session("asignaturaElegida") + ".xml"))
+            Response.TransmitFile(Server.MapPath("../../App_Data/" + Session("asignaturaElegida") + ".xml"))
             Response.End()
 
         Catch ex As Exception
@@ -148,7 +148,7 @@ Public Class exportarTareas
                     Session.Contents("asignaturaElegida") = DropDownList11.Text
 
                     ' 1 - SQL - Consulta de la tabla que trae
-                    Dim consulta As String = "SELECT Codigo, CodAsig, Descripcion, HEstimadas, Explotacion, TipoTarea FROM TareasGenericas WHERE CodAsig IN (SELECT DISTINCT CodAsig FROM crearTareasProfesor WHERE email = '" & Session("usuario") & "');"
+                    Dim consulta As String = "SELECT Codigo, CodAsig, Descripcion, HEstimadas, Explotacion, TipoTarea FROM TareasGenericas;"
 
                     ' 2 - Adapter - Ejecuta la consutla y establece la conexión
                     dataAdapter = New SqlDataAdapter(consulta, conexion)

@@ -3,7 +3,7 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If IsNothing(Session.Contents("usuario")) Then
-            Response.Redirect("login.aspx")
+            Response.Redirect("../login.aspx")
         End If
     End Sub
 
@@ -32,11 +32,10 @@
         ElseIf resultadoTmp = 3 Then
             RespuestaDelServidor.Text = "Contraseña cambiada correctamente. Será redirigido en 3 segundos..."
             If Session.Contents("tipo") = "Profesor" Then
-                Response.AddHeader("REFRESH", "3;URL=Profesor/inicioProfesor.aspx")
+                Response.AddHeader("REFRESH", "3;URL=../Profesor/inicioProfesor.aspx")
             Else
-                Response.AddHeader("REFRESH", "3;URL=Alumno/inicioAlumno.aspx")
+                Response.AddHeader("REFRESH", "3;URL=../Alumno/inicioAlumno.aspx")
             End If
-
         Else
             RespuestaDelServidor.Text = "Error desconocido."
         End If

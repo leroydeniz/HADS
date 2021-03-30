@@ -21,7 +21,7 @@ Public Class importarTareas
         End If
 
         If IsNothing(Session.Contents("usuario")) Then
-            Response.Redirect("../login.aspx")
+            Response.Redirect("../../login.aspx")
         Else
             usuarioText.Text = Session.Contents("usuario")
 
@@ -34,7 +34,7 @@ Public Class importarTareas
 
 
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
-        Response.AddHeader("REFRESH", "0;URL=inicioProfesor.aspx")
+        Response.AddHeader("REFRESH", "0;URL=../inicioProfesor.aspx")
     End Sub
 
 
@@ -45,7 +45,7 @@ Public Class importarTareas
 
     Protected Sub LinkLogout_Click(sender As Object, e As EventArgs) Handles LinkLogout.Click
         Session.Abandon()
-        Response.AddHeader("REFRESH", "0;URL=../login.aspx")
+        Response.AddHeader("REFRESH", "0;URL=../../login.aspx")
     End Sub
 
 
@@ -60,8 +60,8 @@ Public Class importarTareas
             Button1.Enabled = False
         Else
             Button1.Enabled = True
-            Xml1.DocumentSource = Server.MapPath("../App_Data/" & DropDownList11.Text & ".xml")
-            Xml1.TransformSource = Server.MapPath("../App_Data/VerTablaTareas.xsl")
+            Xml1.DocumentSource = Server.MapPath("../../App_Data/" & DropDownList11.Text & ".xml")
+            Xml1.TransformSource = Server.MapPath("../../App_Data/VerTablaTareas.xsl")
             result.Text = ""
         End If
 
@@ -102,7 +102,7 @@ Public Class importarTareas
             xmldoc = New XmlDocument()
 
             ' 9 - Cargo el contenido del archivo XML en una variable de tipo XmlDocument
-            xmldoc.Load(Server.MapPath("../App_Data/" & DropDownList11.Text & ".xml"))
+            xmldoc.Load(Server.MapPath("../../App_Data/" & DropDownList11.Text & ".xml"))
 
             ' 10 - Creo un nuevo XmlNodeList que tendrá la lista de todos los nodos del DOM tareas -> tarea *
             Dim tareasList As XmlNodeList

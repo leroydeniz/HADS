@@ -19,7 +19,7 @@ Public Class importarTareasDS
         End If
 
         If IsNothing(Session.Contents("usuario")) Then
-            Response.Redirect("../login.aspx")
+            Response.Redirect("../../login.aspx")
         Else
             usuarioText.Text = Session.Contents("usuario")
 
@@ -32,7 +32,7 @@ Public Class importarTareasDS
 
 
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
-        Response.AddHeader("REFRESH", "0;URL=inicioProfesor.aspx")
+        Response.AddHeader("REFRESH", "0;URL=../inicioProfesor.aspx")
     End Sub
 
 
@@ -57,8 +57,8 @@ Public Class importarTareasDS
             Button1.Enabled = False
         Else
             Button1.Enabled = True
-            Xml1.DocumentSource = Server.MapPath("../App_Data/" & DropDownList11.Text & ".xml")
-            Xml1.TransformSource = Server.MapPath("../App_Data/VerTablaTareas.xsl")
+            Xml1.DocumentSource = Server.MapPath("../../App_Data/" & DropDownList11.Text & ".xml")
+            Xml1.TransformSource = Server.MapPath("../../App_Data/VerTablaTareas.xsl")
             result.Text = ""
         End If
     End Sub
@@ -75,8 +75,8 @@ Public Class importarTareasDS
         Dim da As SqlDataAdapter = New SqlDataAdapter("select * from TareasGenericas WHERE 0=1", conexion)
             Dim commandBuilder As New SqlCommandBuilder(da)
             Dim ds As New DataSet()
-            ds.ReadXml(Server.MapPath("../App_Data/" & DropDownList11.Text & ".xml"))
-            Dim dt As New DataTable
+        ds.ReadXml(Server.MapPath("../../App_Data/" & DropDownList11.Text & ".xml"))
+        Dim dt As New DataTable
         dt = ds.Tables(0)
         Dim dr As DataRow
             For Each dr In dt.Rows

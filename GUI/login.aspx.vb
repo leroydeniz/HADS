@@ -29,19 +29,39 @@
         '2 - Usuario registrado sin verificar'
         '3 - Usuario no existe'
 
-
         If resultadoTmp = 1 Then
 
             'Se trae la información del usuario de la base de datos para cargar en la sesión'
             If guardarDatos(objController, pEmail) Then
                 'Elige a qué perfil enviarlo'
                 BtnLogin.Enabled = False
+
                 RespuestaDelServidor.Text = "Bienvenido! Será redirigido en 3 segundos..."
-                If Session.Contents("tipo") = "Profesor" Then
-                    Response.AddHeader("REFRESH", "0;URL=Profesor/inicioProfesor.aspx")
-                Else
-                    Response.AddHeader("REFRESH", "0;URL=Alumno/inicioAlumno.aspx")
+
+                If pEmail = "admin@ehu.es" Then
+                    System.Web.Security.FormsAuthentication.SetAuthCookie("admin@ehu.es", True)
+                    Response.Redirect("Admin/registroLogin.aspx")
+                    Exit Sub
                 End If
+
+                If pEmail = "vadillo@ehu.es" Then
+                    System.Web.Security.FormsAuthentication.SetAuthCookie("vadillo@ehu.es", True)
+                    Response.Redirect("Profesor/inicioProfesor.aspx")
+                    Exit Sub
+                End If
+
+                If Session.Contents("tipo") = "Profesor" Then
+                    System.Web.Security.FormsAuthentication.SetAuthCookie("Profesor", True)
+                    Response.Redirect("Profesor/inicioProfesor.aspx")
+                    Exit Sub
+                End If
+
+                If Session.Contents("tipo") = "Alumno" Then
+                    System.Web.Security.FormsAuthentication.SetAuthCookie("Alumno", True)
+                    Response.Redirect("Alumno/inicioalumno.aspx")
+                    Exit Sub
+                End If
+
             Else
                 RespuestaDelServidor.Text = "Error al crear el perfil de sesion."
             End If
@@ -50,8 +70,8 @@
         ElseIf resultadoTmp = 2 Then
             BtnLogin.Enabled = False
             Session.Contents("usuario") = pEmail
-            RespuestaDelServidor.Text = "Debe verificar el usuario antes de continuar. Será redirigido en 3 segundos..."
-            Response.AddHeader("REFRESH", "3;URL=verificarCuenta.aspx")
+            RespuestaDelServidor.Text = "Debe verificar el usuario antes de continuar. Será redirigido en 2 segundos..."
+            Response.AddHeader("REFRESH", "2;URL=Private/verificarCuenta.aspx")
         ElseIf resultadoTmp = 3 Then
             RespuestaDelServidor.Text = "Usuario o contraseña incorrectos."
         Else

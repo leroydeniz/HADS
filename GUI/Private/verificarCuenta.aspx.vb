@@ -4,7 +4,7 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If IsNothing(Session.Contents("usuario")) Then
             Response.Write("<script>alert('Usuario no logueado.')</script>")
-            Response.Redirect("login.aspx")
+            Response.Redirect("../login.aspx")
         End If
 
         Dim objController = New LAB.Controller
@@ -12,9 +12,9 @@
         If objController.cuentaVerificada(Session.Contents("usuario")) = 1 Then
             Response.Write("<script>alert('Cuenta ya verificada.')</script>")
             If Session.Contents("tipo") = "Profesor" Then
-                Response.AddHeader("REFRESH", "0;URL=Profesor/inicioProfesor.aspx")
+                Response.AddHeader("REFRESH", "0;URL=../Profesor/inicioProfesor.aspx")
             Else
-                Response.AddHeader("REFRESH", "0;URL=Alumno/inicioAlumno.aspx")
+                Response.AddHeader("REFRESH", "0;URL=../Alumno/inicioAlumno.aspx")
             End If
         End If
     End Sub
@@ -34,9 +34,9 @@
         If resultadoTmp = 1 Then
             RespuestaDelServidor.Text = "Usuario ya confirmado!"
             If Session.Contents("tipo") = "Profesor" Then
-                Response.AddHeader("REFRESH", "3;URL=Profesor/inicioProfesor.aspx")
+                Response.AddHeader("REFRESH", "3;URL=../Profesor/inicioProfesor.aspx")
             Else
-                Response.AddHeader("REFRESH", "3;URL=Alumno/inicioAlumno.aspx")
+                Response.AddHeader("REFRESH", "3;URL=../Alumno/inicioAlumno.aspx")
             End If
         ElseIf resultadoTmp = 0 Then
             RespuestaDelServidor.Text = "Error de conexión a la base de datos."
@@ -45,9 +45,9 @@
         ElseIf resultadoTmp = 3 Then
             RespuestaDelServidor.Text = "Cuenta verificada correctamente."
             If Session.Contents("tipo") = "Profesor" Then
-                Response.AddHeader("REFRESH", "3;URL=Profesor/inicioProfesor.aspx")
+                Response.AddHeader("REFRESH", "3;URL=../Profesor/inicioProfesor.aspx")
             Else
-                Response.AddHeader("REFRESH", "3;URL=Alumno/inicioAlumno.aspx")
+                Response.AddHeader("REFRESH", "3;URL=../Alumno/inicioAlumno.aspx")
             End If
         ElseIf resultadoTmp = 4 Then
             RespuestaDelServidor.Text = "Error de actualización en la base de datos."
