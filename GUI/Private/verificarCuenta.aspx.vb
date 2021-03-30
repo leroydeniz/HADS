@@ -1,11 +1,8 @@
 ﻿Public Class verificarPassword
     Inherits System.Web.UI.Page
+    Dim objController = New LAB.Controller
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If IsNothing(Session.Contents("usuario")) Then
-            Response.Write("<script>alert('Usuario no logueado.')</script>")
-            Response.Redirect("../login.aspx")
-        End If
 
         Dim objController = New LAB.Controller
 
@@ -45,8 +42,10 @@
         ElseIf resultadoTmp = 3 Then
             RespuestaDelServidor.Text = "Cuenta verificada correctamente."
             If Session.Contents("tipo") = "Profesor" Then
+                objController.registrarMovimiento(Session("usuario"), Session("tipo"), "Cuenta Profesor verificada ")
                 Response.AddHeader("REFRESH", "3;URL=../Profesor/inicioProfesor.aspx")
             Else
+                objController.registrarMovimiento(Session("usuario"), Session("tipo"), "Cuenta Alumno verificada ")
                 Response.AddHeader("REFRESH", "3;URL=../Alumno/inicioAlumno.aspx")
             End If
         ElseIf resultadoTmp = 4 Then

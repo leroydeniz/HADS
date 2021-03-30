@@ -23,6 +23,7 @@
         '3 - Registro correcto'
 
         If resultadoTmp = 0 Then
+            objController.registrarMovimiento(pUser, Session("tipo"), "Intento de registro")
             RespuestaDelServidor.Text = "Usuario ya existe! Será redirigido en 3 segundos..."
             Response.AddHeader("REFRESH", "3;URL=login.aspx")
         ElseIf resultadoTmp = 1 Then
@@ -31,6 +32,7 @@
             RespuestaDelServidor.Text = "Error de inserción en al BD."
             Response.Redirect("verificar.aspx")
         ElseIf resultadoTmp = 3 Then
+            objController.registrarMovimiento(pUser, Session("tipo"), "Registro")
             RespuestaDelServidor.Text = "Usuario registrado correctamente. Será redirigido en 3 segundos..."
             Response.AddHeader("REFRESH", "3;URL=login.aspx")
         ElseIf resultadoTmp = 4 Then

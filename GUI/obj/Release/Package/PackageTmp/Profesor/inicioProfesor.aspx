@@ -30,37 +30,31 @@
                     
                     <asp:TableRow>
                         <asp:TableCell>
-                            2. <asp:LinkButton ID="LinkImportar" runat="server" PostBackUrl="importarTareas.aspx">Importar tareas</asp:LinkButton>
+                            2. <asp:LinkButton ID="LinkImportar" runat="server" PostBackUrl="XML/importarTareas.aspx">Importar tareas</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
                     
                     <asp:TableRow>
                         <asp:TableCell>
-                            3. <asp:LinkButton ID="LinkImportarDataSet" runat="server" PostBackUrl="importarTareasDS.aspx">Importar tareas con Data Set</asp:LinkButton>
+                            3. <asp:LinkButton ID="LinkImportarDataSet" runat="server" PostBackUrl="XML/importarTareasDS.aspx">Importar tareas con Data Set</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
                     
                     <asp:TableRow>
                         <asp:TableCell>
-                            4. <asp:LinkButton ID="LinkExportar" runat="server" PostBackUrl="exportarTareas.aspx">Exportar tareas</asp:LinkButton>
+                            4. <asp:LinkButton ID="LinkExportar" runat="server" PostBackUrl="XML/exportarTareas.aspx">Exportar tareas</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
                     
                     <asp:TableRow>
                         <asp:TableCell>
-                            5. Ver estadísticas
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            6. <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="../cambiarPassword.aspx">Cambiar contraseña</asp:LinkButton>
+                            5. <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="../Private/cambiarPassword.aspx">Cambiar contraseña</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
 
                     <asp:TableRow>
                         <asp:TableCell>
-                            7. <asp:LinkButton ID="LinkLogout" runat="server">Logout</asp:LinkButton>
+                            6. <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="../Private/logout.aspx">Logout</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>

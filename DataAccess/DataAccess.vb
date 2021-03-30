@@ -420,6 +420,22 @@ Public Class DataAccess
         Return True
     End Function
 
+    Public Function registrarMovimiento(pEmail As String, pRol As String, pAccion As String) As String
+        Try
+            If openConnection() Then
+                Dim st As String = "INSERT INTO Registro(email, fecha, rol, accion) VALUES ('" & pEmail & "', GETDATE(), '" & pRol & "', '" & pAccion & "');"
+                comando = New SqlCommand(st, conexion)
+                comando.ExecuteNonQuery()
+                closeConnection()
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return ex.Message
+        End Try
+    End Function
+
     Public Function insertarTareaXXXXX(codigo As String, descripcion As String, asignatura As String, horasEstimadas As String, tipoTarea As String) As Boolean
         Try
             If openConnection() Then

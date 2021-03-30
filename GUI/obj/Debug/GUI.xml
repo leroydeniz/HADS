@@ -46,6 +46,60 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:GUI.RegistroLogin._usuarioText">
+<summary>
+Control usuarioText.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.RegistroLogin._DropDownList1">
+<summary>
+Control DropDownList1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.RegistroLogin._SqlDataSource1">
+<summary>
+Control SqlDataSource1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.RegistroLogin._GridView1">
+<summary>
+Control GridView1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.RegistroLogin._VolverAlMenu">
+<summary>
+Control VolverAlMenu.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.RegistroLogin._LinkButton1">
+<summary>
+Control LinkButton1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:GUI.inicioAlumno._form2">
 <summary>
 Control form2.
@@ -190,9 +244,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.InstanciarTarea._LinkLogout">
+<member name="F:GUI.InstanciarTarea._LinkButton1">
 <summary>
-Control LinkLogout.
+Control LinkButton1.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -253,9 +307,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.TareasAlumnosOcultandoColumnas._LinkLogout">
+<member name="F:GUI.TareasAlumnosOcultandoColumnas._LinkButton1">
 <summary>
-Control LinkLogout.
+Control LinkButton1.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -496,9 +550,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.crearTareas._LinkLogout">
+<member name="F:GUI.crearTareas._LinkButton1">
 <summary>
-Control LinkLogout.
+Control LinkButton1.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -586,9 +640,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.exportarTareas._LinkLogout">
+<member name="F:GUI.exportarTareas._LinkButton1">
 <summary>
-Control LinkLogout.
+Control LinkButton1.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -667,9 +721,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.importarTareasDS._LinkLogout">
+<member name="F:GUI.importarTareasDS._LinkButton1">
 <summary>
-Control LinkLogout.
+Control LinkButton1.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -748,9 +802,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.importarTareas._LinkLogout">
+<member name="F:GUI.importarTareas._LinkButton1">
 <summary>
-Control LinkLogout.
+Control LinkButton1.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -820,9 +874,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.inicioProfesor._LinkLogout">
+<member name="F:GUI.inicioProfesor._LinkButton1">
 <summary>
-Control LinkLogout.
+Control LinkButton1.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -964,9 +1018,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.InsertarNuevaTarea._LinkLogout">
+<member name="F:GUI.InsertarNuevaTarea._LinkButton1">
 <summary>
-Control LinkLogout.
+Control LinkButton1.
 </summary>
 <remarks>
 Campo generado automáticamente.

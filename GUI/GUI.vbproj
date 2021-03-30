@@ -95,12 +95,11 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\RegistroLogin.aspx" />
+    <Content Include="Admin\registroLogin.aspx" />
     <Content Include="Alumno\inicioAlumno.aspx" />
     <Content Include="Alumno\InstanciarTarea.aspx" />
     <Content Include="Alumno\TareasAlumnosOcultandoColumnas.aspx" />
     <Content Include="App_Data\SEG.xml" />
-    <Content Include="Alumno\Web.config" />
     <Content Include="Private\cambiarPassword.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Private\logout.aspx" />
@@ -118,11 +117,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\RegistroLogin.aspx.designer.vb">
-      <DependentUpon>RegistroLogin.aspx</DependentUpon>
+    <Compile Include="Admin\registroLogin.aspx.designer.vb">
+      <DependentUpon>registroLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\RegistroLogin.aspx.vb">
-      <DependentUpon>RegistroLogin.aspx</DependentUpon>
+    <Compile Include="Admin\registroLogin.aspx.vb">
+      <DependentUpon>registroLogin.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Alumno\inicioAlumno.aspx.designer.vb">
@@ -273,7 +272,6 @@
     <None Include="App_Data\tareas.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Profesor\XML\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

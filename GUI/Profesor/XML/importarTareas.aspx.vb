@@ -5,6 +5,7 @@ Public Class importarTareas
     Inherits System.Web.UI.Page
     Dim conexion As SqlConnection = New SqlConnection("Server=tcp:jorgehads.database.windows.net,1433;Initial Catalog=HADS-Jorge;Persist Security Info=False;User ID=trabajo.jorge2000@gmail.com@jorgehads;Password=Marmota69;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
     Dim dataAdapter As New SqlDataAdapter()
+    Dim objController = New LAB.Controller
 
 
 
@@ -20,12 +21,8 @@ Public Class importarTareas
             Button1.Enabled = True
         End If
 
-        If IsNothing(Session.Contents("usuario")) Then
-            Response.Redirect("../../login.aspx")
-        Else
-            usuarioText.Text = Session.Contents("usuario")
+        usuarioText.Text = Session.Contents("usuario")
 
-        End If
     End Sub
 
 
@@ -36,22 +33,6 @@ Public Class importarTareas
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
         Response.AddHeader("REFRESH", "0;URL=../inicioProfesor.aspx")
     End Sub
-
-
-
-
-
-
-
-    Protected Sub LinkLogout_Click(sender As Object, e As EventArgs) Handles LinkLogout.Click
-        Session.Abandon()
-        Response.AddHeader("REFRESH", "0;URL=../../login.aspx")
-    End Sub
-
-
-
-
-
 
 
     Protected Sub DropDownList11_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList11.SelectedIndexChanged
@@ -140,11 +121,13 @@ Public Class importarTareas
             ' 16 - Actualizo el dataset y verifico si hubieron cambios en la actualización
             Dim cantidadActualizadas = dataAdapter.Update(tareasDataSet)
             If cantidadActualizadas <> 0 Then
+                objController.registrarMovimiento(Session("usuario"), Session("tipo"), "Importación correcta XML")
                 result.Text = "TAREAS IMPORTADAS CORRECTAMENTE"
             End If
         Catch ex As Exception
             result.Text = ex.Message
-        result.Text = "ERROR. ALGUNA DE LAS TAREAS YA HA SIDO IMPORTADAS"
+            objController.registrarMovimiento(Session("usuario"), Session("tipo"), "Importación incorrecta XML")
+            result.Text = "ERROR. ALGUNA DE LAS TAREAS YA HA SIDO IMPORTADAS"
         End Try
 
     End Sub

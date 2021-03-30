@@ -49,4 +49,11 @@
         Dim objDataAccess = New DataAccess.DataAccess
         getTablaTareas = getTablaTareas(codigo)
     End Function
+
+    Public Function registrarMovimiento(pEmail As String, pRol As String, pAccion As String) As String
+        Dim objDataAccess = New DataAccess.DataAccess
+        registrarMovimiento = objDataAccess.registrarMovimiento(pEmail, pRol, pAccion)
+    End Function
+
+
 End Class

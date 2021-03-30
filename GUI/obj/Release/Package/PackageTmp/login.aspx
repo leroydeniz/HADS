@@ -62,7 +62,7 @@
                             <br />
                             <asp:LinkButton ID="LinkRegistro" runat="server" PostBackUrl="registro.aspx">Quiero registrarme</asp:LinkButton>
                             <br />
-                            <asp:LinkButton ID="LinkRecuperarContrasena" runat="server" PostBackUrl="./recuperarPassword.aspx">Recuperar contraseña</asp:LinkButton>
+                            <asp:LinkButton ID="LinkRecuperarContrasena" runat="server" PostBackUrl="recuperarPassword.aspx">Recuperar contraseña</asp:LinkButton>
                             <br />
                             <br />
                         </asp:TableCell>
@@ -81,7 +81,7 @@
                             <br />
                             <br />
                             <br />
-                            <br /><asp:Label ID="Label1" runat="server" style="text-align: center" Text="Label"> v6.1.6</asp:Label>
+                            <br /><asp:Label ID="Label1" runat="server" style="text-align: center" Text="Label"> v6.3.5</asp:Label>
                             <br />
                         </asp:TableCell>
                     </asp:TableRow>

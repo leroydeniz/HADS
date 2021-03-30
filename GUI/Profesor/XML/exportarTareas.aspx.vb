@@ -13,6 +13,7 @@ Public Class exportarTareas
     Dim tareasDataSet As New DataSet()
     Dim tareasFiltradasDataSet As New DataSet("tareas")
     Dim tareasFiltradas As New DataTable("tarea")
+    Dim objController = New LAB.Controller
 
 
 
@@ -20,19 +21,6 @@ Public Class exportarTareas
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
         Response.AddHeader("REFRESH", "0;URL=../inicioProfesor.aspx")
     End Sub
-
-
-
-
-
-
-
-    Protected Sub LinkLogout_Click(sender As Object, e As EventArgs) Handles LinkLogout.Click
-        Session.Abandon()
-        Response.AddHeader("REFRESH", "0;URL=../../login.aspx")
-    End Sub
-
-
 
 
 
@@ -89,6 +77,8 @@ Public Class exportarTareas
             ' Guardo el archivo
             tareasFiltradasDataSet.WriteXml(Server.MapPath("../../App_Data/" & Session("asignaturaElegida") & ".xml"))
 
+            objController.registrarMovimiento(Session("usuario"), Session("tipo"), "Exportación XML")
+
             ' Descargo el archivo creado
             Response.ContentType = "application/octet-stream"
             Response.AppendHeader("Content-Disposition", "attachment; filename=" + Session("asignaturaElegida") + ".xml")
@@ -113,14 +103,16 @@ Public Class exportarTareas
         Dim JSONString = String.Empty
         JSONString = JsonConvert.SerializeObject(tareasFiltradas)
 
-        Dim objWriter As New System.IO.StreamWriter(Server.MapPath("../App_Data/" + Session("asignaturaElegida") + ".json"))
+        Dim objWriter As New System.IO.StreamWriter(Server.MapPath("../../App_Data/" + Session("asignaturaElegida") + ".json"))
         objWriter.Write(JSONString)
         objWriter.Close()
+
+        objController.registrarMovimiento(Session("usuario"), Session("tipo"), "Exportación JSON")
 
         ' descargo el archivo creado
         Response.ContentType = "application/octet-stream"
         Response.AppendHeader("content-disposition", "attachment; filename=" + Session("asignaturaelegida") + ".json")
-        Response.TransmitFile(Server.MapPath("../App_Data/" + Session("asignaturaelegida") + ".json"))
+        Response.TransmitFile(Server.MapPath("../../App_Data/" + Session("asignaturaelegida") + ".json"))
         Response.End()
 
     End Sub
@@ -135,43 +127,39 @@ Public Class exportarTareas
         ExportarJSON.Enabled = True
         ExportarXML.Enabled = True
 
-        If IsNothing(Session.Contents("usuario")) Then
-            Response.Redirect("../login.aspx")
-        Else
-            usuarioText.Text = Session.Contents("usuario")
+        usuarioText.Text = Session.Contents("usuario")
             Session.Contents("asignaturaElegida") = DropDownList11.Text
 
-            If Not Page.IsPostBack Then
-                ExportarXML.Enabled = False
-                ExportarJSON.Enabled = False
-                Try
-                    Session.Contents("asignaturaElegida") = DropDownList11.Text
+        If Not Page.IsPostBack Then
+            ExportarXML.Enabled = False
+            ExportarJSON.Enabled = False
+            Try
+                Session.Contents("asignaturaElegida") = DropDownList11.Text
 
-                    ' 1 - SQL - Consulta de la tabla que trae
-                    Dim consulta As String = "SELECT Codigo, CodAsig, Descripcion, HEstimadas, Explotacion, TipoTarea FROM TareasGenericas;"
+                ' 1 - SQL - Consulta de la tabla que trae
+                Dim consulta As String = "SELECT Codigo, CodAsig, Descripcion, HEstimadas, Explotacion, TipoTarea FROM TareasGenericas;"
 
-                    ' 2 - Adapter - Ejecuta la consutla y establece la conexión
-                    dataAdapter = New SqlDataAdapter(consulta, conexion)
+                ' 2 - Adapter - Ejecuta la consutla y establece la conexión
+                dataAdapter = New SqlDataAdapter(consulta, conexion)
 
-                    ' 3 - SQLCommandBuilder - Establece automáticamente las consultas de AMB
-                    Dim tareasBuilder As New SqlCommandBuilder(dataAdapter)
+                ' 3 - SQLCommandBuilder - Establece automáticamente las consultas de AMB
+                Dim tareasBuilder As New SqlCommandBuilder(dataAdapter)
 
 
-                    dataAdapter.Fill(tareasDataSet)
+                dataAdapter.Fill(tareasDataSet)
 
-                    tareasTabla = tareasDataSet.Tables(0)
+                tareasTabla = tareasDataSet.Tables(0)
 
-                    'GridView1.DataSource = tareasTabla
-                    'GridView1.DataBind()
+                'GridView1.DataSource = tareasTabla
+                'GridView1.DataBind()
 
-                    Session("dataAdapter") = dataAdapter
-                    Session("tareasDataSet") = tareasDataSet
-                    Session("tareasTabla") = tareasTabla
+                Session("dataAdapter") = dataAdapter
+                Session("tareasDataSet") = tareasDataSet
+                Session("tareasTabla") = tareasTabla
 
-                Catch ex As Exception
-                    Mensaje.Text = "DEBUG: Page_Load --> " + ex.Message
-                End Try
-            End If
+            Catch ex As Exception
+                Mensaje.Text = "DEBUG: Page_Load --> " + ex.Message
+            End Try
         End If
     End Sub
 

@@ -52,7 +52,7 @@
                             <asp:GridView ID="GridView2" runat="server"> </asp:GridView>
                         </asp:TableCell></asp:TableRow><asp:TableRow>
                         <asp:TableCell>
-                            <br/><br/><br/><asp:LinkButton ID="VerTareas" runat="server">Ver tareas</asp:LinkButton> &nbsp;&nbsp;| &nbsp;&nbsp;<asp:LinkButton ID="VolverAlMenu" runat="server">Volver al menú</asp:LinkButton> &nbsp;&nbsp;| &nbsp;&nbsp;<asp:LinkButton ID="LinkLogout" runat="server">Logout</asp:LinkButton>
+                            <br/><br/><br/><asp:LinkButton ID="VerTareas" runat="server">Ver tareas</asp:LinkButton> &nbsp;&nbsp;| &nbsp;&nbsp;<asp:LinkButton ID="VolverAlMenu" runat="server">Volver al menú</asp:LinkButton> &nbsp;&nbsp;| &nbsp;&nbsp;<asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="../Private/logout.aspx">Logout</asp:LinkButton>
                         </asp:TableCell></asp:TableRow></asp:Table></div></form></body></html>
 
 

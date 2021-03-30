@@ -16,49 +16,47 @@ Public Class InstanciarTarea
     Dim tareas As New DataSet
     Dim tareasTabla As New DataTable
     Dim tareasDataView As DataView
+    Dim objController = New LAB.Controller
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        If IsNothing(Session.Contents("usuario")) Then
-            Response.Redirect("../login.aspx")
-        Else
-            usuarioText.Text = Session.Contents("usuario")
+        usuarioText.Text = Session.Contents("usuario")
 
-            datos = Session("datosFila")
-            usuario = Session("usuario")
-            Codigo = datos.Cells(1).Text
-            Descripcion = datos.Cells(2).Text
-            CodAsig = datos.Cells(3).Text
-            HEstimadas = datos.Cells(5).Text
-            tipoTarea = datos.Cells(4).Text
+        datos = Session("datosFila")
+        usuario = Session("usuario")
+        Codigo = datos.Cells(1).Text
+        Descripcion = datos.Cells(2).Text
+        CodAsig = datos.Cells(3).Text
+        HEstimadas = datos.Cells(5).Text
+        tipoTarea = datos.Cells(4).Text
 
-            TBusuario.Text = usuario
-            TBtarea.Text = Codigo
-            TBhorasEstimadas.Text = HEstimadas
+        TBusuario.Text = usuario
+        TBtarea.Text = Codigo
+        TBhorasEstimadas.Text = HEstimadas
 
-            ' 1 - SQL - Consulta de la tabla que trae
-            Dim consulta As String = "SELECT * from EstudiantesTareas where Email = '" & usuario & "';"
+        ' 1 - SQL - Consulta de la tabla que trae
+        Dim consulta As String = "SELECT * from EstudiantesTareas where Email = '" & usuario & "';"
 
-            ' 2 - Adapter - Establece la conexión y ejecuta el select
-            tareasAdapter = New SqlDataAdapter(consulta, conexion)
+        ' 2 - Adapter - Establece la conexión y ejecuta el select
+        tareasAdapter = New SqlDataAdapter(consulta, conexion)
 
-            ' 3 - Fill - Trae los datos al dataset en memoria
-            tareasAdapter.Fill(tareas)
+        ' 3 - Fill - Trae los datos al dataset en memoria
+        tareasAdapter.Fill(tareas)
 
-            ' 4 - Tables - para elegir la tabla dentro del DataSet
-            tareasTabla = tareas.Tables(0)
+        ' 4 - Tables - para elegir la tabla dentro del DataSet
+        tareasTabla = tareas.Tables(0)
 
-            ' 5 - SQLCommandBuilder - Establece automáticamente las consultas de INSERT, UPDATE y DELETE
-            Dim tareasBuilder As New SqlCommandBuilder(tareasAdapter)
+        ' 5 - SQLCommandBuilder - Establece automáticamente las consultas de INSERT, UPDATE y DELETE
+        Dim tareasBuilder As New SqlCommandBuilder(tareasAdapter)
 
-            GridView2.DataSource = tareasTabla
-            GridView2.DataBind()
+        GridView2.DataSource = tareasTabla
+        GridView2.DataBind()
 
-            ' 7 - Se guardan en sesión los datos que se reutilizarán
-            Session("tareasTabla") = tareasTabla
-            Session("tareasAdapter") = tareasAdapter
-            Session("tareasDataSet") = tareas
-        End If
+        ' 7 - Se guardan en sesión los datos que se reutilizarán
+        Session("tareasTabla") = tareasTabla
+        Session("tareasAdapter") = tareasAdapter
+        Session("tareasDataSet") = tareas
+
 
     End Sub
 
@@ -81,6 +79,7 @@ Public Class InstanciarTarea
             Session("tareasAdapter").Update(tareas)
             tareas.AcceptChanges()
 
+            objController.registrarMovimiento(Session("usuario"), Session("tipo"), "Tarea instanciada")
             RespuestaDelServidor.Text = "Tarea instanciada correctamente."
             Response.AddHeader("REFRESH", "0;URL=InstanciarTarea.aspx")
         Catch ex As Exception
@@ -96,10 +95,6 @@ Public Class InstanciarTarea
     End Sub
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
         Response.AddHeader("REFRESH", "0;URL=inicioAlumno.aspx")
-    End Sub
-    Protected Sub LinkLogout_Click(sender As Object, e As EventArgs) Handles LinkLogout.Click
-        Session.Abandon()
-        Response.AddHeader("REFRESH", "0;URL=../login.aspx")
     End Sub
 
 

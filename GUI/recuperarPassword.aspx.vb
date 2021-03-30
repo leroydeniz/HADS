@@ -24,6 +24,7 @@
         ElseIf resultadoTmp = 2 Then
             RespuestaDelServidor.Text = "Error de actualización de contraseña."
         ElseIf resultadoTmp = 3 Then
+            objController.registrarMovimiento(pEmail, Session("tipo"), "Contraseña cambiada")
             RespuestaDelServidor.Text = "Contraseña cambiada y mail enviado. Será redirigido en 3 segundos..."
             Response.AddHeader("REFRESH", "3;URL=login.aspx")
         ElseIf resultadoTmp = 4 Then

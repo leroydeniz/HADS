@@ -36,6 +36,9 @@
                 'Elige a qué perfil enviarlo'
                 BtnLogin.Enabled = False
 
+                ' Registro cada acceso en DB
+                objController.registrarMovimiento(pEmail, Session("tipo"), "Login")
+
                 RespuestaDelServidor.Text = "Bienvenido! Será redirigido en 3 segundos..."
 
                 If pEmail = "admin@ehu.es" Then

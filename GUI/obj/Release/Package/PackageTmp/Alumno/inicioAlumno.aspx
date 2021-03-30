@@ -29,13 +29,13 @@
                     
                     <asp:TableRow>
                         <asp:TableCell>
-                            2. <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="../cambiarPassword.aspx">Cambiar contraseña</asp:LinkButton>
+                            2. <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="../Private/cambiarPassword.aspx">Cambiar contraseña</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
 
                     <asp:TableRow>
                         <asp:TableCell>
-                            3. <asp:LinkButton ID="LinkLogout" runat="server">Logout</asp:LinkButton>
+                            3. <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="../Private/logout.aspx">Logout</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>

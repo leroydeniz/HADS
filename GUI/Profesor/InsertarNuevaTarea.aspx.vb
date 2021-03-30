@@ -10,11 +10,7 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         vAsignatura = DropDownList1.Text
         vTipoTarea = DropDownList2.Text
-        If IsNothing(Session.Contents("usuario")) Then
-            Response.Redirect("../login.aspx")
-        Else
-            usuarioText.Text = Session.Contents("usuario")
-        End If
+        usuarioText.Text = Session.Contents("usuario")
     End Sub
 
     Protected Sub BtnAñadirTarea_Click(sender As Object, e As EventArgs) Handles BtnAñadirTarea.Click
@@ -23,6 +19,7 @@
         vHorasEstimadas = horasEstimadas.Text
 
         If objController.insertarTarea(vCodigo, vDescripcion, vAsignatura, vHorasEstimadas, vTipoTarea) Then
+            objController.registrarMovimiento(Session("usuario"), Session("tipo"), "Insertar nueva tarea")
             Label0.Text = "Pregunta introducida correctamente"
         Else
             Label0.Text = "Error al introducir la pregunta"
@@ -38,10 +35,7 @@
         vTipoTarea = DropDownList2.Text
     End Sub
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
-        Response.AddHeader("REFRESH", "1;URL=inicioProfesor.aspx")
+        Response.AddHeader("REFRESH", "0;URL=inicioProfesor.aspx")
     End Sub
-    Protected Sub LinkLogout_Click(sender As Object, e As EventArgs) Handles LinkLogout.Click
-        Session.Abandon()
-        Response.AddHeader("REFRESH", "1;URL=../login.aspx")
-    End Sub
+
 End Class

@@ -61,8 +61,5 @@ Public Class TareasAlumnosOcultandoColumnas
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
         Response.AddHeader("REFRESH", "0;URL=inicioAlumno.aspx")
     End Sub
-    Protected Sub LinkLogout_Click(sender As Object, e As EventArgs) Handles LinkLogout.Click
-        Session.Abandon()
-        Response.AddHeader("REFRESH", "0;URL=../login.aspx")
-    End Sub
+
 End Class

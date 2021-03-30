@@ -5,12 +5,7 @@ Public Class crearTareas
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Session.Contents("asignaturaElegida") = DropDownList1.Text
-
-        If IsNothing(Session.Contents("usuario")) Then
-            Response.Redirect("../login.aspx")
-        Else
-            usuarioText.Text = Session.Contents("usuario")
-        End If
+        usuarioText.Text = Session.Contents("usuario")
     End Sub
 
     Protected Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList1.SelectedIndexChanged
@@ -24,8 +19,5 @@ Public Class crearTareas
     Protected Sub VolverAlMenu_Click(sender As Object, e As EventArgs) Handles VolverAlMenu.Click
         Response.AddHeader("REFRESH", "0;URL=inicioProfesor.aspx")
     End Sub
-    Protected Sub LinkLogout_Click(sender As Object, e As EventArgs) Handles LinkLogout.Click
-        Session.Abandon()
-        Response.AddHeader("REFRESH", "0;URL=../login.aspx")
-    End Sub
+
 End Class
