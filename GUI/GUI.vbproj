@@ -100,6 +100,8 @@
     <Content Include="Alumno\InstanciarTarea.aspx" />
     <Content Include="Alumno\TareasAlumnosOcultandoColumnas.aspx" />
     <Content Include="App_Data\SEG.xml" />
+    <Content Include="Global.asax" />
+    <Content Include="Private\AJAX\usuariosActivos.aspx" />
     <Content Include="Private\cambiarPassword.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Private\logout.aspx" />
@@ -143,6 +145,16 @@
     </Compile>
     <Compile Include="Alumno\TareasAlumnosOcultandoColumnas.aspx.vb">
       <DependentUpon>TareasAlumnosOcultandoColumnas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Private\AJAX\usuariosActivos.aspx.designer.vb">
+      <DependentUpon>usuariosActivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\AJAX\usuariosActivos.aspx.vb">
+      <DependentUpon>usuariosActivos.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Private\cambiarPassword.aspx.designer.vb">

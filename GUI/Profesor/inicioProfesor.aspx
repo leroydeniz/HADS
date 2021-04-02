@@ -6,6 +6,28 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Profesor | Inicio</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+
+    <script>
+        setInterval(function () {
+
+            /* PROFESORES - creamos la variable con la solicitud */
+            xhr = new XMLHttpRequest();
+
+            /* indico qué traer y le paso el parámetro de email para saber las preguntas del usuario */
+            xhr.open("GET", "../Private/AJAX/usuariosActivos.aspx", true);
+
+            /* le digo qué hacer cuando llegue la respuesta */
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    $("#tablaUsuariosActivos").html(xhr.responseText);
+                }
+            }
+            xhr.send('');
+        }, 2000);
+    </script>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -54,13 +76,19 @@
 
                     <asp:TableRow>
                         <asp:TableCell>
-                            6. <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="../Private/logout.aspx">Logout</asp:LinkButton>
+                            6. <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="../Private/logout.aspx">Logout</asp:LinkButton><br /><br /><br /><br /><br />
+                        </asp:TableCell>
+                    </asp:TableRow>
+
+                    <asp:TableRow>
+                        <asp:TableCell ID="tablaUsuariosActivos">
+                            
+
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
-            </div>     
+            </div>
 
     </form>
-
 </body>
 </html>

@@ -10,6 +10,8 @@
             End If
         End If
 
+        Label1.Text = Application("version")
+
     End Sub
 
     Protected Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
@@ -38,6 +40,15 @@
 
                 ' Registro cada acceso en DB
                 objController.registrarMovimiento(pEmail, Session("tipo"), "Login")
+
+                ' Se agrega el email a la lista de sesiones en función de su tipo de usuario
+                If (Session("tipo") = "Profesor") Then
+                    Application("profesoresList").add(Session("usuario"))
+                ElseIf (Session("tipo") = "Alumno") Then
+                    Application("alumnosList").add(Session("usuario"))
+                Else
+                    Application("adminsList").add(Session("usuario"))
+                End If
 
                 RespuestaDelServidor.Text = "Bienvenido! Será redirigido en 3 segundos..."
 

@@ -100,6 +100,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:GUI.RegistroLogin._tablaUsuariosActivos">
+<summary>
+Control tablaUsuariosActivos.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:GUI.inicioAlumno._form2">
 <summary>
 Control form2.
@@ -139,6 +148,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:GUI.inicioAlumno._LinkButton1">
 <summary>
 Control LinkButton1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.inicioAlumno._tablaUsuariosActivos">
+<summary>
+Control tablaUsuariosActivos.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -310,6 +328,42 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:GUI.TareasAlumnosOcultandoColumnas._LinkButton1">
 <summary>
 Control LinkButton1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.usuariosActivos._Table1">
+<summary>
+Control Table1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.usuariosActivos._profesoresLista">
+<summary>
+Control profesoresLista.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.usuariosActivos._alumnosLista">
+<summary>
+Control alumnosLista.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.usuariosActivos._adminsLista">
+<summary>
+Control adminsLista.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -877,6 +931,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:GUI.inicioProfesor._LinkButton1">
 <summary>
 Control LinkButton1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.inicioProfesor._tablaUsuariosActivos">
+<summary>
+Control tablaUsuariosActivos.
 </summary>
 <remarks>
 Campo generado automáticamente.
