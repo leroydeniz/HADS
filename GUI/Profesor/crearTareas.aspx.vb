@@ -4,7 +4,6 @@ Public Class crearTareas
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Session.Contents("asignaturaElegida") = DropDownList1.Text
         usuarioText.Text = Session.Contents("usuario")
     End Sub
 

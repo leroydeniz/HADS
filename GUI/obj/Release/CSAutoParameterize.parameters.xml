@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="HADS-JorgeConnectionString-Web.config Connection String" description="HADS-JorgeConnectionString Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="Data Source=tcp:jorgehads.database.windows.net,1433;Initial Catalog=HADS-Jorge;Persist Security Info=True;User ID=trabajo.jorge2000@gmail.com@jorgehads;Password=Marmota69" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Leroy\\source\\repos\\HADS21-13\\GUI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HADS-JorgeConnectionString']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Leroy\\Source\\Repos\\HADS21-13\\GUI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HADS-JorgeConnectionString']/@connectionString" />
   </parameter>
 </parameters>

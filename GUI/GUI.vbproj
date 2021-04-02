@@ -46,6 +46,9 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -101,6 +104,7 @@
     <Content Include="Alumno\TareasAlumnosOcultandoColumnas.aspx" />
     <Content Include="App_Data\SEG.xml" />
     <Content Include="Global.asax" />
+    <Content Include="Private\AJAX\tareasFiltradas.aspx" />
     <Content Include="Private\AJAX\usuariosActivos.aspx" />
     <Content Include="Private\cambiarPassword.aspx" />
     <Content Include="login.aspx" />
@@ -149,6 +153,13 @@
     </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Private\AJAX\tareasFiltradas.aspx.designer.vb">
+      <DependentUpon>tareasFiltradas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\AJAX\tareasFiltradas.aspx.vb">
+      <DependentUpon>tareasFiltradas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Private\AJAX\usuariosActivos.aspx.designer.vb">
       <DependentUpon>usuariosActivos.aspx</DependentUpon>
