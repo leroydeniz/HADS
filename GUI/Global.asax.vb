@@ -6,7 +6,7 @@ Public Class Global_asax
     Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
 
         ' Versión de la aplicación global
-        Application("version") = "v7.2.0"
+        Application("version") = "v7.2.1"
 
         Dim profesoresList As New List(Of String)
         Dim alumnosList As New List(Of String)

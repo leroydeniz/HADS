@@ -48,4 +48,31 @@ Partial Public Class usuariosActivos
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents adminsLista As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Control profesoresTotal.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents profesoresTotal As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Control alumnosTotal.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents alumnosTotal As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Control adminsTotal.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents adminsTotal As Global.System.Web.UI.WebControls.TableCell
 End Class
