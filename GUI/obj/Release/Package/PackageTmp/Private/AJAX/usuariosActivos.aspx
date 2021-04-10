@@ -22,6 +22,11 @@
             <asp:TableCell ID="alumnosLista" HorizontalAlign="Center"></asp:TableCell>
             <asp:TableCell ID="adminsLista" HorizontalAlign="Center"></asp:TableCell>
         </asp:TableRow>
+        <asp:TableRow BackColor="#aaaaaa">
+            <asp:TableCell ID="profesoresTotal" HorizontalAlign="Center" BorderWidth="1">X/X</asp:TableCell>
+            <asp:TableCell ID="alumnosTotal" HorizontalAlign="Center" BorderWidth="1">X/X</asp:TableCell>
+            <asp:TableCell ID="adminsTotal" HorizontalAlign="Center" BorderWidth="1">X/X</asp:TableCell>
+        </asp:TableRow>
     </asp:Table>
 </body>
 </html>
