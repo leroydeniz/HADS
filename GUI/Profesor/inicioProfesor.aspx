@@ -9,25 +9,6 @@
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
 
-    <script>
-        setInterval(function () {
-
-            /* PROFESORES - creamos la variable con la solicitud */
-            xhr = new XMLHttpRequest();
-
-            /* indico qué traer y le paso el parámetro de email para saber las preguntas del usuario */
-            xhr.open("GET", "../Private/AJAX/usuariosActivos.aspx", true);
-
-            /* le digo qué hacer cuando llegue la respuesta */
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    $("#tablaUsuariosActivos").html(xhr.responseText);
-                }
-            }
-            xhr.send('');
-        }, 2000);
-    </script>
-
 </head>
 <body>
     <form id="form1" runat="server">
@@ -46,7 +27,7 @@
                     
                     <asp:TableRow>
                         <asp:TableCell>
-                            1. <asp:LinkButton ID="LinkRegistro" runat="server" PostBackUrl="crearTareas.aspx">Tareas</asp:LinkButton>
+                            1. <asp:LinkButton ID="LinkRegistro" runat="server" PostBackUrl="TareasProfesor.aspx">Tareas</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
                     
@@ -81,12 +62,42 @@
                     </asp:TableRow>
 
                     <asp:TableRow>
-                        <asp:TableCell ID="tablaUsuariosActivos">
-                            
-
+                        <asp:TableCell>
+                            <br /><br />
+                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
+                                    <asp:Timer ID="Timer1" runat="server" Interval="2000">
+                                    </asp:Timer>
+                        
+                                        <asp:Table ID="Table1" runat="server" BorderWidth="1">
+                                            <asp:TableRow BackColor="#777777">
+                                                <asp:TableCell ColumnSpan="3" HorizontalAlign="Center" Style="padding:20px;">.:: <b>Usuarios activos</b> ::.</asp:TableCell>
+                                            </asp:TableRow>
+                                            <asp:TableRow BackColor="#aaaaaa">
+                                                <asp:TableCell HorizontalAlign="Center" BorderWidth="1">Profesores</asp:TableCell>
+                                                <asp:TableCell HorizontalAlign="Center" BorderWidth="1">Alumnos</asp:TableCell>
+                                                <asp:TableCell HorizontalAlign="Center" BorderWidth="1">Admins</asp:TableCell>
+                                            </asp:TableRow>
+                                            <asp:TableRow>
+                                                <asp:TableCell ID="profesoresLista" HorizontalAlign="Center" ></asp:TableCell>
+                                                <asp:TableCell ID="alumnosLista" HorizontalAlign="Center"></asp:TableCell>
+                                                <asp:TableCell ID="adminsLista" HorizontalAlign="Center"></asp:TableCell>
+                                            </asp:TableRow>
+                                            <asp:TableRow BackColor="#aaaaaa">
+                                                <asp:TableCell ID="profesoresTotal" HorizontalAlign="Center" BorderWidth="1">X/X</asp:TableCell>
+                                                <asp:TableCell ID="alumnosTotal" HorizontalAlign="Center" BorderWidth="1">X/X</asp:TableCell>
+                                                <asp:TableCell ID="adminsTotal" HorizontalAlign="Center" BorderWidth="1">X/X</asp:TableCell>
+                                            </asp:TableRow>
+                                        </asp:Table>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
                         </asp:TableCell>
                     </asp:TableRow>
+
+                   
                 </asp:Table>
+                
             </div>
 
     </form>

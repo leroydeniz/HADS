@@ -104,12 +104,11 @@
     <Content Include="Alumno\TareasAlumnosOcultandoColumnas.aspx" />
     <Content Include="App_Data\SEG.xml" />
     <Content Include="Global.asax" />
-    <Content Include="Private\AJAX\tareasFiltradas.aspx" />
-    <Content Include="Private\AJAX\usuariosActivos.aspx" />
     <Content Include="Private\cambiarPassword.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Private\logout.aspx" />
     <Content Include="Profesor\crearTareas.aspx" />
+    <Content Include="Profesor\TareasProfesor.aspx" />
     <Content Include="Profesor\XML\exportarTareas.aspx" />
     <Content Include="Profesor\XML\importarTareasDS.aspx" />
     <Content Include="Profesor\XML\importarTareas.aspx" />
@@ -153,20 +152,6 @@
     </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Private\AJAX\tareasFiltradas.aspx.designer.vb">
-      <DependentUpon>tareasFiltradas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Private\AJAX\tareasFiltradas.aspx.vb">
-      <DependentUpon>tareasFiltradas.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Private\AJAX\usuariosActivos.aspx.designer.vb">
-      <DependentUpon>usuariosActivos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Private\AJAX\usuariosActivos.aspx.vb">
-      <DependentUpon>usuariosActivos.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Private\cambiarPassword.aspx.designer.vb">
       <DependentUpon>cambiarPassword.aspx</DependentUpon>
@@ -213,6 +198,13 @@
     </Compile>
     <Compile Include="Profesor\crearTareas.aspx.vb">
       <DependentUpon>crearTareas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Profesor\TareasProfesor.aspx.designer.vb">
+      <DependentUpon>TareasProfesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor\TareasProfesor.aspx.vb">
+      <DependentUpon>TareasProfesor.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Profesor\XML\exportarTareas.aspx.designer.vb">

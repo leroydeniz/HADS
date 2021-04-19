@@ -1,6 +1,4 @@
-﻿Imports System.Data.SqlClient
-
-Public Class crearTareas
+﻿Public Class TareasProfesor
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -16,4 +14,7 @@ Public Class crearTareas
         Response.AddHeader("REFRESH", "0;URL=inicioProfesor.aspx")
     End Sub
 
+    Protected Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
