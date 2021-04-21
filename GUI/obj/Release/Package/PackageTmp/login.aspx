@@ -1,4 +1,5 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="login.aspx.vb" Inherits="GUI.login"  Debug="true" %>
+﻿
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="login.aspx.vb" Inherits="GUI.login"  Debug="true" %>
 <%@ Import Namespace="System.Data" %>
 
 <!DOCTYPE html>
@@ -81,7 +82,7 @@
                             <br />
                             <br />
                             <br />
-                            <br /><asp:Label ID="Label1" runat="server" style="text-align: center" Text="Label"></asp:Label>
+                            <br /><asp:LinkButton ID="GitHubButton" runat="server" style="text-align: right">GitHub</asp:LinkButton> - <asp:Label ID="Label1" runat="server" style="text-align: center" Text="Label"></asp:Label>
                             <br />
                         </asp:TableCell>
                     </asp:TableRow>

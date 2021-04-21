@@ -51,13 +51,19 @@
                     
                     <asp:TableRow>
                         <asp:TableCell>
-                            5. <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="../Private/cambiarPassword.aspx">Cambiar contraseña</asp:LinkButton>
+                            5. <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="../Coordinacion/coordinador.aspx">Dedicaciones Medias (con WS)</asp:LinkButton>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            6. <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="../Private/cambiarPassword.aspx">Cambiar contraseña</asp:LinkButton>
                         </asp:TableCell>
                     </asp:TableRow>
 
                     <asp:TableRow>
                         <asp:TableCell>
-                            6. <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="../Private/logout.aspx">Logout</asp:LinkButton><br /><br /><br /><br /><br />
+                            7. <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="../Private/logout.aspx">Logout</asp:LinkButton><br /><br /><br /><br /><br />
                         </asp:TableCell>
                     </asp:TableRow>
 

@@ -478,6 +478,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:GUI.login._GitHubButton">
+<summary>
+Control GitHubButton.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:GUI.login._Label1">
 <summary>
 Control Label1.
@@ -524,6 +533,96 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </remarks>
 </member>
 <member name="F:GUI.crearTareas._LinkButton1">
+<summary>
+Control LinkButton1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.DedicacionesMedia._form1">
+<summary>
+Control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.DedicacionesMedia._usuarioText">
+<summary>
+Control usuarioText.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.DedicacionesMedia._ScriptManager1">
+<summary>
+Control ScriptManager1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.DedicacionesMedia._UpdatePanel1">
+<summary>
+Control UpdatePanel1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.DedicacionesMedia._DropDownList1">
+<summary>
+Control DropDownList1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.DedicacionesMedia._todasAsignaturas">
+<summary>
+Control todasAsignaturas.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.DedicacionesMedia._btnVerDedicacion">
+<summary>
+Control btnVerDedicacion.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.DedicacionesMedia._resultado">
+<summary>
+Control resultado.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.DedicacionesMedia._VolverAlMenu">
+<summary>
+Control VolverAlMenu.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.DedicacionesMedia._LinkButton1">
 <summary>
 Control LinkButton1.
 </summary>
@@ -946,6 +1045,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:GUI.inicioProfesor._LinkButton2">
+<summary>
+Control LinkButton2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:GUI.inicioProfesor._LinkButton1">
 <summary>
 Control LinkButton1.
@@ -1351,6 +1459,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:GUI.registro._RequiredFieldValidator3">
+<summary>
+Control RequiredFieldValidator3.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:GUI.registro._RespuestaDelServidor">
 <summary>
 Control RespuestaDelServidor.
@@ -1404,6 +1521,36 @@ Control RespuestaDelServidor.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member>
+<member name="T:GUI.es.ehusw.Matriculas">
+<remarks/>
+</member>
+<member name="M:GUI.es.ehusw.Matriculas.#ctor">
+<remarks/>
+</member>
+<member name="E:GUI.es.ehusw.Matriculas.comprobarCompleted">
+<remarks/>
+</member>
+<member name="M:GUI.es.ehusw.Matriculas.comprobar(System.String)">
+<remarks/>
+</member>
+<member name="M:GUI.es.ehusw.Matriculas.comprobarAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:GUI.es.ehusw.Matriculas.comprobarAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:GUI.es.ehusw.Matriculas.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:GUI.es.ehusw.comprobarCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:GUI.es.ehusw.comprobarCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:GUI.es.ehusw.comprobarCompletedEventArgs.Result">
+<remarks/>
 </member>
 </members>
 </doc>
