@@ -57,6 +57,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web.DynamicData" />
@@ -103,11 +105,22 @@
     <Content Include="Alumno\InstanciarTarea.aspx" />
     <Content Include="Alumno\TareasAlumnosOcultandoColumnas.aspx" />
     <Content Include="App_Data\SEG.xml" />
+    <Content Include="Connected Services\ServiceReference1\GUI.ServiceReference1.DedicacionMadiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReference1\WebService1.disco" />
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
     <Content Include="Global.asax" />
     <Content Include="Private\cambiarPassword.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Private\logout.aspx" />
     <Content Include="Profesor\crearTareas.aspx" />
+    <Content Include="Coordinacion\coordinador.aspx" />
     <Content Include="Profesor\TareasProfesor.aspx" />
     <Content Include="Profesor\XML\exportarTareas.aspx" />
     <Content Include="Profesor\XML\importarTareasDS.aspx" />
@@ -149,6 +162,11 @@
     <Compile Include="Alumno\TareasAlumnosOcultandoColumnas.aspx.vb">
       <DependentUpon>TareasAlumnosOcultandoColumnas.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReference1\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
@@ -198,6 +216,13 @@
     </Compile>
     <Compile Include="Profesor\crearTareas.aspx.vb">
       <DependentUpon>crearTareas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Coordinacion\coordinador.aspx.designer.vb">
+      <DependentUpon>coordinador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Coordinacion\coordinador.aspx.vb">
+      <DependentUpon>coordinador.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Profesor\TareasProfesor.aspx.designer.vb">
@@ -278,6 +303,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\WebService1.wsdl" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -306,6 +332,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DedicacionMediaWS\DedicacionMediaWS.vbproj">
+      <Project>{e563e7a4-129c-496a-b0c5-c40e9dd3fc7e}</Project>
+      <Name>DedicacionMediaWS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LAB\LAB.vbproj">
       <Project>{252a6133-60c8-4c05-b844-f9b259890a3d}</Project>
       <Name>LAB</Name>
@@ -329,6 +359,9 @@
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>GUI_es_ehusw_Matriculas</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

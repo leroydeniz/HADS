@@ -31,6 +31,8 @@
         '1 - Error de conexión a la base de datos
         '2 - Error de inserción en la base de datos'
         '3 - Registro correcto'
+        '4 - Error en envío de email
+        '5 - Usuario no matriculado por WS
 
         If resultadoTmp = 0 Then
             objController.registrarMovimiento(pUser, Session("tipo"), "Intento de registro")
