@@ -9,7 +9,7 @@
     End Sub
 
     Protected Sub btnVerDedicacion_Click(sender As Object, e As EventArgs) Handles btnVerDedicacion.Click
-        Dim objDedicacionMediaWS As New DedicacionMediaWS.WebService1
+        Dim objDedicacionMediaWS As New ServiceReference3.WebService1SoapClient
         Dim dedicacionMedia As Double = objDedicacionMediaWS.DedicacionMadia(DropDownList1.Text)
         If dedicacionMedia = -1 Then
             resultado.Text = "Esta asignatura no tiene registros de dedicación"

@@ -414,8 +414,3 @@ C:\Users\jorge\Desktop\HADS21-13\GUI\obj\Debug\GUI.xml
 C:\Users\jorge\Desktop\HADS21-13\GUI\obj\Debug\GUI.pdb
 C:\Users\Leroy\source\repos\HADS21-13\GUI\bin\Newtonsoft.Json.dll
 C:\Users\Leroy\source\repos\HADS21-13\GUI\bin\Newtonsoft.Json.xml
-C:\Users\Leroy\Source\Repos\HADS21-13\GUI\bin\AjaxControlToolkit.dll
-C:\Users\Leroy\source\repos\HADS21-13\GUI\bin\DedicacionMediaWS.dll
-C:\Users\Leroy\source\repos\HADS21-13\GUI\bin\DedicacionMediaWS.pdb
-C:\Users\Leroy\source\repos\HADS21-13\GUI\bin\DedicacionMediaWS.xml
-C:\Users\Leroy\source\repos\HADS21-13\GUI\bin\DedicacionMediaWS.dll.config
