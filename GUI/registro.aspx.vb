@@ -57,18 +57,18 @@
 
     End Sub
 
-    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        ' Se crea el objeto que maneje el web service de Matrículas
+    Protected Sub email_TextChanged(sender As Object, e As EventArgs) Handles email.TextChanged
         Dim objSWMatricula As New es.ehusw.Matriculas
-
         ' Se llama a la función comprobar de ese web service
         Dim flagMatriculado As String = objSWMatricula.comprobar(email.Text)
 
         ' Si no está matriculado, devuelve el error 5, CC continúa
         If flagMatriculado = "NO" Then
             BtnRegister.Enabled = False
+            result.Text = "El usuario no está matriculado."
         Else
             BtnRegister.Enabled = True
+            result.Text = "Usuario matriculado."
         End If
     End Sub
 

@@ -60,3 +60,4 @@ C:\Users\Leroy\source\repos\HADS21-13\DedicacionMediaWS\obj\Debug\DedicacionMedi
 C:\Users\Leroy\source\repos\HADS21-13\DedicacionMediaWS\obj\Debug\DedicacionMediaWS.dll
 C:\Users\Leroy\source\repos\HADS21-13\DedicacionMediaWS\obj\Debug\DedicacionMediaWS.xml
 C:\Users\Leroy\source\repos\HADS21-13\DedicacionMediaWS\obj\Debug\DedicacionMediaWS.pdb
+C:\Users\Leroy\source\repos\HADS21-13\DedicacionMediaWS\obj\Debug\DedicacionMediaWS.vbprojAssemblyReference.cache

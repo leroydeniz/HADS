@@ -55,24 +55,6 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.RegistroLogin._LinkButton1">
-<summary>
-Control LinkButton1.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:GUI.RegistroLogin._tablaUsuariosActivos">
-<summary>
-Control tablaUsuariosActivos.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
 <member name="F:GUI.RegistroLogin._ScriptManager1">
 <summary>
 Control ScriptManager1.
@@ -112,6 +94,24 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:GUI.RegistroLogin._GridView1">
 <summary>
 Control GridView1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.RegistroLogin._LinkButton1">
+<summary>
+Control LinkButton1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.RegistroLogin._tablaUsuariosActivos">
+<summary>
+Control tablaUsuariosActivos.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -1459,27 +1459,18 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.registro._ScriptManager1">
+<member name="F:GUI.registro._ScriptManager2">
 <summary>
-Control ScriptManager1.
+Control ScriptManager2.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.registro._UpdatePanel1">
+<member name="F:GUI.registro._UpdatePanel2">
 <summary>
-Control UpdatePanel1.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:GUI.registro._Timer1">
-<summary>
-Control Timer1.
+Control UpdatePanel2.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -1489,6 +1480,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:GUI.registro._email">
 <summary>
 Control email.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:GUI.registro._result">
+<summary>
+Control result.
 </summary>
 <remarks>
 Campo generado automáticamente.

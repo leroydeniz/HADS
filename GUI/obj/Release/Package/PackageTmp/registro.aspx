@@ -34,16 +34,18 @@
                     <asp:TableRow>
                         <asp:TableCell ColumnSpan="2">
                             <br />
-                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                                <ContentTemplate>
-                                    <asp:Timer ID="Timer1" runat="server" Interval="5000">
-                                    </asp:Timer>
-
                                     <table>
                                         <tr>
                                             <td>Email:</td>
-                                            <td><asp:TextBox ID="email" runat="server" textMode="Email"></asp:TextBox></td>
+                                            <td>
+                                                <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
+                                                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                                    <ContentTemplate>
+                                                        <asp:TextBox ID="email" runat="server" AutoPostBack="True" style="margin-bottom: 0px" textMode="Email"></asp:TextBox>
+                                                        <asp:Label ID="result" runat="server" Text=""></asp:Label>
+                                                    </ContentTemplate>
+                                                </asp:UpdatePanel>  
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Nombre:</td>
@@ -87,8 +89,6 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="apellidos" ErrorMessage="Apellido es obligatorio."></asp:RequiredFieldValidator>
                                     <br />
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="password" ErrorMessage="Contraseña requerida."></asp:RequiredFieldValidator>
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
                             <br />
                         </asp:TableCell>
                     </asp:TableRow>
