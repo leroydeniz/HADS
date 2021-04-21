@@ -23,35 +23,22 @@
                     
                     <asp:TableRow>
                         <asp:TableCell>
-                            
                             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <ContentTemplate>
-                                    <asp:Label runat="server" Text="Label">Seleccionar Asignatura:</asp:Label>
+                                    <asp:Label runat="server" Text="Label">Seleccionar Asignatura:</asp:Label> &nbsp;&nbsp;&nbsp;
                                     <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="todasAsignaturas" DataTextField="codigo" DataValueField="codigo">
-                                    </asp:DropDownList>                                
+                                    </asp:DropDownList>                             
                                     <asp:SqlDataSource ID="todasAsignaturas" runat="server" ConnectionString="<%$ ConnectionStrings:HADS-JorgeConnectionString %>" SelectCommand="SELECT ' ' As codigo UNION ALL SELECT [codigo] FROM [Asignaturas]"></asp:SqlDataSource>
+                                    <br /><br />  
+                                    <asp:Button ID="btnVerDedicacion" runat="server" Text="Ver dedicacion media" Width="221px" /><br /><br />  
+                                    <asp:Label ID="resultado" runat="server" Text=""></asp:Label>
                                 </ContentTemplate>
                             </asp:UpdatePanel>
-
                         </asp:TableCell>
                     </asp:TableRow>
 
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            <br />
-                            <asp:Button ID="btnVerDedicacion" runat="server" Text="Ver dedicacion media" Width="221px" />
-                        </asp:TableCell>
-                    </asp:TableRow>
-
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            <br />
-                            <br />
-                            <asp:Label ID="resultado" runat="server" Text=""></asp:Label>
-                        </asp:TableCell>
-                    </asp:TableRow>
 
                     <asp:TableRow>
                         <asp:TableCell>
@@ -59,6 +46,6 @@
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
-    </form>
-</body>
+        </form>
+    </body>
 </html>

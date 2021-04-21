@@ -2,7 +2,7 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        BtnRegister.Enabled = False
     End Sub
 
     Protected Sub BtnRegister_Click(sender As Object, e As EventArgs) Handles BtnRegister.Click
@@ -56,4 +56,20 @@
         End If
 
     End Sub
+
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        ' Se crea el objeto que maneje el web service de Matrículas
+        Dim objSWMatricula As New es.ehusw.Matriculas
+
+        ' Se llama a la función comprobar de ese web service
+        Dim flagMatriculado As String = objSWMatricula.comprobar(email.Text)
+
+        ' Si no está matriculado, devuelve el error 5, CC continúa
+        If flagMatriculado = "NO" Then
+            BtnRegister.Enabled = False
+        Else
+            BtnRegister.Enabled = True
+        End If
+    End Sub
+
 End Class

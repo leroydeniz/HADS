@@ -29,85 +29,77 @@
                             <br />
                         </asp:TableCell>
                     </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            Email:
-                        </asp:TableCell>
-                        <asp:TableCell>
-                            <asp:TextBox ID="email" runat="server" textMode="Email"></asp:TextBox> 
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            Nombre:
-                        </asp:TableCell>
-                        <asp:TableCell>
-                            <asp:TextBox ID="nombre" runat="server"></asp:TextBox> 
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            Apellidos:
-                        </asp:TableCell>
-                        <asp:TableCell>
-                            <asp:TextBox ID="apellidos" runat="server"></asp:TextBox> 
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            Password:
-                        </asp:TableCell>
-                        <asp:TableCell>
-                            <asp:TextBox ID="password" runat="server" textMode="Password"></asp:TextBox> 
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            Re-Password:
-                        </asp:TableCell>
-                        <asp:TableCell>
-                            <asp:TextBox ID="repassword" runat="server" textMode="Password"></asp:TextBox> 
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            Perfil:
-                        </asp:TableCell>
-                        <asp:TableCell>
-                            <asp:RadioButtonList ID="perfil" runat="server" RepeatDirection="Horizontal">
-                                <asp:ListItem Value="Profesor" Selected="True">Profesor</asp:ListItem>
-                                <asp:ListItem Value="Alumno">Alumno</asp:ListItem>
-                            </asp:RadioButtonList>     
-                        </asp:TableCell>
-                    </asp:TableRow>
+
+                    
                     <asp:TableRow>
                         <asp:TableCell ColumnSpan="2">
                             <br />
-                            <asp:Button ID="BtnRegister" runat="server" Height="44px" style="text-align: center" Text="Registrarse" Width="221px" />
+                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
+                                    <asp:Timer ID="Timer1" runat="server" Interval="5000">
+                                    </asp:Timer>
+
+                                    <table>
+                                        <tr>
+                                            <td>Email:</td>
+                                            <td><asp:TextBox ID="email" runat="server" textMode="Email"></asp:TextBox></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nombre:</td>
+                                            <td><asp:TextBox ID="nombre" runat="server"></asp:TextBox></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Apellidos:</td>
+                                            <td><asp:TextBox ID="apellidos" runat="server"></asp:TextBox></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Password:</td>
+                                            <td><asp:TextBox ID="password" runat="server" textMode="Password"></asp:TextBox></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Re-Password:</td>
+                                            <td><asp:TextBox ID="repassword" runat="server" textMode="Password"></asp:TextBox></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Perfil:</td>
+                                            <td><asp:RadioButtonList ID="perfil" runat="server" RepeatDirection="Horizontal">
+                                                <asp:ListItem Selected="True" Value="Profesor">Profesor</asp:ListItem>
+                                                <asp:ListItem Value="Alumno">Alumno</asp:ListItem>
+                                            </asp:RadioButtonList></td>
+                                        </tr>
+                                    </table>
+                                    
+                                    <br />
+                                    <br />
+                                    <asp:Button ID="BtnRegister" runat="server" Height="44px" style="text-align: center" Text="Registrarse" Width="221px" />
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="RespuestaDelServidor" runat="server" Text=""></asp:Label>
+                                    <br />
+                                    <br />
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="password" ErrorMessage="Contraseña inválida." ValidationExpression="[a-zA-Z0-9]{6,}"></asp:RegularExpressionValidator>
+                                    <br />
+                                    <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="repassword" ControlToValidate="password" ErrorMessage="Las contraseñas no coinciden."></asp:CompareValidator>
+                                    <br />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="nombre" ErrorMessage="Nombre es obligatorio."></asp:RequiredFieldValidator>
+                                    <br />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="apellidos" ErrorMessage="Apellido es obligatorio."></asp:RequiredFieldValidator>
+                                    <br />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="password" ErrorMessage="Contraseña requerida."></asp:RequiredFieldValidator>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
                             <br />
                         </asp:TableCell>
                     </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell ColumnSpan="2">
-                            <br /><asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Contraseña inválida." ControlToValidate="password" ValidationExpression="[a-zA-Z0-9]{6,}"></asp:RegularExpressionValidator>
-                            <br /><asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Las contraseñas no coinciden." ControlToValidate="password" ControlToCompare="repassword"></asp:CompareValidator>
-                            <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Nombre es obligatorio." ControlToValidate="nombre"></asp:RequiredFieldValidator>
-                            <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Apellido es obligatorio."  ControlToValidate="apellidos" ></asp:RequiredFieldValidator>
-                            <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="password" ErrorMessage="Contraseña requerida."></asp:RequiredFieldValidator>
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell ColumnSpan="2">
-                            <br />
-                            <asp:Label ID="RespuestaDelServidor" runat="server" Text=""></asp:Label>
-                            <br />
-                            <br />
-                        </asp:TableCell>
-                    </asp:TableRow>
+
                 </asp:Table>
                 <br />
             </div>
         </div>
+    
+                            
+        <br />
     </form>
-</body>
+    </body>
 </html>

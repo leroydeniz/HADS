@@ -102,8 +102,15 @@
     <Content Include="Alumno\InstanciarTarea.aspx" />
     <Content Include="Alumno\TareasAlumnosOcultandoColumnas.aspx" />
     <Content Include="App_Data\SEG.xml" />
+    <None Include="Connected Services\RegistroLoginWS\RegistroLogin.wsdl" />
     <None Include="Connected Services\ServiceReference3\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference3\configuration.svcinfo" />
+    <None Include="Connected Services\RegistroLoginWS\configuration91.svcinfo" />
+    <None Include="Connected Services\RegistroLoginWS\configuration.svcinfo" />
+    <None Include="Connected Services\RegistroLoginWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
     <Content Include="Connected Services\ServiceReference3\GUI.ServiceReference3.DedicacionMadiaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -158,6 +165,11 @@
     <Compile Include="Alumno\TareasAlumnosOcultandoColumnas.aspx.vb">
       <DependentUpon>TareasAlumnosOcultandoColumnas.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Connected Services\RegistroLoginWS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ServiceReference3\Reference.vb">
       <AutoGen>True</AutoGen>
@@ -304,6 +316,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="My Project\DataSources\System.Data.DataTable.datasource" />
     <None Include="My Project\PublishProfiles\HADS21-13.pubxml" />
     <None Include="My Project\PublishProfiles\HAS21-13 - Web Deploy.pubxml" />
     <None Include="My Project\Settings.settings">
@@ -353,6 +366,7 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\RegistroLoginWS\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReference3\" />
   </ItemGroup>
   <PropertyGroup>

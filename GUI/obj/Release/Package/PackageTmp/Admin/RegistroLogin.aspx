@@ -8,24 +8,6 @@
     <title>Admin | Registro de actividades por usuario</title>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
-    <script>
-        setInterval(function () {
-
-            /* PROFESORES - creamos la variable con la solicitud */
-            xhr = new XMLHttpRequest();
-
-            /* indico qué traer y le paso el parámetro de email para saber las preguntas del usuario */
-            xhr.open("GET", "../Private/AJAX/usuariosActivos.aspx", true);
-
-            /* le digo qué hacer cuando llegue la respuesta */
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    $("#tablaUsuariosActivos").html(xhr.responseText);
-                }
-            }
-            xhr.send('');
-        }, 2000);
-    </script>
 
 </head>
 <body>
@@ -69,7 +51,7 @@
                                 
                     <asp:TableRow>
                         <asp:TableCell>
-                            <br /><br /><br /><asp:LinkButton ID="VolverAlMenu" runat="server">Volver al menú</asp:LinkButton> &nbsp;&nbsp;| &nbsp;&nbsp;<asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="../Private/logout.aspx">Logout</asp:LinkButton><br /><br /><br /><br /><br />
+                            <br /><br /><br /><asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="../Private/logout.aspx">Logout</asp:LinkButton><br /><br /><br /><br /><br />
                         </asp:TableCell>
                     </asp:TableRow>
 
