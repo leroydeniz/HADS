@@ -16,6 +16,16 @@
 
         Dim resultadoTmp = objController.registro(pUser, pPass, pNombre, pApellidos, pTipo)
 
+        ' Se crea el objeto que maneje el web service de Matrículas
+        Dim objSWMatricula As New es.ehusw.Matriculas
+
+        ' Se llama a la función comprobar de ese web service
+        Dim flagMatriculado As String = objSWMatricula.comprobar(pUser)
+
+        ' Si no está matriculado, devuelve el error 5, CC continúa
+        If flagMatriculado = "NO" Then
+            resultadoTmp = 5
+        End If
 
         '0 - Usuario ya existe'
         '1 - Error de conexión a la base de datos
@@ -37,6 +47,8 @@
             Response.AddHeader("REFRESH", "3;URL=login.aspx")
         ElseIf resultadoTmp = 4 Then
             RespuestaDelServidor.Text = "Error en envío de email."
+        ElseIf resultadoTmp = 5 Then
+            RespuestaDelServidor.Text = "Usuario no está matriculado."
         Else
             RespuestaDelServidor.Text = "Error desconocido."
         End If

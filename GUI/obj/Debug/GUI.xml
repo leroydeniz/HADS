@@ -334,69 +334,6 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:GUI.usuariosActivos._Table1">
-<summary>
-Control Table1.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:GUI.usuariosActivos._profesoresLista">
-<summary>
-Control profesoresLista.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:GUI.usuariosActivos._alumnosLista">
-<summary>
-Control alumnosLista.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:GUI.usuariosActivos._adminsLista">
-<summary>
-Control adminsLista.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:GUI.usuariosActivos._profesoresTotal">
-<summary>
-Control profesoresTotal.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:GUI.usuariosActivos._alumnosTotal">
-<summary>
-Control alumnosTotal.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:GUI.usuariosActivos._adminsTotal">
-<summary>
-Control adminsTotal.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
 <member name="F:GUI.cambiarPassword._formCambiarPassword">
 <summary>
 Control formCambiarPassword.
@@ -1414,6 +1351,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:GUI.registro._RequiredFieldValidator3">
+<summary>
+Control RequiredFieldValidator3.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:GUI.registro._RespuestaDelServidor">
 <summary>
 Control RespuestaDelServidor.
@@ -1467,6 +1413,36 @@ Control RespuestaDelServidor.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member>
+<member name="T:GUI.es.ehusw.Matriculas">
+<remarks/>
+</member>
+<member name="M:GUI.es.ehusw.Matriculas.#ctor">
+<remarks/>
+</member>
+<member name="E:GUI.es.ehusw.Matriculas.comprobarCompleted">
+<remarks/>
+</member>
+<member name="M:GUI.es.ehusw.Matriculas.comprobar(System.String)">
+<remarks/>
+</member>
+<member name="M:GUI.es.ehusw.Matriculas.comprobarAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:GUI.es.ehusw.Matriculas.comprobarAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:GUI.es.ehusw.Matriculas.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:GUI.es.ehusw.comprobarCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:GUI.es.ehusw.comprobarCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:GUI.es.ehusw.comprobarCompletedEventArgs.Result">
+<remarks/>
 </member>
 </members>
 </doc>

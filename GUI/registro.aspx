@@ -93,6 +93,7 @@
                             <br /><asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Las contraseñas no coinciden." ControlToValidate="password" ControlToCompare="repassword"></asp:CompareValidator>
                             <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Nombre es obligatorio." ControlToValidate="nombre"></asp:RequiredFieldValidator>
                             <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Apellido es obligatorio."  ControlToValidate="apellidos" ></asp:RequiredFieldValidator>
+                            <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="password" ErrorMessage="Contraseña requerida."></asp:RequiredFieldValidator>
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
