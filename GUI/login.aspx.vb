@@ -14,6 +14,10 @@
 
     End Sub
 
+    Protected Sub GitHubButton_Click(sender As Object, e As EventArgs) Handles GitHubButton.Click
+        Response.AddHeader("REFRESH", "0;URL=https://github.com/leroydeniz/HADS")
+    End Sub
+
     Protected Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
 
         'Definir la instancia del controlador'

@@ -77,6 +77,15 @@ Partial Public Class login
     Protected WithEvents RespuestaDelServidor As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Control GitHubButton.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GitHubButton As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
     '''Control Label1.
     '''</summary>
     '''<remarks>
